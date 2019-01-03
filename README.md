@@ -3,8 +3,7 @@
 
 <p>Step inside Pierce's Pocket, a place where I showcase the work I have completed, designed or contributed to.
 
-Click here to see whats inside: <br>
-<a href="www.piercespocket.co.uk">piercespocket.co.uk</a>
+<a href="https://www.piercespocket.co.uk"> Click here </a> to visit.
 
 </p>
 
