@@ -1,0 +1,23 @@
+{
+  "name": "piercespocket",
+  "version": "1.0.0",
+  "description": "<h3><strong>About</strong></h3>",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/InspectorPocket/PiercesPocket.git"
+  },
+  "author": "Pierce Woods",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/InspectorPocket/PiercesPocket/issues"
+  },
+  "homepage": "https://github.com/InspectorPocket/PiercesPocket#readme",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-sass": "^4.0.2"
+  }
+}
