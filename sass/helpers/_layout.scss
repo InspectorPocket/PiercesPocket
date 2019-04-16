@@ -1,1 +1,23 @@
 .center-margin { margin: 0 auto; }
+.auto-margin { margin: auto; }
+
+.abs { position: absolute; }
+
+.container {
+    display: flex;
+    min-width: 1440px;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.col-full { flex: 1; }
+
+.col-half { flex-basis: 50%; }
+.col-quarter { flex-basis: 25%; }
+
+.col-third { flex-basis: 33.33%; }
+.col-two-third { flex-basis: 66.66%; }

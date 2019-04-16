@@ -1,10 +1,26 @@
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans");
+.flex {
+  display: flex; }
+
+.flex-row {
+  flex-direction: row; }
+
+.flex-column {
+  flex-direction: column; }
+
+.align-center {
+  justify-content: center;
+  align-items: center;
+  text-align: center; }
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: "Noto Sans", sans-serif; }
+  font-family: "Noto Sans", sans-serif;
+  margin: 0;
+  padding: 0; }
 
 html, body {
   -webkit-font-smoothing: antialiased;
@@ -13,20 +29,79 @@ html, body {
   margin: 0;
   padding: 0; }
 
+ul, li {
+  text-decoration: none;
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
 .img {
   overflow: hidden; }
   .img img {
     height: 100%;
-    width: 100%; }
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto; }
 
 .center-margin {
   margin: 0 auto; }
 
-/* .background {
-    @include background-cover();
-}
- */
-.navbar ul li {
-  text-decoration: none;
-  list-style: none;
-  text-align: left; }
+.auto-margin {
+  margin: auto; }
+
+.abs {
+  position: absolute; }
+
+.container {
+  display: flex;
+  min-width: 1440px; }
+
+.row {
+  display: flex;
+  width: 100%;
+  align-items: center; }
+
+.col-full {
+  flex: 1; }
+
+.col-half {
+  flex-basis: 50%; }
+
+.col-quarter {
+  flex-basis: 25%; }
+
+.col-third {
+  flex-basis: 33.33%; }
+
+.col-two-third {
+  flex-basis: 66.66%; }
+
+.background {
+  height: 100vh;
+  width: 100vw;
+  background: url("../img/backgrounds/greytrees.jpg") no-repeat center center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover; }
+
+.logo-container .logo {
+  height: 80px;
+  width: 80px; }
+
+.header {
+  width: 100%; }
+
+.navbar ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end; }
+  .navbar ul li {
+    text-align: center;
+    padding: 0 20px; }
+    .navbar ul li a {
+      color: #fff; }

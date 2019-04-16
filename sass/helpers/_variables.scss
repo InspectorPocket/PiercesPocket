@@ -1,6 +1,7 @@
-$primary-colour: #14881e;
-$secondary-colour: #322322;
-$bg-colour: #000;
+$colour-primary: #14881e;
+$colour-secondary: #322322;
+$colour-bg: #fff;
+$colour-white: #fff;
 
 $hoverwidth: 380%;
 $half-translucent: rgba(0,0,0,0.5);
@@ -10,8 +11,6 @@ $font-noto: 'Noto Sans', sans-serif;
 
 $fancy-border: 80px 0px 80px 0px;
 $faint-shadow: 0px 0px 57px -12px rgba(0,0,0,0.64);
-$box-size: border-box;
-$center-margin: 0 auto;
 
-$one-border: $primary-colour solid 1px;
-$two-border: $primary-colour solid 2px;
+$one-border: $colour-primary solid 1px;
+$two-border: $colour-primary solid 2px;

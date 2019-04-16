@@ -1,20 +1,30 @@
 * {
     @include box-sizing(border-box);
     font-family: $font-noto;
+    margin: 0; padding: 0;
 }
     
 html, body {
     -webkit-font-smoothing: antialiased;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
-    background-color: #000;
+    background-color: $colour-bg;
     margin: 0; padding: 0;
 }
 
+ul, li {
+    text-decoration: none;
+    list-style: none;
+}
 
+a {
+    text-decoration: none;
+}
 
 .img {
     overflow: hidden;
     img {
         height: 100%; width: 100%;
+        top: 0; right: 0; bottom: 0; left: 0;
+        margin: auto;
     }
 }
