@@ -1,0 +1,39 @@
+.btn {
+    @include border-radius(20px);
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    color: $colour-white;
+    padding: 10px 20px;
+    &::before {
+        @include transition(.4s ease-in-out);
+        position: absolute;
+        display: flex;
+        margin: 0; padding: 0;
+        bottom: 0; left: 0;
+    }
+    &:hover {
+        &::before {
+            @include transition(.3s ease-in-out);
+        }
+    }
+}
+
+.btn-hollow {
+    border: solid 1px $colour-white;
+    &::before {
+        content: "";
+        background-color: $colour-white;
+        opacity: 0.2;
+        height: 0; width: 100%;
+    }
+    &:hover {
+        &::before {
+            height: 100%;
+        }
+    }
+}
+
+.btn-full {
+
+}

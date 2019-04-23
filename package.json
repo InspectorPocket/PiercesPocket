@@ -18,6 +18,7 @@
   "homepage": "https://github.com/InspectorPocket/PiercesPocket#readme",
   "devDependencies": {
     "gulp": "^4.0.0",
+    "gulp-cli": "^2.1.0",
     "gulp-sass": "^4.0.2"
   }
 }
