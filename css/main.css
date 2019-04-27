@@ -122,10 +122,10 @@ a {
     content: "";
     background-color: #fff;
     opacity: 0.2;
-    height: 0;
-    width: 100%; }
+    height: 100%;
+    width: 0; }
   .btn-hollow:hover::before {
-    height: 100%; }
+    width: 100%; }
 
 .logo {
   height: 78px;
