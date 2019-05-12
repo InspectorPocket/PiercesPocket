@@ -1,7 +1,15 @@
+
+@font-face {
+    font-family: system-ui;
+    font-style: normal;
+    font-weight: 300;
+    src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+}
+
 *, *::before, *::after {
     @include box-sizing(border-box);
-    font-family: $font-noto;
     margin: 0; padding: 0;
+    font-family: system-ui;
 }
     
 html, body {
@@ -28,3 +36,4 @@ a {
         margin: auto;
     }
 }
+

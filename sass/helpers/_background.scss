@@ -1,4 +1,18 @@
 .background {
     height: 100vh; width: 100vw;
-    @include background-cover('../img/backgrounds/greytrees.jpg');
+    @include background-cover('../img/backgrounds/stars.svg');
+    background-color: $colour-black;
+    @include background-size(100%);
+}
+
+.background-content {
+    width: 100vw; height: 100vh;
+    position: fixed;
+    & svg {
+        width: 100%; height: 100%;
+        position: absolute;
+        top: 0; right: 0;
+        bottom: 0; left: 0;
+        margin: auto;
+    }
 }

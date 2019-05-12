@@ -5,7 +5,8 @@
 
 .container {
     display: flex;
-    min-width: 1440px;
+    width: 100vw;
+    max-width: 1440px
 }
 
 .row {
