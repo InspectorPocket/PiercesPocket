@@ -1,0 +1,17 @@
+.logo-flick {
+    margin-top: 24px;
+    width: $logo-size; height: $logo-size + 24px;
+    z-index: 2;
+}
+
+.logo-circle {
+    height: $logo-size; width: $logo-size;
+    &::before {
+        content: '';
+        background-color: $colour-white;
+        width: $logo-size; height: $logo-size;
+        position: absolute;
+        bottom: 0;
+        z-index: 2;
+    }
+}
