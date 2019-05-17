@@ -27,8 +27,8 @@
 }
 
 .btn-hollow {
-    @include border-radius(10px);
-    border: solid 2px $colour-white;
+    @include border-radius(50px);
+    border: solid 1px $colour-white;
     padding: 6px 20px;
     &::before, &::after {
         content: "";
@@ -45,7 +45,7 @@
     &::before, &::after {
         content: "";
         background-color: $colour-white;
-        width: 0; height: 1.5px;
+        width: 0; height: 1px;
         top: auto;
     }
     &::before {

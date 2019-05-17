@@ -20,15 +20,15 @@
 }
 
 .page-line {
-    position: fixed;
+    position: relative;
     width: $logo-size; height: 100%;
-    left: 48px; top: 57px;
+    top: 57px;
     &::before {
         content: '';
         position: absolute;
         top: 0; right: 0;
         bottom: 0; left: 0;
-        width: 2px; height: 100%;
+        width: 1px; height: 100%;
         background-color: white;
     }
 }

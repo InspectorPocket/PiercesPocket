@@ -5,11 +5,17 @@
 	-o-background-size: $size;
 }
 
+@mixin animation($anim) {
+	-moz-animation: $anim;
+  	-webkit-animation: $anim;
+ 	animation: $anim;
+}
+
 @mixin box-shadow($faint-shadow) {
-	box-shadow: $faint-shadow;
 	-webkit-box-shadow: $faint-shadow;
 	-moz-box-shadow: $faint-shadow;
 	-o-box-shadow: $faint-shadow;
+	box-shadow: $faint-shadow;
 }
 
 @mixin border-radius($fancy-border) {
@@ -35,17 +41,17 @@
 
 @mixin transition($transition) {
 	-webkit-transition: $transition;
-  -moz-transition: $transition;
-  -o-transition: $transition;
-  transition: $transition;
+  	-moz-transition: $transition;
+  	-o-transition: $transition;
+  	transition: $transition;
 }
 
 @mixin transform($transform) {
 	-webkit-transform: $transform;
-  -moz-transform: $transform;
-  -o-transform: $transform;
-  -ms-transform: $transform;
-  transform: $transform;
+  	-moz-transform: $transform;
+  	-o-transform: $transform;
+  	-ms-transform: $transform;
+  	transform: $transform;
 }
 
 @mixin placeholder($placeholder) {

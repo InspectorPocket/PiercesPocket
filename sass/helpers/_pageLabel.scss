@@ -4,12 +4,10 @@
         @include transition(.3s ease-in-out);
         @include transform(rotate(-90deg));
         @include border-radius(20px);
-        border-left: solid 1px transparent;
-        border-right: solid 1px transparent;
         position: absolute;
         background-color: $colour-black;
         top: 40%;
-        margin-left: -75px;
+        margin-left: -77px;
         padding: 0 20px;
         line-height: 2;
         z-index: 1;
@@ -17,8 +15,6 @@
     &:hover {
         & h3 {
             @include transition(.2s ease-in-out);
-            border-left: solid 1px $colour-white;
-            border-right: solid 1px $colour-white;
         }
     }
 }
