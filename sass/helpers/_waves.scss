@@ -8,13 +8,23 @@
         bottom: -30px; left: 0;
         width: 100%;
     }
-    & .waveTop {
+}
 
-    }
-    & .waveMid {
-        opacity: .6;
-    }
-    & .waveBot {
-        opacity: .2;
-    }
+.wave-one-a {
+    @include animation (wave-one-a 150s infinite linear);
+}
+.wave-one-b {
+    @include animation (wave-one-b 150s infinite linear);
+}
+.wave-two-a {
+    @include animation (wave-two-a 200s infinite linear);
+}
+.wave-two-b {
+    @include animation (wave-two-b 200s infinite linear);
+}
+.wave-three-a {
+    @include animation (wave-three-a 250s infinite linear);
+}
+.wave-three-b {
+    @include animation (wave-three-b 250s infinite linear);
 }
