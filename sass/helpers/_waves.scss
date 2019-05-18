@@ -1,0 +1,20 @@
+.waves {
+    position: absolute;
+    bottom: 0; right: 0;
+    left: -10%;
+    width: 120%; height: auto;
+    & .wave {
+        position: absolute;
+        bottom: -30px; left: 0;
+        width: 100%;
+    }
+    & .waveTop {
+
+    }
+    & .waveMid {
+        opacity: .6;
+    }
+    & .waveBot {
+        opacity: .2;
+    }
+}
