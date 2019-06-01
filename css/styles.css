@@ -29,93 +29,6 @@
   80%, 100% {
     transform: translateY(0); } }
 
-@keyframes wave-one-a {
-  0%, 100% {
-    transform: translateX(0);
-    opacity: 1; }
-  50% {
-    transform: translateX(-80%);
-    opacity: 1; }
-  50.1% {
-    transform: translateX(80%);
-    opacity: 0; }
-  50.2% {
-    opacity: 1; } }
-
-@keyframes wave-one-b {
-  0%, 100% {
-    transform: translateX(80%);
-    opacity: 1; }
-  50% {
-    transform: translateX(0);
-    opacity: 1; }
-  99% {
-    transform: translateX(-80%);
-    opacity: 1; }
-  99.1% {
-    transform: translateX(80%);
-    opacity: 0; }
-  99.2% {
-    opacity: 1; } }
-
-@keyframes wave-two-a {
-  0%, 100% {
-    transform: translateX(0);
-    opacity: 0.6; }
-  50% {
-    transform: translateX(-80%);
-    opacity: 0.6; }
-  50.1% {
-    opacity: 0;
-    transform: translateX(80%); }
-  50.2% {
-    opacity: 0.6; } }
-
-@keyframes wave-two-b {
-  0%, 100% {
-    transform: translateX(80%);
-    opacity: 0.6; }
-  50% {
-    transform: translateX(0);
-    opacity: 0.6; }
-  99% {
-    transform: translateX(-80%);
-    opacity: 0.6; }
-  99.1% {
-    opacity: 0;
-    transform: translateX(80%); }
-  99.2% {
-    opacity: 0.6; } }
-
-@keyframes wave-three-a {
-  0%, 100% {
-    transform: translateX(0);
-    opacity: 0.2; }
-  50% {
-    transform: translateX(-80%);
-    opacity: 0.2; }
-  50.1% {
-    transform: translateX(80%);
-    opacity: 0; }
-  50.2% {
-    opacity: 0.2; } }
-
-@keyframes wave-three-b {
-  0%, 100% {
-    transform: translateX(80%);
-    opacity: 0.2; }
-  50% {
-    transform: translateX(0);
-    opacity: 0.2; }
-  99% {
-    transform: translateX(-80%);
-    opacity: 0.2; }
-  99.1% {
-    opacity: 0;
-    transform: translateX(80%); }
-  99.2% {
-    opacity: 0.2; } }
-
 *, *::before, *::after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -234,82 +147,91 @@ h1, h2, h3, h4, h5, p, ul, li, a {
     background-color: white; }
 
 .btn {
-  -webkit-transition: 0.3s ease-in-out;
-  -moz-transition: 0.3s ease-in-out;
-  -o-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  -webkit-transition: transform 0.3s ease-in-out;
+  -moz-transition: transform 0.3s ease-in-out;
+  -o-transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
   display: flex;
   position: relative;
   overflow: hidden;
   color: #fff;
   z-index: 1; }
-  .btn::before, .btn::after {
-    -webkit-transition: 0.3s ease-in-out;
-    -moz-transition: 0.3s ease-in-out;
-    -o-transition: 0.3s ease-in-out;
-    transition: 0.3s ease-in-out;
+  .btn::after {
+    content: "";
+    -webkit-transition: transform 0.3s ease-in-out;
+    -moz-transition: transform 0.3s ease-in-out;
+    -o-transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+    -webkit-transform: scaleX(0);
+    -moz-transform: scaleX(0);
+    -o-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    transform: scaleX(0);
+    transform-origin: right;
+    background-color: #fff;
     position: absolute;
-    display: flex;
     margin: 0;
     padding: 0;
-    top: 0;
-    right: 0;
     bottom: 0;
     left: 0;
-    left: 50%;
-    right: 50%;
+    width: 100%;
     z-index: -1; }
   .btn:hover {
-    -webkit-transition: 0.2s ease-in-out;
-    -moz-transition: 0.2s ease-in-out;
-    -o-transition: 0.2s ease-in-out;
-    transition: 0.2s ease-in-out; }
-    .btn:hover::before, .btn:hover::after {
-      -webkit-transition: 0.2s ease-in-out;
-      -moz-transition: 0.2s ease-in-out;
-      -o-transition: 0.2s ease-in-out;
-      transition: 0.2s ease-in-out;
-      width: 55%; }
-    .btn:hover::before {
-      right: auto;
-      left: 0; }
+    -webkit-transition: transform 0.3s ease-in-out;
+    -moz-transition: transform 0.3s ease-in-out;
+    -o-transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out; }
     .btn:hover::after {
-      left: auto;
-      right: 0; }
+      -webkit-transition: transform 0.3s ease-in-out;
+      -moz-transition: transform 0.3s ease-in-out;
+      -o-transition: transform 0.3s ease-in-out;
+      transition: transform 0.3s ease-in-out;
+      -webkit-transform: scaleX(1);
+      -moz-transform: scaleX(1);
+      -o-transform: scaleX(1);
+      -ms-transform: scaleX(1);
+      transform: scaleX(1);
+      transform-origin: left; }
 
 .btn-hollow {
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
   -moz-border-radius: 50px;
   -webkit-border-radius: 50px;
   -o-border-radius: 50px;
   border-radius: 50px;
   border: solid 1px #fff;
   padding: 6px 20px; }
-  .btn-hollow::before, .btn-hollow::after {
-    content: "";
+  .btn-hollow::after {
     background-color: #fff;
-    width: 0;
     height: 100%; }
   .btn-hollow:hover {
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
     color: #231f20; }
 
 .btn-nav {
   padding: 7px 6px; }
-  .btn-nav::before, .btn-nav::after {
-    content: "";
-    background-color: #fff;
-    width: 0;
-    height: 1px;
-    top: auto; }
-  .btn-nav::before {
-    -moz-border-radius: 10px 0 0 10px;
-    -webkit-border-radius: 10px 0 0 10px;
-    -o-border-radius: 10px 0 0 10px;
-    border-radius: 10px 0 0 10px; }
   .btn-nav::after {
-    -moz-border-radius: 0 10px 10px 0;
-    -webkit-border-radius: 0 10px 10px 0;
-    -o-border-radius: 0 10px 10px 0;
-    border-radius: 0 10px 10px 0; }
+    -webkit-transition: transform 0.2s ease-in-out;
+    -moz-transition: transform 0.2s ease-in-out;
+    -o-transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
+    height: 1px; }
+  .btn-nav:hover::after {
+    -webkit-transition: transform 0.2s ease-in-out;
+    -moz-transition: transform 0.2s ease-in-out;
+    -o-transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out; }
 
 .logo-flick {
   margin-top: 24px;
@@ -371,49 +293,7 @@ h1, h2, h3, h4, h5, p, ul, li, a {
   -o-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out; }
 
-.waves {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  left: -10%;
-  width: 120%;
-  height: auto; }
-  .waves .wave {
-    position: absolute;
-    bottom: -30px;
-    left: 0;
-    width: 100%; }
-
-.wave-one-a {
-  -moz-animation: wave-one-a 150s infinite linear;
-  -webkit-animation: wave-one-a 150s infinite linear;
-  animation: wave-one-a 150s infinite linear; }
-
-.wave-one-b {
-  -moz-animation: wave-one-b 150s infinite linear;
-  -webkit-animation: wave-one-b 150s infinite linear;
-  animation: wave-one-b 150s infinite linear; }
-
-.wave-two-a {
-  -moz-animation: wave-two-a 200s infinite linear;
-  -webkit-animation: wave-two-a 200s infinite linear;
-  animation: wave-two-a 200s infinite linear; }
-
-.wave-two-b {
-  -moz-animation: wave-two-b 200s infinite linear;
-  -webkit-animation: wave-two-b 200s infinite linear;
-  animation: wave-two-b 200s infinite linear; }
-
-.wave-three-a {
-  -moz-animation: wave-three-a 250s infinite linear;
-  -webkit-animation: wave-three-a 250s infinite linear;
-  animation: wave-three-a 250s infinite linear; }
-
-.wave-three-b {
-  -moz-animation: wave-three-b 250s infinite linear;
-  -webkit-animation: wave-three-b 250s infinite linear;
-  animation: wave-three-b 250s infinite linear; }
-
+/* @import "helpers/_waves.scss"; */
 .navbar ul {
   display: flex;
   flex-flow: row wrap;

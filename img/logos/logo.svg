@@ -1,22 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="52px" height="78px" viewBox="0 0 52 78" enable-background="new 0 0 52 78" xml:space="preserve">
-<g>
-	<path id="path-1" fill="#FFFFFF" d="M26,52.006C8.667,51.673,0,60.338,0,78c0-17.329,0-34.498,0-51.506S8.667,0.654,26,0
-		c17.334,0.652,26,9.483,26,26.494S43.334,52.008,26,52.006z M26,39c8.666,0.001,13-4.25,13-12.755C39,17.741,34.666,13.326,26,13
-		c-8.667,0.327-13,4.742-13,13.245C13,34.749,17.333,39,26,39z"/>
-</g>
-<title>Mask</title>
-<desc>Created with Sketch.</desc>
-<g id="Styles">
-	<g id="Icons-_x2F_-Logo_x2F_-Final">
-		<g id="Mask">
-			<path id="path-1_1_" fill="#F8FBFA" d="M26,52.006C5,52.006,2,78,2,78H0c0,0,0-34.498,0-51.506S8.667,0.654,26,0
-				c17.334,0.652,26,9.483,26,26.494S43.334,52.008,26,52.006z M26,39c8.666,0.001,13-4.25,13-12.755C39,17.741,34.666,13.326,26,13
-				c-8.667,0.327-13,4.742-13,13.245C13,34.749,17.333,39,26,39z"/>
-		</g>
-	</g>
-</g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="72px" viewBox="0 0 48 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Logo" fill="#FFFFFF" fill-rule="nonzero">
+            <path d="M24,48.0055385 C9.33333333,48.0055385 1.66666667,56.0036923 1,72 L0,72 C0,72 0,40.1556923 0,24.456 C0,8.75630769 8.00030769,0.603692308 24,0 C40.0006154,0.601846154 48,8.75353846 48,24.456 C48,40.1584615 40.0006154,48.0055385 24,48.0055385 Z M24,36 C31.9993846,36.0009231 36,32.0769231 36,24.2261538 C36,16.3763077 31.9993846,12.3009231 24,12 C15.9996923,12.3018462 12,16.3772308 12,24.2261538 C12,32.076 15.9996923,36 24,36 Z" id="path-1_1_"></path>
+        </g>
+    </g>
 </svg>
