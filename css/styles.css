@@ -197,52 +197,50 @@ h1, h2, h3, h4, h5, p, ul, li, a {
       -ms-transform: scaleX(1);
       transform: scaleX(1);
       transform-origin: left; }
-
-.btn-hollow {
-  -webkit-transition: 0.3s ease-in-out;
-  -moz-transition: 0.3s ease-in-out;
-  -o-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
-  -moz-border-radius: 50px;
-  -webkit-border-radius: 50px;
-  -o-border-radius: 50px;
-  border-radius: 50px;
-  border: solid 1px #fff;
-  padding: 6px 20px; }
-  .btn-hollow::after {
-    background-color: #fff;
-    height: 100%; }
-  .btn-hollow:hover {
+  .btn__hollow {
     -webkit-transition: 0.3s ease-in-out;
     -moz-transition: 0.3s ease-in-out;
     -o-transition: 0.3s ease-in-out;
     transition: 0.3s ease-in-out;
-    color: #231f20; }
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+    border: solid 1px #fff;
+    padding: 6px 20px; }
+    .btn__hollow::after {
+      background-color: #fff;
+      height: 100%; }
+    .btn__hollow:hover {
+      -webkit-transition: 0.3s ease-in-out;
+      -moz-transition: 0.3s ease-in-out;
+      -o-transition: 0.3s ease-in-out;
+      transition: 0.3s ease-in-out;
+      color: #231f20; }
+  .btn__nav {
+    padding: 7px 6px; }
+    .btn__nav::after {
+      -webkit-transition: transform 0.2s ease-in-out;
+      -moz-transition: transform 0.2s ease-in-out;
+      -o-transition: transform 0.2s ease-in-out;
+      transition: transform 0.2s ease-in-out;
+      height: 1px; }
+    .btn__nav:hover::after {
+      -webkit-transition: transform 0.2s ease-in-out;
+      -moz-transition: transform 0.2s ease-in-out;
+      -o-transition: transform 0.2s ease-in-out;
+      transition: transform 0.2s ease-in-out; }
 
-.btn-nav {
-  padding: 7px 6px; }
-  .btn-nav::after {
-    -webkit-transition: transform 0.2s ease-in-out;
-    -moz-transition: transform 0.2s ease-in-out;
-    -o-transition: transform 0.2s ease-in-out;
-    transition: transform 0.2s ease-in-out;
-    height: 1px; }
-  .btn-nav:hover::after {
-    -webkit-transition: transform 0.2s ease-in-out;
-    -moz-transition: transform 0.2s ease-in-out;
-    -o-transition: transform 0.2s ease-in-out;
-    transition: transform 0.2s ease-in-out; }
-
-.logo-flick {
+.logo__flick {
   margin-top: 24px;
   width: 48px;
   height: 72px;
   z-index: 2; }
 
-.logo-circle {
+.logo__circle {
   height: 48px;
   width: 48px; }
-  .logo-circle::before {
+  .logo__circle::before {
     content: '';
     background-color: #fff;
     width: 48px;
@@ -264,6 +262,30 @@ h1, h2, h3, h4, h5, p, ul, li, a {
   -moz-animation: arrow-bounce 2s infinite ease-in-out;
   -webkit-animation: arrow-bounce 2s infinite ease-in-out;
   animation: arrow-bounce 2s infinite ease-in-out; }
+
+.card {
+  background-color: #231f20;
+  position: relative; }
+  .card__container {
+    top: 104px;
+    height: calc((100vh - (100px / 2)) - 104px);
+    height: calc((100vh - ($spacing-card-main / 2)) + $header-size);
+    width: calc(100vw - 100px);
+    width: calc(100vw - $spacing-card-main); }
+  .card__small {
+    background-color: #E5DED0; }
+  .card--rounded {
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px; }
+  .card--shadow {
+    -webkit-box-shadow: 0px 0px 57px -12px rgba(0, 0, 0, 0.64);
+    -moz-box-shadow: 0px 0px 57px -12px rgba(0, 0, 0, 0.64);
+    -o-box-shadow: 0px 0px 57px -12px rgba(0, 0, 0, 0.64);
+    box-shadow: 0px 0px 57px -12px rgba(0, 0, 0, 0.64); }
+  .card--border {
+    border: solid #fff 1px; }
 
 .page-label h3 {
   -webkit-transition: 0.3s ease-in-out;
@@ -306,6 +328,9 @@ h1, h2, h3, h4, h5, p, ul, li, a {
   position: absolute;
   width: 100vw;
   height: 104px; }
+  .header__inner {
+    width: calc(100vw - 100px);
+    width: calc(100vw - $spacing-card-main); }
 
 .main {
   position: relative;

@@ -4,7 +4,7 @@
     display: flex;
     position: relative;
     overflow: hidden;
-    color: $colour-white;
+    color: $pocket-white;
     z-index: 1;
     &::after {
         content: "";
@@ -12,7 +12,7 @@
         @include border-radius(50px);
         @include transform(scaleX(0));
         transform-origin: right;
-        background-color: $colour-white;
+        background-color: $pocket-white;
         position: absolute;
         margin: 0; padding: 0;
         bottom: 0; left: 0;
@@ -27,32 +27,32 @@
             transform-origin: left;
         }
     }
-}
 
-.btn-hollow {
-    @include transition(.3s ease-in-out);
-    @include border-radius(50px);
-    border: solid 1px $colour-white;
-    padding: 6px 20px;
-    &::after {
-        background-color: $colour-white;
-        height: 100%;
-    }
-    &:hover {
+    &__hollow {
         @include transition(.3s ease-in-out);
-        color: $colour-black;
+        @include border-radius(50px);
+        border: solid 1px $pocket-white;
+        padding: 6px 20px;
+        &::after {
+            background-color: $pocket-white;
+            height: 100%;
+        }
+        &:hover {
+            @include transition(.3s ease-in-out);
+            color: $pocket-black;
+        }
     }
-}
 
-.btn-nav {
-    padding: 7px 6px;
-    &::after {
-        @include transition(transform .2s ease-in-out);
-        height: 1px;
-    }
-    &:hover {
+    &__nav {
+        padding: 7px 6px;
         &::after {
             @include transition(transform .2s ease-in-out);
+            height: 1px;
+        }
+        &:hover {
+            &::after {
+                @include transition(transform .2s ease-in-out);
+            }
         }
     }
 }
