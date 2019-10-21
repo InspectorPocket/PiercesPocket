@@ -1,19 +1,5 @@
 .logo {
-    &__flick {
-        margin-top: $logo-top;
-        width: $logo-size; height: $logo-size + $logo-top;
-        z-index: 2;
-    }
-
-    &__circle {
-        height: $logo-size; width: $logo-size;
-        &::before {
-            content: '';
-            background-color: $pocket-white;
-            width: $logo-size; height: $logo-size;
-            position: absolute;
-            bottom: 0;
-            z-index: 2;
-        }
+    &--colour {
+        
     }
 }

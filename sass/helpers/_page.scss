@@ -1,6 +1,6 @@
 //TODO change variable to scss var and add script to compile scss variables properly
 
-.card {
+.page {
     //style card appearence here
     background-color: $pocket-black;
     position: relative;
@@ -13,7 +13,7 @@
         width: calc(100vw - $spacing-card-main);
     }
     &__small {
-        background-color: $pocket-bg;
+        background-color: $pocket-white;
     }
 
     &--rounded {
