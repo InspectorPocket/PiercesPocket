@@ -1,0 +1,39 @@
+*, *::before, *::after {
+    @include box-sizing(border-box);
+    margin: 0; padding: 0;
+    font-family: system-ui;
+    z-index: 1;
+}
+    
+html, body {
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+    background-color: $pocket-black;
+    margin: 0; padding: 0;
+    overflow-x: hidden;
+}
+
+// body {
+//     width: 100%;
+//     margin: 0 auto;
+//     max-width: 1440px;
+// }
+
+.img {
+    overflow: hidden;
+    img, svg {
+        height: 100%; width: 100%;
+        top: 0; right: 0; bottom: 0; left: 0;
+        margin: auto;
+    }
+}
+
+h1, h2, h3, h4, h5, p, ul, li, a {
+    text-decoration: none;
+    list-style: none;
+    font-weight: normal;
+    color: $pocket-white;
+}
+
+
+

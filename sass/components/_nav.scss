@@ -1,0 +1,77 @@
+.nav {
+    position: fixed;
+
+    width: 120px;
+    height: 80vh;
+    min-height: 22vh;
+    max-height: 80vh;
+    margin: 10vh 0 10vh 10vw;
+    bottom: 0;
+    &__inner {
+        display: flex;
+
+        width: 100%;
+        height: 100%;
+        padding: $nav-padding;
+
+        background-color: $pocket-white;
+        border-radius: $nav-border-radius;
+    }
+    &__logo {
+        width: 100%;
+        position: absolute;
+        z-index: 100;
+
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: $nav-padding 0;
+
+        background-color: $pocket-white;
+        border-radius: $nav-border-radius;
+    }
+    &__list {
+        display: flex;
+        flex-direction: column;
+        z-index: 99;
+
+        height: 50%;
+        margin: auto;
+        &__icon {
+            height: 100%;
+            width: 100%;
+            margin: $nav-icon-spacing;
+            svg {
+                width: 100%;
+                pointer-events: none;
+            }
+            .fill {
+                pointer-events: none;
+                fill: $pocket-black;
+                @include transition(.8s ease-in-out);
+            }
+            &:hover {
+                .fill {
+                    @include transition(.2s ease-in-out);
+                    &--green { fill: $pocket-green-light; }
+                    &--red { fill: $pocket-red-light; }
+                    &--yellow { fill: $pocket-yellow-light; }
+                    &--blue { fill: $pocket-blue-light; }
+                }
+            }
+            
+        }
+    }
+    &__menu {
+        padding: $nav-padding 0;
+        background-color: $pocket-white;
+        border-radius: $nav-border-radius;
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        svg {
+            width: 100%;
+        }
+    }
+}

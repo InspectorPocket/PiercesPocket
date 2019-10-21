@@ -1,0 +1,28 @@
+//TODO change variable to scss var and add script to compile scss variables properly
+
+.page {
+    //style card appearence here
+    background-color: $pocket-black;
+    position: relative;
+    &__container {
+        top: $header-size;
+        
+        height: calc((100vh - (100px / 2)) - 104px);
+        height: calc((100vh - ($spacing-card-main / 2)) + $header-size);
+        width: calc(100vw - 100px);
+        width: calc(100vw - $spacing-card-main);
+    }
+    &__small {
+        background-color: $pocket-white;
+    }
+
+    &--rounded {
+        @include border-radius (10px);
+    }
+    &--shadow {
+        @include box-shadow ($faint-shadow);
+    }
+    &--border {
+        border: solid $pocket-white 1px;
+    }
+}

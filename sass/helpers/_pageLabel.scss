@@ -1,0 +1,20 @@
+//TODO - make central to work with other text values
+.page-label {
+    & h3 {
+        @include transition(.3s ease-in-out);
+        @include transform(rotate(-90deg));
+        @include border-radius(20px);
+        position: absolute;
+        background-color: $pocket-black;
+        top: 40%;
+        margin-left: -77px;
+        padding: 0 20px;
+        line-height: 2;
+        z-index: 1;
+    }
+    &:hover {
+        & h3 {
+            @include transition(.2s ease-in-out);
+        }
+    }
+}
