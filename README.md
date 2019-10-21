@@ -1,9 +1,9 @@
-# piercespocket.co.uk
+# piercespocket.com
 <h3><strong>About</strong></h3>
 
 <p>Step inside Pierce's Pocket, a place where I showcase the work I have completed, designed or contributed to.
 
-<a href="https://www.piercespocket.co.uk"> Click here </a> to visit.
+<a href="https://www.piercespocket.com"> Click here </a> to visit.
 
 </p>
 
