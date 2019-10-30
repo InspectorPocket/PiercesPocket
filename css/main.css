@@ -1,0 +1,207 @@
+.flex {
+  display: flex; }
+
+.flex-row {
+  flex-direction: row; }
+
+.flex-column {
+  flex-direction: column; }
+
+.align-center {
+  justify-content: center;
+  align-items: center;
+  text-align: center; }
+
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui;
+  z-index: 1; }
+
+html, body {
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+  background-color: #191919;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; }
+
+.img {
+  overflow: hidden; }
+  .img img, .img svg {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto; }
+
+h1, h2, h3, h4, h5, p, ul, li, a {
+  text-decoration: none;
+  list-style: none;
+  font-weight: normal;
+  color: #fff; }
+
+.center-margin {
+  margin: 0 auto; }
+
+.auto-margin {
+  margin: auto; }
+
+.abs {
+  position: absolute; }
+
+.container {
+  display: flex;
+  width: 100vw;
+  max-width: 1440px; }
+
+.row {
+  display: flex;
+  width: 100%;
+  align-items: center; }
+
+.hide-overflow {
+  overflow: hidden; }
+
+.col-full {
+  flex: 1; }
+
+.col-half {
+  flex-basis: 50%; }
+
+.col-quarter {
+  flex-basis: 25%; }
+
+.col-third {
+  flex-basis: 33.33%; }
+
+.col-two-third {
+  flex-basis: 66.66%; }
+
+.background {
+  background: url("../img/backgrounds/stars.svg") no-repeat center center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: 100%;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  height: 100vh;
+  width: 100vw;
+  background-color: #191919; }
+
+.background-content {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 0; }
+  .background-content svg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    z-index: 0; }
+
+.page-line {
+  position: relative;
+  width: 48px;
+  height: 100%; }
+  .page-line::before {
+    content: '';
+    position: absolute;
+    top: 60px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background-color: white; }
+
+.header {
+  position: absolute;
+  width: 100vw;
+  height: 104px; }
+  .header__inner {
+    width: calc(100vw - 100px);
+    width: calc(100vw - $spacing-card-main); }
+
+.nav {
+  position: fixed;
+  width: 100px;
+  height: 17vh;
+  min-height: 17vh;
+  max-height: 80vh;
+  margin: 10vh 0 10vh 10vw;
+  bottom: 0; }
+  .nav__inner {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10rem; }
+  .nav__logo {
+    width: 100%;
+    position: absolute;
+    z-index: 100;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 10px 0;
+    background-color: #fff;
+    border-radius: 10rem; }
+  .nav__list {
+    display: flex;
+    flex-direction: column;
+    z-index: 99;
+    height: 50%;
+    margin: auto; }
+    .nav__list__icon {
+      height: 100%;
+      width: 100%;
+      margin: 20% auto; }
+      .nav__list__icon svg {
+        width: 100%;
+        pointer-events: none; }
+      .nav__list__icon .fill {
+        pointer-events: none;
+        fill: #191919;
+        -webkit-transition: 0.8s ease-in-out;
+        -moz-transition: 0.8s ease-in-out;
+        -o-transition: 0.8s ease-in-out;
+        transition: 0.8s ease-in-out; }
+      .nav__list__icon:hover .fill {
+        -webkit-transition: 0.2s ease-in-out;
+        -moz-transition: 0.2s ease-in-out;
+        -o-transition: 0.2s ease-in-out;
+        transition: 0.2s ease-in-out; }
+        .nav__list__icon:hover .fill--green {
+          fill: #6ED29D; }
+        .nav__list__icon:hover .fill--red {
+          fill: #FE8989; }
+        .nav__list__icon:hover .fill--yellow {
+          fill: #F2DE70; }
+        .nav__list__icon:hover .fill--blue {
+          fill: #008AB3; }
+  .nav__menu {
+    padding: calc(10px * 2) 0;
+    background-color: #fff;
+    border-radius: 10rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 100; }
+    .nav__menu svg {
+      width: 100%; }

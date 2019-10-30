@@ -300,9 +300,9 @@ h1, h2, h3, h4, h5, p, ul, li, a {
 /* @import "helpers/_waves.scss"; */
 .nav {
   position: fixed;
-  width: 120px;
-  height: 80vh;
-  min-height: 22vh;
+  width: 100px;
+  height: 17vh;
+  min-height: 17vh;
   max-height: 80vh;
   margin: 10vh 0 10vh 10vw;
   bottom: 0; }
@@ -310,7 +310,7 @@ h1, h2, h3, h4, h5, p, ul, li, a {
     display: flex;
     width: 100%;
     height: 100%;
-    padding: 20px;
+    padding: 10px;
     background-color: #fff;
     border-radius: 10rem; }
   .nav__logo {
@@ -320,7 +320,7 @@ h1, h2, h3, h4, h5, p, ul, li, a {
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 20px 0;
+    padding: 10px 0;
     background-color: #fff;
     border-radius: 10rem; }
   .nav__list {
@@ -357,7 +357,7 @@ h1, h2, h3, h4, h5, p, ul, li, a {
         .nav__list__icon:hover .fill--blue {
           fill: #008AB3; }
   .nav__menu {
-    padding: 20px 0;
+    padding: calc(10px * 2) 0;
     background-color: #fff;
     border-radius: 10rem;
     position: absolute;
