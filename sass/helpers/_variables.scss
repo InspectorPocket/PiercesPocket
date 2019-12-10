@@ -1,15 +1,20 @@
-$pocket-white: #fff;
-$pocket-black: #191919;
-$pocket-dark-grey: #282828;
-$pocket-green-light: #6ED29D;
-$pocket-red-light: #FE8989;
-$pocket-yellow-light: #F2DE70;
-$pocket-blue-light: #008AB3;
+$white: #fff;
+$black: #191919;
+$dark-grey: #282828;
+$green-light: #6ED29D;
+$red-light: #FE8989;
+$yellow-light: #F2DE70;
+$blue-light: #008AB3;
 
-$nav-padding: 10px;
+$half-translucent: rgba(0,0,0,0.5);
+$faint-shadow: 0 0 50px 0 rgba(0,0,0,0.2);
+$shadow: 0 0 50px 0 rgba(0,0,0,0.3);
+
+$nav-padding: 0.625rem;
 $nav-icon-spacing: 20% auto;
 $nav-border-radius: 10rem;
-$circle-radius: 50%;
+
+$half: 50%;
 
 $spacing-card-main: 100px;
 
@@ -21,10 +26,9 @@ $gradient: left, rgba(0,0,0,0), rgba(0,0,0,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.3
 $font-noto: 'Noto Sans', sans-serif;
 
 $fancy-border: 80px 0px 80px 0px;
-$faint-shadow: 0px 0px 57px -12px rgba(0,0,0,0.64);
 
-$one-border: $pocket-black solid 1px;
-$two-border: $pocket-black solid 2px;
+$one-border: $black solid 1px;
+$two-border: $black solid 2px;
 
-$logo-size: 48px;
-$logo-top: 24px;
+$logo-size: 2.5rem;
+$menu-size: 1.875rem;

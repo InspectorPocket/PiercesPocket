@@ -2,7 +2,7 @@
 
 .page {
     //style card appearence here
-    background-color: $pocket-black;
+    background-color: $black;
     position: relative;
     &__container {
         top: $header-size;
@@ -13,7 +13,7 @@
         width: calc(100vw - $spacing-card-main);
     }
     &__small {
-        background-color: $pocket-white;
+        background-color: $white;
     }
 
     &--rounded {
@@ -23,6 +23,6 @@
         @include box-shadow ($faint-shadow);
     }
     &--border {
-        border: solid $pocket-white 1px;
+        border: solid $white 1px;
     }
 }

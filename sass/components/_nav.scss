@@ -1,34 +1,39 @@
 .nav {
     position: fixed;
+    overflow: hidden;
 
-    width: 100px;
-    height: 17vh;
-    min-height: 17vh;
+    width: 3.75rem;
+    height: 100%;
+    min-height: 6.5625rem;
     max-height: 80vh;
-    margin: 10vh 0 10vh 10vw;
+    margin: 10vh 0 10vh 5vw;
     bottom: 0;
+    border-radius: $nav-border-radius;
+    @include box-shadow($faint-shadow);
+
+    // @include animation(nav-intro 10s ease-in-out);
     &__inner {
         display: flex;
+        flex-direction: column;
 
         width: 100%;
         height: 100%;
-        padding: $nav-padding;
 
-        background-color: $pocket-white;
-        border-radius: $nav-border-radius;
+        background-color: $white;
     }
-    &__logo {
+    &__icon {
+        height: $logo-size + ($nav-padding * 2);
         width: 100%;
+        padding: $nav-padding;
+        margin: auto;
+        
         position: absolute;
+        border-radius: 50%;
+        background-color: inherit;
         z-index: 100;
 
-        left: 0;
-        right: 0;
-        bottom: 0;
-        padding: $nav-padding 0;
-
-        background-color: $pocket-white;
-        border-radius: $nav-border-radius;
+        &--top { top: 0; }
+        &--bot { bottom: 0; }
     }
     &__list {
         display: flex;
@@ -37,41 +42,32 @@
 
         height: 50%;
         margin: auto;
-        &__icon {
+        & li {
+            margin: $nav-padding auto;
+        }
+        &__item {
             height: 100%;
             width: 100%;
-            margin: $nav-icon-spacing;
             svg {
-                width: 100%;
+                height: $logo-size - $nav-padding;
+                width: $logo-size - $nav-padding;
                 pointer-events: none;
             }
             .fill {
                 pointer-events: none;
-                fill: $pocket-black;
+                fill: $black;
                 @include transition(.8s ease-in-out);
             }
             &:hover {
                 .fill {
                     @include transition(.2s ease-in-out);
-                    &--green { fill: $pocket-green-light; }
-                    &--red { fill: $pocket-red-light; }
-                    &--yellow { fill: $pocket-yellow-light; }
-                    &--blue { fill: $pocket-blue-light; }
+                    &--green { fill: $green-light; }
+                    &--red { fill: $red-light; }
+                    &--yellow { fill: $yellow-light; }
+                    &--blue { fill: $blue-light; }
                 }
             }
             
-        }
-    }
-    &__menu {
-        padding: calc(#{$nav-padding} * 2) 0;
-        background-color: $pocket-white;
-        border-radius: $nav-border-radius;
-        position: absolute;
-        left: 0;
-        right: 0;
-        z-index: 100;
-        svg {
-            width: 100%;
         }
     }
 }
