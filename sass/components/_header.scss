@@ -1,9 +1,0 @@
-.header {
-    position: absolute;
-    width: 100vw; 
-    height: $header-size;
-    &__inner {
-        width: calc(100vw - 100px);
-        width: calc(100vw - $spacing-card-main);
-    }
-}
