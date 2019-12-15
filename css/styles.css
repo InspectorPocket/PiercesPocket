@@ -110,6 +110,11 @@ html, body {
   padding: 0;
   overflow-x: hidden; }
 
+a:active, a:focus {
+  outline: 0;
+  border: none;
+  -moz-outline-style: none; }
+
 .img {
   overflow: hidden; }
   .img img, .img svg {
