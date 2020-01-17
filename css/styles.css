@@ -126,8 +126,11 @@ h1, h2, h3, h4, h5, p, ul, li, a {
 h1 {
   font-size: 1.5em;
   color: #282828;
-  letter-spacing: 0.15em;
+  letter-spacing: -1;
   padding: 1rem 0; }
+
+.bold {
+  font-weight: bold; }
 
 .hide {
   display: none !important; }
@@ -435,9 +438,15 @@ h1 {
 
 .page {
   position: relative;
-  height: 100%;
-  margin: 10vh 5vw 10vh 5vw; }
+  height: calc(100% - 20vh);
+  margin: 10vh 5vw 10vh 5vw;
+  box-sizing: border-box; }
   .page__inner {
+    height: 100%;
+    -webkit-box-shadow: inset 0 0 0 10px #ffffff;
+    -moz-box-shadow: inset 0 0 0 10px #ffffff;
+    -o-box-shadow: inset 0 0 0 10px #ffffff;
+    box-shadow: inset 0 0 0 10px #ffffff;
     margin-left: 30px;
     padding-left: 30px;
     background-color: #ffffff;
@@ -478,7 +487,7 @@ h1 {
         display: block;
         color: #ffffff;
         font-size: 1.5em;
-        letter-spacing: 0.15em;
+        letter-spacing: -1;
         text-align: right;
         padding: 0.625rem 0.3125rem; }
         .title-page__inner__item a::after {
