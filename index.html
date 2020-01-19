@@ -14,7 +14,7 @@
     <!-- Header -->
     <div class="header flex flex--center-left">
         <!-- Logo -->
-        <div class="logo flex flex--center">
+        <a href="../../index.html" class="logo flex flex--center">
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                 viewBox="0 0 100 100" class="logo__inner">
                 <g id="logo-g">
@@ -23,11 +23,12 @@
                     </path>
                 </g>
             </svg>
-        </div>
+        </a>
+
         <!-- NavBar -->
         <nav class="nav">
             <!-- Projects -->
-            <a href="#" class="btn btn__tabby btn__tabby--green">
+            <a href="../../projects.html" class="btn btn__tabby btn__tabby--green">
                 <!-- Icon -->
                 <div class="btn__tabby__icon flex flex--center">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -44,7 +45,7 @@
                 </div>
             </a>
             <!-- About -->
-            <a href="#" class="btn btn__tabby btn__tabby--yellow">
+            <a href="../../about.html" class="btn btn__tabby btn__tabby--yellow">
                 <!-- Icon -->
                 <div class="btn__tabby__icon flex flex--center">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -61,7 +62,7 @@
                 </div>
             </a>
             <!-- Github -->
-            <a href="#" class="btn btn__tabby btn__tabby--blue">
+            <a href="https://github.com/InspectorPocket" target="_blank" class="btn btn__tabby btn__tabby--blue">
                 <!-- Icon -->
                 <div class="btn__tabby__icon flex flex--center">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -78,7 +79,7 @@
                 </div>
             </a>
             <!-- Dribble -->
-            <a href="#" class="btn btn__tabby btn__tabby--red">
+            <a href="https://dribbble.com/InspectorPocket" target="_blank" class="btn btn__tabby btn__tabby--red">
                 <!-- Icon -->
                 <div class="btn__tabby__icon flex flex--center">
                     <!-- <svg></svg> -->
@@ -96,9 +97,36 @@
                 </div>
             </a>
         </nav>
+
+        <!-- Nav behind -->
+        <nav class="nav nav__behind">
+            <!-- Closed -->
+            <a class="nav__behind__icon nav__behind__icon--closed flex flex--center">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 40 40">
+                    <title>Close Icon</title>
+                    <g id="Icons/Menu/Close" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <rect id="Rectangle-Copy-2" fill="#191919" transform="translate(20.000000, 20.000000) rotate(-50.000000) translate(-20.000000, -20.000000) " x="6" y="17.5" width="28" height="5" rx="1"></rect>
+                        <rect id="Rectangle-Copy-2" fill="#191919" transform="translate(20.000000, 20.000000) rotate(50.000000) translate(-20.000000, -20.000000) " x="6" y="17.5" width="28" height="5" rx="1"></rect>
+                    </g>
+                </svg>
+            </a>
+            <!-- Open -->
+            <a class="nav__behind__icon nav__behind__icon--open flex flex--center hide">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 40 40">
+                    <title>Sandwich</title>
+                    <g id="Icons/Menu/Sandwich" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <rect id="Rectangle" fill="#191919" x="6" y="8" width="28" height="5" rx="1"></rect>
+                        <rect id="Rectangle-Copy" fill="#191919" x="6" y="27" width="28" height="5" rx="1"></rect>
+                        <rect id="Rectangle-Copy-2" fill="#191919" x="6" y="17.5" width="28" height="5" rx="1"></rect>
+                    </g>
+                </svg>
+            </a>
+        </nav>
     </div>
     <!-- Title page -->
-    <main class="title-page">
+    <!-- <main class="title-page">
         <section class="title-page__inner align-center">
             <div class="title-page__inner__item title-page__inner__item--green">
                 <a href="../pages/work.html">WORK</a>
@@ -113,7 +141,7 @@
                 <a href="../pages/about.html">ABOUT</a>
             </div>
         </section>
-    </main>
+    </main> -->
     <!-- <main class="page" id="main">
         <section class="page__inner align-center">
             <ul class="">
@@ -132,5 +160,6 @@
             </ul>
         </section>
     </main> -->
+    <script src="../../js/nav.js"></script>
 </body>
 </html>
