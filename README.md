@@ -1,4 +1,4 @@
-# piercespocket.com
+# Pierce's Pocket
 <h3><strong>About</strong></h3>
 
 <p>Step inside Pierce's Pocket, a place where I showcase the work I have completed, designed or contributed to.
