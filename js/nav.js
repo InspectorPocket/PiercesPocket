@@ -15,6 +15,9 @@ const nav_front = navBars[0];
 const nav_back = navBars[1];
 let nav_width = navBars[0].offsetWidth;
 
+// TODO nav closes dynamically with device width
+// if device_width = x
+    // nav width = device_width
 nav_btn.addEventListener('click', () => {
     const att_sm = `transform: translateX(calc(-${nav_width}px + 3.75em));`;
     const att_lg = `transform: translateX(calc(-${nav_width}px + 5.2em));`;
