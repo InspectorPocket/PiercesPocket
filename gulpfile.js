@@ -9,7 +9,20 @@ gulp.task('styles', function(done) {
         done()
 });
 
-//Watch task
+// Watch task
 gulp.task('default',function() {
     gulp.watch('app/sass/**/*.scss',gulp.series('styles'));
+    gulp.watch('app/**/**/*.njk',gulp.series('nunjucks'));
+});
+
+// Nunjucks task
+gulp.task('nunjucks', function() {
+  // Gets .html and .nunjucks files in pages
+  return gulp.src('app/pages/**/*.+(html|njk)')
+  // Renders template with nunjucks
+  .pipe(nunjucksRender({
+      path: ['app/templates']
+    }))
+  // output files in app folder
+  .pipe(gulp.dest('app'))
 });

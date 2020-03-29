@@ -44,20 +44,21 @@
   -moz-transition: 0.2s ease-in-out;
   -o-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out; }
-  .card__projects {
+  .card__intro {
+    background: #2B2626;
     height: 180px;
     max-width: 288px;
+    animation: 3s projects_intro ease-in-out both;
     background: #2B2626;
     position: absolute;
     top: 0;
-    z-index: 2;
-    animation: 3s projects_intro ease-in-out both; }
-    .card__projects > svg {
-      margin: 0;
-      position: absolute;
-      left: -55px;
-      top: 0;
-      width: 356px; }
+    z-index: 2; }
+  .card__projects > svg {
+    margin: 0;
+    position: absolute;
+    left: -55px;
+    top: 0;
+    width: 356px; }
 
 .section {
   animation: 3s section ease-in-out both;
@@ -66,7 +67,8 @@
   z-index: 1;
   max-width: 288px;
   position: absolute;
-  left: 0; }
+  left: 0;
+  background: #ffffff; }
 
 @keyframes nav_open_anim-1 {
   0% {
@@ -289,7 +291,8 @@ h4 {
 
 .btn {
   display: flex;
-  align-items: center; }
+  align-items: center;
+  pointer-events: auto; }
   .btn::before {
     display: block;
     position: absolute;
@@ -311,13 +314,15 @@ h4 {
     -moz-transition: 0.4s ease-in-out;
     -o-transition: 0.4s ease-in-out;
     transition: 0.4s ease-in-out; }
-    .btn__tabby:hover > .btn__tabby__icon {
+    .btn__tabby:hover > .btn__tabby__icon,
+    .btn__tabby--active > .btn__tabby__icon {
       -webkit-transition: 0.2s cubic-bezier(0.82, -0.01, 1, 1);
       -moz-transition: 0.2s cubic-bezier(0.82, -0.01, 1, 1);
       -o-transition: 0.2s cubic-bezier(0.82, -0.01, 1, 1);
       transition: 0.2s cubic-bezier(0.82, -0.01, 1, 1);
       transform: translateY(-4px); }
-    .btn__tabby:hover > .btn__tabby__text :first-child::before {
+    .btn__tabby:hover > .btn__tabby__text :first-child::before,
+    .btn__tabby--active > .btn__tabby__text :first-child::before {
       -webkit-transition: 0.3s cubic-bezier(0.82, -0.01, 1, 1);
       -moz-transition: 0.3s cubic-bezier(0.82, -0.01, 1, 1);
       -o-transition: 0.3s cubic-bezier(0.82, -0.01, 1, 1);
@@ -333,6 +338,7 @@ h4 {
       width: 2.25em;
       border-radius: 1em;
       border: 1px solid #ffffff;
+      pointer-events: none;
       z-index: 2;
       -webkit-transition: 0.4s ease-in-out;
       -moz-transition: 0.4s ease-in-out;
@@ -343,7 +349,10 @@ h4 {
         width: 1em; }
     .btn__tabby__text {
       height: 100%;
-      position: relative; }
+      position: relative;
+      pointer-events: none; }
+      .btn__tabby__text ::selection {
+        background-color: none; }
       .btn__tabby__text__inner {
         border-radius: 1em;
         display: none;
@@ -382,7 +391,8 @@ h4 {
         background: #CAFFE3; }
     .btn__tabby--green > div:last-of-type > :first-child::before {
       background: #CAFFE3; }
-    .btn__tabby--green:hover > div:first-of-type {
+    .btn__tabby--green:hover > div:first-of-type,
+    .btn__tabby--green--active > div:first-of-type {
       background: #6ED29D;
       -webkit-box-shadow: 0 4px 8px 0 rgba(110, 210, 157, 0.5);
       -moz-box-shadow: 0 4px 8px 0 rgba(110, 210, 157, 0.5);
@@ -394,7 +404,8 @@ h4 {
         background: #FFE7A5; }
     .btn__tabby--yellow > div:last-of-type > :first-child::before {
       background: #FFE7A5; }
-    .btn__tabby--yellow:hover > div:first-of-type {
+    .btn__tabby--yellow:hover > div:first-of-type,
+    .btn__tabby--yellow--active > div:first-of-type {
       background: #FFBE0B;
       -webkit-box-shadow: 0 4px 8px 0 rgba(255, 190, 11, 0.5);
       -moz-box-shadow: 0 4px 8px 0 rgba(255, 190, 11, 0.5);
@@ -406,7 +417,8 @@ h4 {
         background: #BAE2FF; }
     .btn__tabby--blue > div:last-of-type > :first-child::before {
       background: #BAE2FF; }
-    .btn__tabby--blue:hover > div:first-of-type {
+    .btn__tabby--blue:hover > div:first-of-type,
+    .btn__tabby--blue--active > div:first-of-type {
       background: #73A8FD;
       -webkit-box-shadow: 0 4px 8px 0 rgba(115, 168, 253, 0.5);
       -moz-box-shadow: 0 4px 8px 0 rgba(115, 168, 253, 0.5);
@@ -418,7 +430,8 @@ h4 {
         background: #FFA6A6; }
     .btn__tabby--red > div:last-of-type > :first-child::before {
       background: #FFA6A6; }
-    .btn__tabby--red:hover > div:first-of-type {
+    .btn__tabby--red:hover > div:first-of-type,
+    .btn__tabby--red--active > div:first-of-type {
       background: #FF324B;
       -webkit-box-shadow: 0 4px 8px 0 rgba(255, 50, 75, 0.5);
       -moz-box-shadow: 0 4px 8px 0 rgba(255, 50, 75, 0.5);
@@ -438,7 +451,8 @@ h4 {
 @media only screen and (min-width: 768px) {
   .btn__tabby {
     margin: 0 0.5em; }
-    .btn__tabby:hover > .btn__tabby__icon {
+    .btn__tabby:hover > .btn__tabby__icon,
+    .btn__tabby--active > .btn__tabby__icon {
       transform: translateY(-8px); }
     .btn__tabby__icon {
       position: absolute; }
@@ -446,22 +460,26 @@ h4 {
       display: flex; }
       .btn__tabby__text__inner {
         display: flex; }
-    .btn__tabby--green:hover > div:first-of-type {
+    .btn__tabby--green:hover > div:first-of-type,
+    .btn__tabby--green--active > div:first-of-type {
       -webkit-box-shadow: 0 8px 16px 0 rgba(110, 210, 157, 0.5);
       -moz-box-shadow: 0 8px 16px 0 rgba(110, 210, 157, 0.5);
       -o-box-shadow: 0 8px 16px 0 rgba(110, 210, 157, 0.5);
       box-shadow: 0 8px 16px 0 rgba(110, 210, 157, 0.5); }
-    .btn__tabby--yellow:hover > div:first-of-type {
+    .btn__tabby--yellow:hover > div:first-of-type,
+    .btn__tabby--yellow--active > div:first-of-type {
       -webkit-box-shadow: 0 8px 16px 0 rgba(255, 190, 11, 0.5);
       -moz-box-shadow: 0 8px 16px 0 rgba(255, 190, 11, 0.5);
       -o-box-shadow: 0 8px 16px 0 rgba(255, 190, 11, 0.5);
       box-shadow: 0 8px 16px 0 rgba(255, 190, 11, 0.5); }
-    .btn__tabby--blue:hover > div:first-of-type {
+    .btn__tabby--blue:hover > div:first-of-type,
+    .btn__tabby--blue--active > div:first-of-type {
       -webkit-box-shadow: 0 8px 16px 0 rgba(115, 168, 253, 0.5);
       -moz-box-shadow: 0 8px 16px 0 rgba(115, 168, 253, 0.5);
       -o-box-shadow: 0 8px 16px 0 rgba(115, 168, 253, 0.5);
       box-shadow: 0 8px 16px 0 rgba(115, 168, 253, 0.5); }
-    .btn__tabby--red:hover > div:first-of-type {
+    .btn__tabby--red:hover > div:first-of-type,
+    .btn__tabby--red--active > div:first-of-type {
       -webkit-box-shadow: 0 8px 16px 0 rgba(255, 50, 75, 0.5);
       -moz-box-shadow: 0 8px 16px 0 rgba(255, 50, 75, 0.5);
       -o-box-shadow: 0 8px 16px 0 rgba(255, 50, 75, 0.5);
@@ -591,6 +609,15 @@ h4 {
           animation: nav_open_anim-2 0.9s both ease-in-out; }
         .nav__behind__icon > span:nth-child(3) {
           animation: nav_open_anim-3 0.9s both ease-in-out; }
+      .nav__behind__icon--default > span:nth-child(1) {
+        animation: none;
+        transform: rotate(-50deg) scaleY(1); }
+      .nav__behind__icon--default > span:nth-child(2) {
+        animation: none;
+        transform: scaleX(0); }
+      .nav__behind__icon--default > span:nth-child(3) {
+        animation: none;
+        transform: rotate(50deg); }
       .nav__behind__icon--toggled > span:nth-child(1) {
         animation: nav_closed_anim-1 0.9s both ease-in-out; }
       .nav__behind__icon--toggled > span:nth-child(2) {
