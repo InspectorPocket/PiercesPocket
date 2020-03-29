@@ -82,14 +82,14 @@ function clickHandler() {
         console.log('green');
         this.classList.add(mapColours.green);
         setTimeout(() => {
-            window.open('projects.html', '_self');
+            window.open('app/projects.html', '_self');
         }, transition_l);
     }
     if (this.classList.contains(tabby + 'yellow')) {
         console.log('yellow');
         this.classList.add(mapColours.yellow);
         setTimeout(() => {
-            window.open('about.html', '_self');
+            window.open('app/about.html', '_self');
         }, transition_l);
     }
     if (this.classList.contains(tabby + 'blue')) {
@@ -97,7 +97,7 @@ function clickHandler() {
         this.classList.add(mapColours.blue);
         window.open('https://github.com/InspectorPocket', '_blank');
         setTimeout(() => {
-            window.open('github.html', '_self');
+            window.open('app/github.html', '_self');
         }, transition_l);
     }
     if (this.classList.contains(tabby + 'red')) {
