@@ -1,7 +1,9 @@
-node_modules
 .vscode
 .DS_Store
+node_modules
 
 sass
 templates
 pages
+
+app/index.html
