@@ -33,7 +33,7 @@ gulp.task('nunjucks', function() {
     .pipe(gulp.dest('./'))
   });
 
-  //TODO make index not appear in app || make site load with all files in app
+  //TODO make index not appear in app (gulp-clean)
 // Watch task
 gulp.task('default',function() {
     gulp.watch('app/sass/**/*.scss',gulp.series('styles'));

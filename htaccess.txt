@@ -1,3 +1,5 @@
+// TODO remove .html from urls
+
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

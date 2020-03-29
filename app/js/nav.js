@@ -79,29 +79,25 @@ function clickHandler() {
     removeNavClasses();
     this.classList.toggle(tabby_active);
     if (this.classList.contains(tabby + 'green')) {
-        console.log('green');
         this.classList.add(mapColours.green);
         setTimeout(() => {
-            window.open('app/projects.html', '_self');
+            window.open('../../../../app/projects.html', '_self');
         }, transition_l);
     }
     if (this.classList.contains(tabby + 'yellow')) {
-        console.log('yellow');
         this.classList.add(mapColours.yellow);
         setTimeout(() => {
-            window.open('app/about.html', '_self');
+            window.open('../../../../app/about.html', '_self');
         }, transition_l);
     }
     if (this.classList.contains(tabby + 'blue')) {
-        console.log('blue');
         this.classList.add(mapColours.blue);
         window.open('https://github.com/InspectorPocket', '_blank');
         setTimeout(() => {
-            window.open('app/github.html', '_self');
+            window.open('../../../../app/github.html', '_self');
         }, transition_l);
     }
     if (this.classList.contains(tabby + 'red')) {
-        console.log('red');
         this.classList.add(mapColours.red);
         window.open('https://dribbble.com/InspectorPocket', '_blank');
         setTimeout(() => {
