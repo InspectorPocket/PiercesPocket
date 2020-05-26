@@ -1,25 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-        <title>Pierce's Pocket</title>
-        <meta name="description" content="Step inside Pierce's Pocket, a place where I showcase the work I have completed, designed or contributed to.">
-        <link rel="shortcut icon" href="/app/img/icons/logo.ico"/>
-        <link rel="stylesheet" type="text/css" media="all" href="/app/styles.css">
-    </head>
-    <body>
-    
-
-
+{% macro active(activePage='home') %}
 <div id="header" class="header">
     <div class="header__inner">
         <!-- NavBar -->
         <div class="nav nav__front">
             <!-- Projects -->
-            <a class="btn btn__nav btn__nav--green ">
+            <a class="btn btn__nav btn__nav--green {%if activePage == 'projects' %}btn__nav--active btn__nav--green--active{% endif %}">
                 <!-- Icon -->
                 <div class="btn__nav__icon">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
@@ -37,7 +22,7 @@
                 </div>
             </a>
             <!-- About -->
-            <a class="btn btn__nav btn__nav--yellow ">
+            <a class="btn btn__nav btn__nav--yellow {%if activePage == 'about' %}btn__nav--active btn__nav--yellow--active{% endif %}">
                 <!-- Icon -->
                 <div class="btn__nav__icon">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -56,7 +41,7 @@
                 </div>
             </a>
             <!-- Github -->
-            <a class="btn btn__nav btn__nav--blue ">
+            <a class="btn btn__nav btn__nav--blue {%if activePage == 'github' %}btn__nav--active btn__nav--blue--active{% endif %}">
                 <!-- Icon -->
                 <div class="btn__nav__icon">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -75,7 +60,7 @@
                 </div>
             </a>
             <!-- Dribble -->
-            <a class="btn btn__nav btn__nav--red btn__nav--active btn__nav--red--active">
+            <a class="btn btn__nav btn__nav--red {%if activePage == 'dribbble' %}btn__nav--active btn__nav--red--active{% endif %}">
                 <!-- Icon -->
                 <div class="btn__nav__icon">
                     <!-- <svg></svg> -->
@@ -116,9 +101,4 @@
         </svg>
     </a>
 </div>
-
-    <h1 style="color: white; text-align: center;">Dribbble</h1>
-
-    <script src="/app/js/nav.js"></script>
-    </body>
-</html>
+{% endmacro %}

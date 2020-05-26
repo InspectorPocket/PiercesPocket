@@ -1,0 +1,9 @@
+@font-face {
+    font-family: system-ui;
+    font-style: normal;
+    font-weight: 300;
+    src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+}
+
+// TODO  Make fonts scaleable to display sizes
+// TODO  Set up font % scaling (root font size is 1rem, everything else is % based

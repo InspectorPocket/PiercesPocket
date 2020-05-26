@@ -2,8 +2,8 @@
 .DS_Store
 node_modules
 
-sass
-templates
-pages
+# sass
+# templates
+# pages
 
 app/index.html

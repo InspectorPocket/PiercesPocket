@@ -1,0 +1,19 @@
+// FLEX //
+%align-left {
+    justify-content: left;
+    align-items: center; 
+    text-align: left;
+}
+%align-center {
+    justify-content: center;
+    align-items: center; 
+    text-align: center;
+}
+%align-right {
+    justify-content: right;
+    align-items: center; 
+    text-align: right;
+}
+
+%flex-row { flex-direction: row; }
+%flex-column { flex-direction: column; }

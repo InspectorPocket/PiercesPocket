@@ -1,0 +1,101 @@
+.nav {
+    min-height: $nav-height-small;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: $white;
+    border-radius: $b-radius;
+    @include transition(1s ease-in-out);
+    z-index: 99;
+    &.btn {
+        margin: 0;
+        &__nav {
+            &__tab {
+                @include transition(.2s ease-in-out);
+            }
+        }
+        @include transition(.2s ease-in-out);
+    }
+    &__front {
+        padding-left: $logo-small;
+    }
+    &__behind {
+        background: transparent;
+        z-index: 98;
+        justify-content: flex-end;
+        position: relative;
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            height: 100%;
+            width: 250%;
+            left: -150%;
+            background: $grey-200;
+            border-radius: $b-radius;
+        }
+        &__icon {
+            display: flex;
+            @extend %align-center;
+            width: $logo-inner-small;
+            height: $logo-inner-small;
+            position: relative;
+            $anim-length: .9s;
+            > span {
+                background: black;
+                height: 2px;
+                width: calc(100% - 24px);
+                position: absolute;
+                border-radius: $b-radius;
+                &:nth-child(1) { animation: nav_open_anim-1 $anim-length both ease-in-out; }
+                &:nth-child(2) { animation: nav_open_anim-2 $anim-length both ease-in-out; }
+                &:nth-child(3) { animation: nav_open_anim-3 $anim-length both ease-in-out; }
+            }
+            
+            &--default {
+                > span {
+                    &:nth-child(1) {
+                        animation: none;
+                        transform: rotate(-50deg) scaleY(1);
+                    }
+                    &:nth-child(2) {
+                        animation: none;
+                        transform: scaleX(0);
+                    }
+                    &:nth-child(3) {
+                        animation: none;
+                        transform: rotate(50deg);
+                    }
+                }
+            }
+            &--toggled {
+                > span {
+                    &:nth-child(1) { animation: nav_closed_anim-1 $anim-length both ease-in-out; }
+                    &:nth-child(2) { animation: nav_closed_anim-2 $anim-length both ease-in-out; }
+                    &:nth-child(3) { animation: nav_closed_anim-3 $anim-length both ease-in-out; }
+                }
+            }
+        }
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .nav {
+        min-height: $nav-height-large;
+        &__front {
+            padding-left: $logo-large;
+        }
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 1024px) {
+    
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1366px) {
+
+}

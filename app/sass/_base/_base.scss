@@ -1,0 +1,78 @@
+*, *::before, *::after {
+    @include box-sizing(border-box);
+    margin: 0; padding: 0;
+    font-family: system-ui;
+    z-index: 1;
+}
+
+html, body {
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+    background-color: $grey-800;
+    overflow-x: hidden;
+}
+
+// body {
+//     width: 100%;
+//     margin: 0 auto;
+//     max-width: 1440px;
+// }
+
+*:active, *:focus {
+    outline: 0;
+    border: none;
+    outline-style: none;
+    -moz-outline-style: none;
+}
+
+div > svg {
+    display: flex;
+    @extend %align-center;
+    @include size(100%);
+    margin: auto;
+}
+
+.img {
+    overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, p, ul, li, a {
+    text-transform: uppercase;
+    text-decoration: none;
+    list-style: none;
+    font-weight: bold;
+    color: $grey-700;
+    letter-spacing: -0.3px;
+    // line-height: 1.5;
+}
+
+p, ul, li {
+    text-transform: none;
+    font-weight: normal;
+}
+
+a {
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 1.5em;
+    padding: 1em 0;
+}
+
+h4 {
+    font-size: 0.75em;
+}
+
+.hide { display: none !important; }
+
+.invisible { opacity: 0 !important; }
+
+.fill {
+    &--grey-700 { fill: $grey-700; }
+    &--green-light { fill: $green-light; }
+    &--red-light { fill: $red-light; }
+    &--yellow-light { fill: $yellow-light; }
+    &--blue-light { fill: $blue-light; }
+}
+

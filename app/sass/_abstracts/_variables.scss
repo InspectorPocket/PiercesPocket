@@ -1,0 +1,72 @@
+// Colours
+$white: #ffffff;
+$grey-100: #FDFFFC;
+$grey-200: #E7E7E8;
+$grey-400: #A2A1A1;
+$grey-600: #3C3D42;
+$grey-700: #2B2626;
+$grey-800: #191919;
+$black: #000000;
+$blue-dark: #2270EB;
+$blue: #73A8FD;
+$blue-light: #BAE2FF;
+$green-dark: #168E4E;
+$green: #6ED29D;
+$green-light: #CAFFE3;
+$red-dark: #9F1425;
+$red: #FF324B;
+$red-light: #FFA6A6;
+$orange-dark: #DB3E14;
+$orange: #FF744F;
+$orange-light: #FFB29D;
+$yellow-dark: #FF9F1C;
+$yellow: #FFBE0B;
+$yellow-light: #FFE7A5;
+$purple-dark: #3A076E;
+$purple: #915EC6;
+$purple-light: #DFC0FF;
+
+// Animations
+$nav-anim-l: 0.4s;
+
+// Shadows
+$dark-shadow: 0 16px 32px 0 rgba(0,0,0,0.3);
+$light-shadow: 0 16px 32px 0 rgba(0,0,0, 0.15);
+
+// Buttons
+$nav-height: 2.25em;
+
+// Layout
+$half: 50%;
+$spacing-card-main: 100px;
+$header-size: 104px;
+
+// Gradients and other styling
+$half-translucent: rgba(0,0,0,0.5);
+$gradient: left, rgba(0,0,0,0), rgba(0,0,0,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.3), rgba(0,0,0,0.2), rgba(0,0,0,0.1),  rgba(0,0,0,0);
+
+// Borders
+$one-border: $black solid 1px;
+$two-border: $black solid 2px;
+
+// Logo
+$logo-inner-small: 2.25em;
+$logo-small: 3.75em;
+
+$logo-inner-large: 3.25em;
+$logo-large: 5.25em;
+
+
+// Nav
+$nav-height-small: 3.25rem;
+$nav-height-large: 3.75rem;
+$menu-size: 1.875rem;
+$header-offset: .5em;
+
+// Nav behind tab
+$nav-behind-tab-small: calc(0% + (#{$logo-small}) + #{$logo-inner-small});
+$nav-behind-tab-large: calc(0% + (#{$logo-large}) + #{$logo-inner-small});
+
+// Border radius
+// $b-radius: 40em;
+$b-radius: 1em;

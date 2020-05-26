@@ -1,0 +1,231 @@
+.btn {
+    display: flex;
+    align-items: center;
+    pointer-events: auto;
+    &::before {
+        // content: '';
+        display: block;
+        position: absolute;
+        @include transition(.3s cubic-bezier(.82,-0.01,1,1));
+    }
+    &:hover {
+        // @include transition(.3s ease-in-out);
+        &::before {
+            @include transition(.3s cubic-bezier(.82,-0.01,1,1));
+        }
+    }
+    &__nav {
+        border-radius: $b-radius;
+        height: $nav-height;
+        position: relative;
+        margin: 0 ($header-offset / 2);
+        @include transition($nav-anim-l ease-in-out);
+        // TODO add :active transition
+        &:hover > &,
+        &--active > & {
+            &__icon {
+                @include transition(.2s cubic-bezier(.82,-0.01,1,1));
+                transform: translateY(-4px);
+            }
+            &__text {
+                & :first-child {
+                    &::before {
+                        @include transition(.3s cubic-bezier(.82,-0.01,1,1));
+                        transform: scaleX(1);
+                    }
+                }
+            }
+        }
+        &:first-of-type { margin-left: .5em; }
+        &:last-of-type { margin-right: .5em; }
+
+        &__icon {
+            display: flex;
+            @extend %align-center;
+            position: relative;
+            height: $nav-height;
+            width: $nav-height;
+            border-radius: $b-radius;
+            border: 1px solid $white;
+            pointer-events: none;
+            z-index: 2;
+            @include transition($nav-anim-l ease-in-out);
+            & svg {
+                height: 1em;
+                width: 1em;
+            }
+        }
+        &__text {
+            height: 100%;
+            position: relative;
+            pointer-events: none;
+            ::selection {
+                background-color: none;
+            }
+            &__inner {
+                border-radius: $b-radius;
+                display: none;
+                align-items: center;
+                overflow: hidden;
+                position: relative;
+                z-index: 1;
+                padding-left: $nav-height;
+                @include transition($nav-anim-l ease-in-out);
+                &::before {
+                    content: '';
+                    height: 100%;
+                    width: 100%;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                    display: block;
+                    position: absolute;
+                    transform-origin: 0% 50%;
+                    transform: scaleX(0);
+                    border-radius: $b-radius;
+                    z-index: -1;
+                    @include transition($nav-anim-l ease-in-out);
+                }
+                h4 { padding: 0 1.25em 0 1em; }
+            }
+        }
+
+        &--green {
+            & > div:first-of-type {
+                background: $green-light;
+                & > :first-child::before {
+                    background: $green-light;
+                }
+            }
+            & > div:last-of-type {
+                & > :first-child::before {
+                    background: $green-light;
+                }
+            }
+            &:hover > div:first-of-type,
+            &--active > div:first-of-type {
+                background: $green;
+                @include box-shadow(0 4px 8px 0 rgba($green, .5));
+            }
+        }
+        &--yellow {
+            & > div:first-of-type {
+                background: $yellow-light;
+                & > :first-child::before {
+                    background: $yellow-light;
+                }
+            }
+            & > div:last-of-type {
+                & > :first-child::before {
+                    background: $yellow-light;
+                }
+            }
+            &:hover > div:first-of-type,
+            &--active > div:first-of-type {
+                background: $yellow;
+                @include box-shadow(0 4px 8px 0 rgba($yellow, .5));
+            }
+        }
+        &--blue {
+            & > div:first-of-type {
+                background: $blue-light;
+                & > :first-child::before {
+                    background: $blue-light;
+                }
+            }
+            & > div:last-of-type {
+                & > :first-child::before {
+                    background: $blue-light;
+                }
+            }
+            &:hover > div:first-of-type,
+            &--active > div:first-of-type {
+                background: $blue;
+                @include box-shadow(0 4px 8px 0 rgba($blue, .5));
+            }
+        }
+        &--red {
+            & > div:first-of-type {
+                background: $red-light;
+                & > :first-child::before {
+                    background: $red-light;
+                }
+            }
+            & > div:last-of-type {
+                & > :first-child::before {
+                    background: $red-light;
+                }
+            }
+            &:hover > div:first-of-type,
+            &--active > div:first-of-type {
+                background: $red;
+                @include box-shadow(0 4px 8px 0 rgba($red, .5));
+            }
+        }
+    }
+}
+
+/* Small devices 344px and up) */
+@media only screen and (min-width: 344px) {
+    &.btn {
+        &__nav {
+            margin: 0 $header-offset;
+            &:first-of-type {
+                margin-left: 1em;
+            }
+            &:last-of-type {
+                margin-right: 1em;
+            }
+        }
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    &.btn {
+        &__nav {
+            margin: 0 $header-offset;
+            &:hover > &,
+            &--active > & {
+                &__icon {
+                    transform: translateY(-8px);
+                }
+            }
+            &__icon {
+                position: absolute;
+            }
+            &__text {
+                display: flex;
+                &__inner {
+                    display: flex;
+                }
+            }
+
+            &--green {
+                &:hover > div:first-of-type,
+                &--active > div:first-of-type {
+                    @include box-shadow(0 8px 16px 0 rgba($green, .5));
+                }
+            }
+            &--yellow {
+                &:hover > div:first-of-type,
+                &--active > div:first-of-type {
+                    @include box-shadow(0 8px 16px 0 rgba($yellow, .5));
+                }
+            }
+            &--blue {
+                &:hover > div:first-of-type,
+                &--active > div:first-of-type {
+                    @include box-shadow(0 8px 16px 0 rgba($blue, .5));
+                }
+            }
+            &--red {
+                &:hover > div:first-of-type,
+                &--active > div:first-of-type {
+                    @include box-shadow(0 8px 16px 0 rgba($red, .5));
+                }
+            }
+        }
+    }
+}
