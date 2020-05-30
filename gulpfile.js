@@ -37,6 +37,5 @@ gulp.task('nunjucks', function() {
 // Watch task
 gulp.task('default',function() {
     gulp.watch('app/sass/**/*.scss',gulp.series('styles'));
-    gulp.watch('app/**/**/*.njk',gulp.series('nunjucks'));
-    gulp.watch('app/pages/index.njk',gulp.series('njk-index'));
+    gulp.watch('app/**/**/*.njk',gulp.series('nunjucks', 'njk-index'));
 });

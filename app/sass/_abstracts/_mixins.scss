@@ -1,56 +1,63 @@
-// TASTY MIXIN SUGARS //
+// MEDIA QUERIES
 
-// HEIGHT WIDTH //
-// height will default to width value, unless you specify a second argument
-// @include size(24px); --> width and height are 24px
-// @include size(100%, 10em); --> width = 100%. height = 10em.
+// Mobile first design doesn't require a mobile query
+// @mixin mobile {
+// 	@media (max-width: #{$screen-tablet-portrait - 1px}) {
+// 	  @content;
+// 	}
+// }
+
+// Tablet Portrait
+@mixin tablet-portrait {
+	@media (min-width: #{$screen-tablet-portrait}) and (max-width: #{$screen-tablet-landscape - 1px}) {
+	  @content;
+	}
+}
+
+// Tablet Landscape and Up
+@mixin tablet-landscape-plus {
+	@media (min-width: #{$screen-tablet-landscape}) {
+	  @content;
+	}
+}
+
+// Tablet Landscape
+@mixin tablet-landscape {
+	@media (min-width: #{$screen-tablet-landscape}) and (max-width: #{$screen-desktop - 1px}) {
+	  @content;
+	}
+}
+
+// Desktop
+@mixin desktop {
+	@media (min-width: #{$screen-desktop}) and (max-width: #{$screen-hd - 1px}) {
+	  @content;
+	}
+}
+
+// Desktop HD
+@mixin desktop-hd {
+	@media (min-width: #{$screen-hd}) {
+	  @content;
+	}
+}
+
+//High resolution screens
+@mixin high-resolution {
+	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+		@content;
+	}
+}
+
+
+// GENERIC MIXINS
+@mixin font-family($family) {
+	font-family: $family, Arial, Helvetica, sans-serif;
+}
+
 @mixin size($width, $height: $width) {
 	width: $width;
 	height: $height;
-}
-
-
-// IMAGE MIXINS //
-@mixin background-size($size) {
-	background-size: $size;
-	-webkit-background-size: $size;
-	-moz-background-size: $size;
-	-o-background-size: $size;
-}
-
-@mixin background-image($file, $size) {
-	background: url($file) no-repeat center center;
-	@include background-size($size);
-}
-
-// STYLES MIXINS //
-@mixin linear-background($gradient) {
-	background: -webkit-linear-gradient($gradient);
-	background: -moz-linear-gradient($gradient);
-	background: -o-linear-gradient($gradient);
-	background: linear-gradient($gradient);
-}
-
-
-
-@mixin animation($anim) {
-	-moz-animation: $anim;
-  	-webkit-animation: $anim;
- 	animation: $anim;
-}
-
-@mixin box-shadow($faint-shadow) {
-	-webkit-box-shadow: $faint-shadow;
-	-moz-box-shadow: $faint-shadow;
-	-o-box-shadow: $faint-shadow;
-	box-shadow: $faint-shadow;
-}
-
-@mixin box-shadows($shadow1, $shadow2) {
-	-webkit-box-shadow: $shadow1, $shadow2;
-	-moz-box-shadow: $shadow1, $shadow2;
-	-o-box-shadow: $shadow1, $shadow2;
-	box-shadow: $shadow1, $shadow2;
 }
 
 @mixin border-radius($fancy-border) {
@@ -65,13 +72,6 @@
 	-moz-box-sizing: $box-size;
 	-o-box-sizing: $box-size;
 	box-sizing: $box-size;
-}
-
-@mixin transition($transition) {
-	-webkit-transition: $transition;
-  	-moz-transition: $transition;
-  	-o-transition: $transition;
-  	transition: $transition;
 }
 
 @mixin transform($transform) {
@@ -94,3 +94,72 @@
 	filter: blur($blur);
 }
 
+// IMAGE MIXINS
+@mixin background-size($size) {
+	background-size: $size;
+	-webkit-background-size: $size;
+	-moz-background-size: $size;
+	-o-background-size: $size;
+}
+
+@mixin background-image($file, $size) {
+	background: url($file) no-repeat center center;
+	@include background-size($size);
+}
+
+@mixin background-opacity($color, $opacity: 0) {
+	background: $color; /* The Fallback */
+	background: rgba($color, $opacity);
+}
+
+// ANIMATION //
+@mixin keyframes($animationName) {
+	@-webkit-keyframes #{$animationName} {
+		@content;
+	}
+	@-moz-keyframes #{$animationName} {
+		@content;
+	}
+	@-o-keyframes #{$animationName} {
+		@content;
+	}
+	@keyframes #{$animationName} {
+		@content;
+	}
+}
+
+@mixin animation($name, $duration: 2s, $timing: ease-in-out, $iteration: 1) {
+	-moz-animation: $name $duration $timing $iteration;
+  	-webkit-animation: $name $duration $timing $iteration;
+ 	animation: $name $duration $timing $iteration;
+}
+
+@mixin transition($transition) {
+	-webkit-transition: $transition;
+  	-moz-transition: $transition;
+  	-o-transition: $transition;
+  	transition: $transition;
+}
+
+// BACKGROUND //
+@mixin linear-background($gradient) {
+	background: -webkit-linear-gradient($gradient);
+	background: -moz-linear-gradient($gradient);
+	background: -o-linear-gradient($gradient);
+	background: linear-gradient($gradient);
+}
+
+// SHADOWS //
+@mixin box-shadow($faint-shadow) {
+	-webkit-box-shadow: $faint-shadow;
+	-moz-box-shadow: $faint-shadow;
+	-o-box-shadow: $faint-shadow;
+	box-shadow: $faint-shadow;
+}
+
+@mixin box-shadows($shadow1, $shadow2) {
+	-webkit-box-shadow: $shadow1, $shadow2;
+	-moz-box-shadow: $shadow1, $shadow2;
+	-o-box-shadow: $shadow1, $shadow2;
+	box-shadow: $shadow1, $shadow2;
+}

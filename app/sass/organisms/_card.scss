@@ -1,39 +1,3 @@
 .card {
-    background: $white;
-    border-radius: $b-radius;
-    width: 100%;
-    margin: auto;
-    overflow: hidden;
-    @include transition(.2s ease-in-out);
-    &__intro {
-        background: $grey-700;
-        height: 180px;
-        max-width: 288px;
-        animation: 3s projects_intro ease-in-out both;
-        background: $grey-700;
-        position: absolute;
-        top: 0;
-        z-index: 2;
-    }
-    &__projects {
-        // bottom: 0;
-        & > svg {
-            margin: 0;
-            position: absolute;
-            left: -55px;
-            top: 0;
-            width: 356px;
-        }
-    }
-    &__section {
-        animation: 3s section ease-in-out both;
-        min-height: 100%;
-        width: 100%;
-        z-index: 1;
-        max-width: 288px;
-        position: absolute;
-        left: 0;
-        background: $white;
-    }
     
 }

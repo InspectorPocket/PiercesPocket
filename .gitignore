@@ -7,3 +7,4 @@ node_modules
 # pages
 
 app/index.html
+app/_ignore/_toStudy.scss

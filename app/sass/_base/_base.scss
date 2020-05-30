@@ -1,3 +1,8 @@
+::selection {
+    background-color: $green;
+    color: $white;
+}
+
 *, *::before, *::after {
     @include box-sizing(border-box);
     margin: 0; padding: 0;
@@ -8,8 +13,11 @@
 html, body {
     -webkit-font-smoothing: antialiased;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
-    background-color: $grey-800;
+    background-color: $white;
     overflow-x: hidden;
+    color: $grey-700;
+    @include size(100%);
+    @include transition($transition-default)
 }
 
 // body {
@@ -32,27 +40,19 @@ div > svg {
     margin: auto;
 }
 
-.img {
-    overflow: hidden;
-}
+img { max-width: 100%; }
 
 h1, h2, h3, h4, h5, p, ul, li, a {
-    text-transform: uppercase;
     text-decoration: none;
     list-style: none;
-    font-weight: bold;
     color: $grey-700;
-    letter-spacing: -0.3px;
-    // line-height: 1.5;
+    // letter-spacing: -0.3px;
+    line-height: 1.5;
 }
 
 p, ul, li {
     text-transform: none;
     font-weight: normal;
-}
-
-a {
-    cursor: pointer;
 }
 
 h1 {
@@ -64,9 +64,35 @@ h4 {
     font-size: 0.75em;
 }
 
-.hide { display: none !important; }
+a {
+    cursor: pointer;
+    @include transition($transition-default);
+    &:hover {
 
-.invisible { opacity: 0 !important; }
+    }
+    &:active, &:focus {
+        
+    }
+}
+
+*::-webkit-scrollbar {
+    height: rem(8);
+    margin: 2%;
+    width: rem(8);
+  }
+  
+  *::-webkit-scrollbar-track {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: lighten($grey-700, 10%);
+    border-radius: rem(50);
+    outline: rem(1) solid $grey-700;
+  }
+
+
 
 .fill {
     &--grey-700 { fill: $grey-700; }
@@ -76,3 +102,6 @@ h4 {
     &--blue-light { fill: $blue-light; }
 }
 
+@media screen and (max-device-width: 480px){
+    body{ -webkit-text-size-adjust: 100%; }
+}

@@ -166,23 +166,8 @@
     }
 }
 
-/* Small devices 344px and up) */
-@media only screen and (min-width: 344px) {
-    &.btn {
-        &__nav {
-            margin: 0 $header-offset;
-            &:first-of-type {
-                margin-left: 1em;
-            }
-            &:last-of-type {
-                margin-right: 1em;
-            }
-        }
-    }
-}
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
+@include tablet-landscape-plus {
     &.btn {
         &__nav {
             margin: 0 $header-offset;

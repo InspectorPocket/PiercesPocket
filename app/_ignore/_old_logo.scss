@@ -1,0 +1,30 @@
+// TODO Add hover & focus effect on logo
+.logo {
+    display: flex;
+    @extend %align-center;
+    height: $logo-small;
+    width: $logo-small;
+    border-radius: $b-radius;
+    background: $white;
+    z-index: 100;
+    position: absolute;
+    @include box-shadow($light-shadow);
+    @include transition(.2s ease-in-out);
+    &__inner {
+        height: $logo-inner-small;
+        width: $logo-inner-small;
+        @include transition(.2s ease-in-out);
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .logo {
+        height: $logo-large;
+        width: $logo-large;
+        &__inner {
+            height: $logo-inner-large;
+            width: $logo-inner-large;
+        }
+    }
+}

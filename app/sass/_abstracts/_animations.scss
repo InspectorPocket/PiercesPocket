@@ -1,5 +1,17 @@
+// GENERIC ANIMATIONS //
+@include keyframes(fade-in) {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@include keyframes(animate-gradient) {
+    0%, 100% { background-position: 0 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+// SPECIFIC ANIMATIONS //
 // TODO make these better
-@keyframes nav_open_anim-1 {
+@include keyframes(nav_open_anim-1) {
     0% {
         transform: translateY(-5px) scaleY(1);
     }
@@ -10,7 +22,7 @@
         transform: rotate(-50deg) scaleY(1);
     }
 }
-@keyframes nav_open_anim-2 {
+@include keyframes(nav_open_anim-2) {
     0% {
         transform: scaleX(1);
     }
@@ -21,7 +33,7 @@
         transform: scaleX(0);
     }
 }
-@keyframes nav_open_anim-3 {
+@include keyframes(nav_open_anim-3) {
     0% {
         transform: translateY(5px);
     }
@@ -32,7 +44,7 @@
         transform: rotate(50deg);
     }
 }
-@keyframes nav_closed_anim-1 {
+@include keyframes(nav_closed_anim-1) {
     0% {
         transform: rotate(-50deg);
     }
@@ -43,7 +55,7 @@
         transform: translateY(-5px);
     }
 }
-@keyframes nav_closed_anim-2 {
+@include keyframes(nav_closed_anim-2) {
     0% {
         transform: scaleX(0);
     }
@@ -54,7 +66,7 @@
         transform: scaleX(1);
     }
 }
-@keyframes nav_closed_anim-3 {
+@include keyframes(nav_closed_anim-3) {
     0% {
         transform: rotate(50deg);
     }
@@ -66,7 +78,7 @@
     }
 }
 
-@keyframes projects_intro {
+@include keyframes(projects_intro) {
     0% {
         opacity: 0;
         transform: translateY(180px) translateX(-100vw);
@@ -82,7 +94,7 @@
         box-shadow: 0 -16px 32px 0 inset rgba($grey-800, 1);
     }
 }
-@keyframes section {
+@include keyframes(section) {
     0%, 60% {
         opacity: 0;
         transform: translateY(16px) scaleY(0);
@@ -95,5 +107,6 @@
 
 // Generic animation initialise
 .bounce {
-    @include animation (arrow-bounce 2s infinite ease-in-out);
+    @include animation(arrow-bounce);
 }
+
