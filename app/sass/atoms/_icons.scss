@@ -1,4 +1,15 @@
 .icon {
-    
+    @include size($icon-size);
+    display: flex;
+    @extend %align-center;
+    position: relative;
+    height: $nav-height;
+    width: $nav-height;
+    border-radius: $b-radius;
+    border: 1px solid $white;
+    z-index: 2;
+    @include transition($nav-anim-l ease-in-out);
+    & > svg {
+        @include size(1rem);
+    }
 }
-

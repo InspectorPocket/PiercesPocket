@@ -60,6 +60,24 @@
 	height: $height;
 }
 
+@mixin user-select($colour) {
+	-webkit-touch-callout: $colour;
+    -webkit-user-select: $colour;
+    -khtml-user-select: $colour;
+    -moz-user-select: $colour;
+    -ms-user-select: $colour;
+    user-select: $colour;
+}
+@mixin tap-highlight($transparent) {
+	-webkit-tap-highlight-color: $transparent;
+	-webkit-tap-highlight-color: transparent;
+}
+
+@mixin selection($bg, $colour) {
+	background-color: $bg;
+    color: $colour;
+}
+
 @mixin border-radius($fancy-border) {
 	-moz-border-radius: $fancy-border;
 	-webkit-border-radius: $fancy-border;

@@ -1,5 +1,5 @@
-// TODO add click animation
+// TODO add click animation ==> water droplet ripple?
 
 .logo {
-    @include size(60px);
+    @include size($logo-small);
 }

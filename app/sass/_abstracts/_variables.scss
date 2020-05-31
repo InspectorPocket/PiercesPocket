@@ -49,30 +49,22 @@ $spacing-card-main: 100px;
 $header-size: 104px;
 
 // Gradients and other styling
+$transparent: rgba(255,255,255,0);
 $half-translucent: rgba(0,0,0,0.5);
 $gradient: left, rgba(0,0,0,0), rgba(0,0,0,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.3), rgba(0,0,0,0.2), rgba(0,0,0,0.1),  rgba(0,0,0,0);
 
-// Borders
-$one-border: $black solid 1px;
-$two-border: $black solid 2px;
+// Icons
+$icon-size: 1rem; // -.5rem to account for svg padding
 
 // Logo
-$logo-inner-small: 2.25em;
-$logo-small: 3.75em;
-
-$logo-inner-large: 3.25em;
-$logo-large: 5.25em;
-
+$logo-small: 2.25rem;
+$logo-large: 3.25rem;
 
 // Nav
 $nav-height-small: 3.25rem;
 $nav-height-large: 3.75rem;
 $menu-size: 1.875rem;
 $header-offset: .5em;
-
-// Nav behind tab
-$nav-behind-tab-small: calc(0% + (#{$logo-small}) + #{$logo-inner-small});
-$nav-behind-tab-large: calc(0% + (#{$logo-large}) + #{$logo-inner-small});
 
 // Border radius
 // $b-radius: 40em;

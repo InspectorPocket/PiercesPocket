@@ -39,22 +39,6 @@
         &:first-of-type { margin-left: .5em; }
         &:last-of-type { margin-right: .5em; }
 
-        &__icon {
-            display: flex;
-            @extend %align-center;
-            position: relative;
-            height: $nav-height;
-            width: $nav-height;
-            border-radius: $b-radius;
-            border: 1px solid $white;
-            pointer-events: none;
-            z-index: 2;
-            @include transition($nav-anim-l ease-in-out);
-            & svg {
-                height: 1em;
-                width: 1em;
-            }
-        }
         &__text {
             height: 100%;
             position: relative;
@@ -92,17 +76,6 @@
         }
 
         &--green {
-            & > div:first-of-type {
-                background: $green-light;
-                & > :first-child::before {
-                    background: $green-light;
-                }
-            }
-            & > div:last-of-type {
-                & > :first-child::before {
-                    background: $green-light;
-                }
-            }
             &:hover > div:first-of-type,
             &--active > div:first-of-type {
                 background: $green;
@@ -110,17 +83,6 @@
             }
         }
         &--yellow {
-            & > div:first-of-type {
-                background: $yellow-light;
-                & > :first-child::before {
-                    background: $yellow-light;
-                }
-            }
-            & > div:last-of-type {
-                & > :first-child::before {
-                    background: $yellow-light;
-                }
-            }
             &:hover > div:first-of-type,
             &--active > div:first-of-type {
                 background: $yellow;
@@ -128,17 +90,6 @@
             }
         }
         &--blue {
-            & > div:first-of-type {
-                background: $blue-light;
-                & > :first-child::before {
-                    background: $blue-light;
-                }
-            }
-            & > div:last-of-type {
-                & > :first-child::before {
-                    background: $blue-light;
-                }
-            }
             &:hover > div:first-of-type,
             &--active > div:first-of-type {
                 background: $blue;
@@ -146,21 +97,27 @@
             }
         }
         &--red {
-            & > div:first-of-type {
-                background: $red-light;
-                & > :first-child::before {
-                    background: $red-light;
-                }
-            }
-            & > div:last-of-type {
-                & > :first-child::before {
-                    background: $red-light;
-                }
-            }
             &:hover > div:first-of-type,
             &--active > div:first-of-type {
                 background: $red;
                 @include box-shadow(0 4px 8px 0 rgba($red, .5));
+            }
+        }
+    }
+    &__contact {
+        @include size(1.25rem);
+        &--active {
+            transform: translateY(-8px);
+            & > svg {
+                fill: $purple;
+                & > g {
+                    // stroke only goies inside. A different solution is requires
+                    // svg with 2 paths in it? or duplicate the svg behind it and have a separate colour to simulate an outline
+                    // maybe it needs to be a :after element and have the image replaced
+                    stroke: $white;
+                    stroke-width: 1px;
+                    @include box-shadow(0 8px 16px 0 rgba($purple, .5));
+                }
             }
         }
     }
@@ -188,26 +145,74 @@
             }
 
             &--green {
+                & > div:first-of-type {
+                    background: $green-light;
+                    & > :first-child::before {
+                        background: $green-light;
+                    }
+                }
+                & > div:last-of-type {
+                    & > :first-child::before {
+                        background: $green-light;
+                    }
+                }
                 &:hover > div:first-of-type,
                 &--active > div:first-of-type {
+                    background: $green;
                     @include box-shadow(0 8px 16px 0 rgba($green, .5));
                 }
             }
             &--yellow {
+                & > div:first-of-type {
+                    background: $yellow-light;
+                    & > :first-child::before {
+                        background: $yellow-light;
+                    }
+                }
+                & > div:last-of-type {
+                    & > :first-child::before {
+                        background: $yellow-light;
+                    }
+                }
                 &:hover > div:first-of-type,
                 &--active > div:first-of-type {
+                    background: $yellow;
                     @include box-shadow(0 8px 16px 0 rgba($yellow, .5));
                 }
             }
             &--blue {
+                & > div:first-of-type {
+                    background: $blue-light;
+                    & > :first-child::before {
+                        background: $blue-light;
+                    }
+                }
+                & > div:last-of-type {
+                    & > :first-child::before {
+                        background: $blue-light;
+                    }
+                }
                 &:hover > div:first-of-type,
                 &--active > div:first-of-type {
+                    background: $blue;
                     @include box-shadow(0 8px 16px 0 rgba($blue, .5));
                 }
             }
             &--red {
+                & > div:first-of-type {
+                    background: $red-light;
+                    & > :first-child::before {
+                        background: $red-light;
+                    }
+                }
+                & > div:last-of-type {
+                    & > :first-child::before {
+                        background: $red-light;
+                    }
+                }
                 &:hover > div:first-of-type,
                 &--active > div:first-of-type {
+                    background: $red;
                     @include box-shadow(0 8px 16px 0 rgba($red, .5));
                 }
             }

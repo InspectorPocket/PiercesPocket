@@ -1,7 +1,4 @@
-::selection {
-    background-color: $green;
-    color: $white;
-}
+::selection { @include selection($grey-700, $white); }
 
 *, *::before, *::after {
     @include box-sizing(border-box);
@@ -33,11 +30,27 @@ html, body {
     -moz-outline-style: none;
 }
 
-div > svg {
-    display: flex;
-    @extend %align-center;
-    @include size(100%);
-    margin: auto;
+div, a {
+    & > svg {
+        display: flex;
+        @extend %align-center;
+        @include size(100%);
+        margin: auto;
+        fill: $grey-700;
+    }
+}
+
+a {
+    @include user-select(none);
+    @include tap-highlight($transparent);
+    cursor: pointer;
+    @include transition($transition-default);
+    &:hover {
+
+    }
+    &:active, &:focus {
+        
+    }
 }
 
 img { max-width: 100%; }
@@ -62,17 +75,6 @@ h1 {
 
 h4 {
     font-size: 0.75em;
-}
-
-a {
-    cursor: pointer;
-    @include transition($transition-default);
-    &:hover {
-
-    }
-    &:active, &:focus {
-        
-    }
 }
 
 *::-webkit-scrollbar {

@@ -1,7 +1,7 @@
 {% macro active(activePage='home') %}
-<div id="header" class="header">
-    <!-- Logo -->
-    <a href="/index.html" class="logo">
+<nav id="header" class="header">
+    {# Logo #}
+    <a class="logo">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             viewBox="0 0 100 100" class="logo__inner">
             <g id="logo-g">
@@ -11,11 +11,11 @@
             </g>
         </svg>
     </a>
-    <!-- NavBar -->
+    {# Navbar #}
     <div class="nav">
-        <!-- Projects -->
+        {# Projects #}
         <a class="btn btn__nav btn__nav--green {%if activePage == 'projects' %}btn__nav--active btn__nav--green--active{% endif %}">
-            <div class="btn__nav__icon">
+            <div class="icon btn__nav__icon">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
                     <title>Projects</title>
                     <g id="Icons/Nav/Default/Work" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -29,9 +29,9 @@
                 </div>
             </div>
         </a>
-        <!-- About -->
+        {# About #}
         <a class="btn btn__nav btn__nav--yellow {%if activePage == 'about' %}btn__nav--active btn__nav--yellow--active{% endif %}">
-            <div class="btn__nav__icon">
+            <div class="icon btn__nav__icon">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                     viewBox="0 0 50 50">
                     <title>About</title>
@@ -47,5 +47,17 @@
             </div>
         </a>
     </div>
-</div>
+    {# Contact Icon #}
+   <a class="icon btn__contact {%if activePage == 'contact' %}btn__contact--active{% endif %}">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"viewBox="0 0 24 24" version="1.1">
+            <g id="contact-icon" fill-rule="evenodd">
+                <g id="Button/Contact/Default" transform="translate(-20.000000, -20.000000)">
+                    <g id="Phone/Handset" transform="translate(20.000000, 20.000000)">
+                        <path d="M18,2 C20.209139,2 22,3.790861 22,6 C22,7.01881327 21.6191053,7.94866381 20.9919493,8.65491808 C20.9922702,8.80580907 20.9568287,8.95771143 20.8853168,9.09865316 C19.8192667,11.1997148 18.2707984,13.2656888 16.2399119,15.2965753 C14.1708371,17.36565 11.8071684,19.192168 9.14890569,20.7761291 C9.0219741,20.8517705 8.88369495,20.8964725 8.74373357,20.9114405 C8.02788464,21.5858936 7.06230219,22 6,22 C3.790861,22 2,20.209139 2,18 C2,15.790861 3.790861,14 6,14 C7.40538103,14 8.64148149,14.7247763 9.35491342,15.8209409 C10.6157544,14.855902 11.7921807,13.826204 12.8854006,12.7329841 C13.9397466,11.6786381 14.9250711,10.5568348 15.8413743,9.36757419 C14.7334498,8.65622417 14,7.41376528 14,6 C14,3.790861 15.790861,2 18,2 Z" id="Combined-Shape"/>
+                    </g>
+                </g>
+            </g>
+        </svg>
+    </a>
+</nav>
 {% endmacro %}
