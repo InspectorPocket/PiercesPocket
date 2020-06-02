@@ -45,7 +45,7 @@ function navHandler() {
     if (this.classList.contains(btn_nav + 'yellow')) {
         this.classList.add(mapColours.yellow);
         setTimeout(() => {
-            window.open('/app/about.html', '_self');
+            window.open('/app/contact.html', '_self');
         }, transition_default);
     }
     if (this.classList.contains(btn_nav + 'blue')) {

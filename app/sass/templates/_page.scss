@@ -1,14 +1,8 @@
 .page {
-    &__home {
-
-    }
-    &__about {
-        ::selection { @include selection($yellow-light, $grey-700); }
-    }
     &__projects {
         ::selection { @include selection($green-light, $grey-700); }
     }
     &__contact {
-        ::selection { @include selection($purple-light, $grey-700); }
+        ::selection { @include selection($yellow-light, $grey-700); }
     }
 }

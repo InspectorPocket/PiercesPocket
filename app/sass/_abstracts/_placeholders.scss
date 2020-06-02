@@ -1,19 +1,31 @@
 // FLEX //
+%center-items {
+    display: flex;
+    align-items: center; 
+}
 %align-left {
+    display: flex;
     justify-content: left;
     align-items: center; 
-    text-align: left;
 }
 %align-center {
+    display: flex;
     justify-content: center;
     align-items: center; 
-    text-align: center;
 }
 %align-right {
+    display: flex;
     justify-content: right;
     align-items: center; 
-    text-align: right;
+}
+%align-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
 }
 
 %flex-row { flex-direction: row; }
 %flex-column { flex-direction: column; }
+
+// Animation
+%anim-long { @include transition(0.4s ease-in-out); }

@@ -1,56 +1,22 @@
-// MEDIA QUERIES
-
-// Mobile first design doesn't require a mobile query
-// @mixin mobile {
-// 	@media (max-width: #{$screen-tablet-portrait - 1px}) {
-// 	  @content;
-// 	}
-// }
-
-// Tablet Portrait
-@mixin tablet-portrait {
-	@media (min-width: #{$screen-tablet-portrait}) and (max-width: #{$screen-tablet-landscape - 1px}) {
-	  @content;
-	}
+// FUNCTIONS
+@function strip-units($value) {
+	@return ($value / ($value * 0 + 1));
 }
-
-// Tablet Landscape and Up
-@mixin tablet-landscape-plus {
-	@media (min-width: #{$screen-tablet-landscape}) {
-	  @content;
+  
+//Set font size as pixels and rems {px}
+@function rem($pxval) {
+	@if not unitless($pxval) {
+		$pxval: strip-units($pxval);
 	}
-}
-
-// Tablet Landscape
-@mixin tablet-landscape {
-	@media (min-width: #{$screen-tablet-landscape}) and (max-width: #{$screen-desktop - 1px}) {
-	  @content;
+	$base: 16;
+	@if not unitless($base) {
+		$base: strip-units($base);
 	}
-}
-
-// Desktop
-@mixin desktop {
-	@media (min-width: #{$screen-desktop}) and (max-width: #{$screen-hd - 1px}) {
-	  @content;
-	}
-}
-
-// Desktop HD
-@mixin desktop-hd {
-	@media (min-width: #{$screen-hd}) {
-	  @content;
-	}
-}
-
-//High resolution screens
-@mixin high-resolution {
-	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-		@content;
-	}
+	@return ($pxval / $base) * 1rem;
 }
 
 
-// GENERIC MIXINS
+// MIXINS
 @mixin font-family($family) {
 	font-family: $family, Arial, Helvetica, sans-serif;
 }
@@ -58,6 +24,23 @@
 @mixin size($width, $height: $width) {
 	width: $width;
 	height: $height;
+}
+
+@mixin absolute-pos($top, $right: $top, $bot: $right, $left: $bot) {
+	position: absolute;
+	top: $top;
+	right: $right;
+	bottom: $bot;
+	left: $left;
+}
+
+@mixin nav-icon($colour) {
+	background: $colour;
+	@include box-shadow(0 rem(4) rem(8) 0 rgba($colour, .5));
+}
+@mixin nav-icon-l($colour) {
+	background: $colour;
+	@include box-shadow(0 rem(8) rem(16) 0 rgba($colour, .5));
 }
 
 @mixin user-select($colour) {
@@ -112,7 +95,11 @@
 	filter: blur($blur);
 }
 
-// IMAGE MIXINS
+// STYLING
+@mixin border-default($colour) {
+	border: rem(1) solid $colour;
+}
+
 @mixin background-size($size) {
 	background-size: $size;
 	-webkit-background-size: $size;
@@ -181,3 +168,66 @@
 	-o-box-shadow: $shadow1, $shadow2;
 	box-shadow: $shadow1, $shadow2;
 }
+
+// BREAKPOINTS
+@mixin bp-sm {
+	@media (min-width: $bp-sm) {
+	  @content;
+	}
+}
+@mixin bp-md {
+	@media (min-width: $bp-md) {
+	  @content;
+	}
+}
+@mixin bp-lg {
+	@media (min-width: $bp-lg) {
+	  @content;
+	}
+}
+
+
+// MEDIA QUERIES
+
+// Tablet Portrait
+@mixin tablet-portrait {
+	@media (min-width: #{$screen-tablet-portrait}) and (max-width: #{$screen-tablet-landscape - rem(1)}) {
+	  @content;
+	}
+}
+
+// Tablet Landscape and Up
+@mixin tablet-landscape-plus {
+	@media (min-width: #{$screen-tablet-landscape}) {
+	  @content;
+	}
+}
+
+// Tablet Landscape
+@mixin tablet-landscape {
+	@media (min-width: #{$screen-tablet-landscape}) and (max-width: #{$screen-desktop - rem(1)}) {
+	  @content;
+	}
+}
+
+// Desktop
+@mixin desktop {
+	@media (min-width: #{$screen-desktop}) and (max-width: #{$screen-hd - rem(1)}) {
+	  @content;
+	}
+}
+
+// Desktop HD
+@mixin desktop-hd {
+	@media (min-width: #{$screen-hd}) {
+	  @content;
+	}
+}
+
+//High resolution screens
+@mixin high-resolution {
+	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+		@content;
+	}
+}
+

@@ -27,45 +27,27 @@ $purple: #915EC6;
 $purple-light: #DFC0FF;
 
 // Screen Sizes
-$screen-tablet-portrait: 501px !default;
+$screen-tablet-portrait: 481px !default;
 $screen-tablet-landscape: 768px !default;
 $screen-desktop: 1024px !default;
 $screen-hd: 1920px !default;
 
+$bp-sm: rem(600);
+$bp-md: rem(960);
+$bp-lg: rem(1280);
+
 // Animations
-$nav-anim-l: 0.4s;
 $transition-default: all 0.2s ease-in-out;
+$anim-delayed: .3s cubic-bezier(.82,-0.01,1,1);
 
 // Shadows
 $dark-shadow: 0 16px 32px 0 rgba(0,0,0,0.3);
 $light-shadow: 0 16px 32px 0 rgba(0,0,0, 0.15);
-
-// Buttons
-$nav-height: 2.25em;
-
-// Layout
-$half: 50%;
-$spacing-card-main: 100px;
-$header-size: 104px;
 
 // Gradients and other styling
 $transparent: rgba(255,255,255,0);
 $half-translucent: rgba(0,0,0,0.5);
 $gradient: left, rgba(0,0,0,0), rgba(0,0,0,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.3), rgba(0,0,0,0.2), rgba(0,0,0,0.1),  rgba(0,0,0,0);
 
-// Icons
-$icon-size: 1rem; // -.5rem to account for svg padding
-
-// Logo
-$logo-small: 2.25rem;
-$logo-large: 3.25rem;
-
-// Nav
-$nav-height-small: 3.25rem;
-$nav-height-large: 3.75rem;
-$menu-size: 1.875rem;
-$header-offset: .5em;
-
 // Border radius
-// $b-radius: 40em;
-$b-radius: 1em;
+$b-radius: rem(16);
