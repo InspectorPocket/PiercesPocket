@@ -10,8 +10,7 @@
 @include bp-sm {
     .logo {
         & > svg {
-            padding: 0;
-            @include size(rem(36));
+            @include size(rem(44));
         }
     }
 }
@@ -19,8 +18,7 @@
 @include bp-md {
     .logo {
         & > svg {
-            padding: 0;
-            @include size(rem(44));
+            @include size(rem(62));
         }
     }
 }
@@ -28,7 +26,6 @@
 @include bp-lg {
     .logo {
         & > svg {
-            padding: 0;
             @include size(rem(62));
         }
     }

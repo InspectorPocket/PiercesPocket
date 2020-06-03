@@ -26,6 +26,8 @@ $purple-dark: #3A076E;
 $purple: #915EC6;
 $purple-light: #DFC0FF;
 
+$shadow-colour: rgba($grey-700, 0.25);
+
 // Screen Sizes
 $screen-tablet-portrait: 481px !default;
 $screen-tablet-landscape: 768px !default;
@@ -51,3 +53,6 @@ $gradient: left, rgba(0,0,0,0), rgba(0,0,0,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.3
 
 // Border radius
 $b-radius: rem(16);
+
+// Header references
+$header-h-sm: rem(88);

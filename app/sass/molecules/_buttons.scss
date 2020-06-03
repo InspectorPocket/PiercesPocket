@@ -14,6 +14,9 @@
         border-radius: $b-radius;
         height: rem(40);
         margin: 0 rem(4);
+        &__icon {
+            @include border-default($white);
+        }
         &:hover > &,
         &--active > & {
             &__icon {

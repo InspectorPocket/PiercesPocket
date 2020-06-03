@@ -2,7 +2,6 @@
     @extend %align-center;
     @include size(rem(40));
     @extend %anim-long;
-    @include border-default($white);
     border-radius: $b-radius;
     z-index: 2;
 }

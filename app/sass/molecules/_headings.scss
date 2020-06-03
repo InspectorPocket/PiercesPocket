@@ -1,0 +1,12 @@
+.headings {
+    &__projects {
+        @extend %align-center;
+        position: absolute;
+        width: 100%;
+        padding: rem(24) 0;
+        z-index: 999;
+        & > h1 {
+
+        }
+    }
+}

@@ -154,12 +154,26 @@
 	background: linear-gradient($gradient);
 }
 
+@mixin background-opacity($color, $opacity: 0.3) {
+    background: $color; /* The Fallback */
+    background: rgba($color, $opacity);
+}
+
 // SHADOWS //
 @mixin box-shadow($faint-shadow) {
 	-webkit-box-shadow: $faint-shadow;
 	-moz-box-shadow: $faint-shadow;
 	-o-box-shadow: $faint-shadow;
 	box-shadow: $faint-shadow;
+}
+@mixin border-vault($colour) {
+	border: 100px solid $colour;
+}
+@mixin vault-border($width) {
+	@include box-shadow(0 0 0 $width #{$white});
+}
+@mixin vault-shadow($y, $blur) {
+	@include box-shadow(0 $y $blur 0 rgba(43,38,38,0.25));
 }
 
 @mixin box-shadows($shadow1, $shadow2) {

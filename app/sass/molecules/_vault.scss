@@ -1,0 +1,53 @@
+.vault {
+    @extend %align-center;
+    @include size(100%);
+    position: absolute;
+    &__inner {
+        @extend %justify-center;
+        flex-direction: column;
+        position: fixed;
+        @include size(100vw, calc(100vh - #{$header-h-sm * 2}));
+        // margin-top: $header-h-sm;
+        &__border {
+            overflow: hidden;
+            @include absolute-pos(0, auto, 0, auto);
+            position: relative;
+            border-radius: 50%;
+            @include size(200%, 100%);
+            @include vault-border(rem(2000));
+            @include transform(translateX(-25%) scaleY(1));
+            z-index: 5;
+        }
+        &__shadow {
+            display: block;
+            position: absolute;
+            @include size(100%, $header-h-sm);
+            background: $white;
+            z-index: 4;
+            &--top {
+                @include vault-shadow(rem(20), rem(40));
+                bottom: 100%;
+            }
+            &--bot {
+                @include vault-shadow(- rem(20), rem(40));
+                top: 100%;
+            }
+        }
+
+        // &::before, &::after {
+        //     content: '';
+        //     display: block;
+        //     position: absolute;
+        //     @include size(100%);
+        //     background: $green;
+        //     // @include box-shadow();
+        //     z-index: 4;
+        // }
+        // &::before {
+        //     bottom: 100%;
+        // }
+        // &::after {
+        //     top: 100%;
+        // }
+    }
+}

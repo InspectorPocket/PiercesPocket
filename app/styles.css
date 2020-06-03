@@ -2,7 +2,11 @@
   display: flex;
   align-items: center; }
 
-svg, .icon {
+.vault__inner {
+  display: flex;
+  justify-content: center; }
+
+svg, .icon, .vault, .headings__projects {
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -95,8 +99,7 @@ p, ul, li {
   font-weight: normal; }
 
 h1 {
-  font-size: 1.5rem;
-  padding: 1rem 0; }
+  font-size: 1.5rem; }
 
 h4, p {
   font-size: 1rem; }
@@ -114,7 +117,7 @@ h4 {
   box-shadow: none; }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #463e3e;
+  background-color: #2B2626;
   border-radius: 3.125rem;
   outline: 0.0625rem solid #2B2626; }
 
@@ -191,26 +194,22 @@ h4 {
 
 @media (min-width: 37.5rem) {
   .logo > svg {
-    padding: 0;
-    width: 2.25rem;
-    height: 2.25rem; } }
-
-@media (min-width: 60rem) {
-  .logo > svg {
-    padding: 0;
     width: 2.75rem;
     height: 2.75rem; } }
 
+@media (min-width: 60rem) {
+  .logo > svg {
+    width: 3.875rem;
+    height: 3.875rem; } }
+
 @media (min-width: 80rem) {
   .logo > svg {
-    padding: 0;
     width: 3.875rem;
     height: 3.875rem; } }
 
 .icon {
   width: 2.5rem;
   height: 2.5rem;
-  border: 0.0625rem solid #ffffff;
   border-radius: 1rem;
   z-index: 2; }
 
@@ -232,6 +231,8 @@ h4 {
   border-radius: 1rem;
   height: 2.5rem;
   margin: 0 0.25rem; }
+  .btn__nav__icon {
+    border: 0.0625rem solid #ffffff; }
   .btn__nav:hover > .btn__nav__icon,
   .btn__nav--active > .btn__nav__icon {
     -webkit-transition: 0.2s cubic-bezier(0.82, -0.01, 1, 1);
@@ -375,6 +376,62 @@ h4 {
 .nav {
   display: flex; }
 
+.vault {
+  width: 100%;
+  height: 100%;
+  position: absolute; }
+  .vault__inner {
+    flex-direction: column;
+    position: fixed;
+    width: 100vw;
+    height: calc(100vh - 11rem); }
+    .vault__inner__border {
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      right: auto;
+      bottom: 0;
+      left: auto;
+      position: relative;
+      border-radius: 50%;
+      width: 200%;
+      height: 100%;
+      -webkit-box-shadow: 0 0 0 125rem #ffffff;
+      -moz-box-shadow: 0 0 0 125rem #ffffff;
+      -o-box-shadow: 0 0 0 125rem #ffffff;
+      box-shadow: 0 0 0 125rem #ffffff;
+      -webkit-transform: translateX(-25%) scaleY(1);
+      -moz-transform: translateX(-25%) scaleY(1);
+      -o-transform: translateX(-25%) scaleY(1);
+      -ms-transform: translateX(-25%) scaleY(1);
+      transform: translateX(-25%) scaleY(1);
+      z-index: 5; }
+    .vault__inner__shadow {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 5.5rem;
+      background: #ffffff;
+      z-index: 4; }
+      .vault__inner__shadow--top {
+        -webkit-box-shadow: 0 1.25rem 2.5rem 0 rgba(43, 38, 38, 0.25);
+        -moz-box-shadow: 0 1.25rem 2.5rem 0 rgba(43, 38, 38, 0.25);
+        -o-box-shadow: 0 1.25rem 2.5rem 0 rgba(43, 38, 38, 0.25);
+        box-shadow: 0 1.25rem 2.5rem 0 rgba(43, 38, 38, 0.25);
+        bottom: 100%; }
+      .vault__inner__shadow--bot {
+        -webkit-box-shadow: 0 -1.25rem 2.5rem 0 rgba(43, 38, 38, 0.25);
+        -moz-box-shadow: 0 -1.25rem 2.5rem 0 rgba(43, 38, 38, 0.25);
+        -o-box-shadow: 0 -1.25rem 2.5rem 0 rgba(43, 38, 38, 0.25);
+        box-shadow: 0 -1.25rem 2.5rem 0 rgba(43, 38, 38, 0.25);
+        top: 100%; }
+
+.headings__projects {
+  position: absolute;
+  width: 100%;
+  padding: 1.5rem 0;
+  z-index: 999; }
+
 .header {
   position: fixed;
   padding: 1.5rem;
@@ -413,10 +470,11 @@ h4 {
     .header__line {
       margin: 0 4.75rem; } }
 
-.page__projects ::selection {
-  background-color: #CAFFE3;
-  color: #2B2626; }
-
-.page__contact ::selection {
-  background-color: #FFE7A5;
-  color: #2B2626; }
+.page {
+  position: relative; }
+  .page__projects ::selection {
+    background-color: #CAFFE3;
+    color: #2B2626; }
+  .page__contact ::selection {
+    background-color: #FFE7A5;
+    color: #2B2626; }
