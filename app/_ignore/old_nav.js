@@ -1,4 +1,5 @@
 // TODO refactor code
+// TODO add handler to logo to smooth out transition of buttons
 const nav = document.getElementsByClassName('nav');
 const nav_btn = document.getElementById('nav_btn');
 let navBars = [];
@@ -51,14 +52,14 @@ nav_btn.addEventListener('click', () => {
 
 const mapColours = {};
 
-const tabby = 'btn__tabby--';
+const btn_nav = 'btn__nav--';
 const active = '--active';
-const tabby_active = tabby + 'active';
+const btn_nav_active = btn_nav + 'active';
 function getBtnColour() {
     buttons.forEach(btn => {
         let btn_class_arr = Array.from(btn.classList);
-        let colour = btn_class_arr.join('-').split("-").join('_').split('_').filter(e => e !== 'btn').filter(e => e !== 'tabby').filter(e => e !== 'active').filter(item => item).pop();
-        let btn_colour_active = tabby + colour + '--active';
+        let colour = btn_class_arr.join('-').split("-").join('_').split('_').filter(e => e !== 'btn').filter(e => e !== 'nav').filter(e => e !== 'active').filter(item => item).pop();
+        let btn_colour_active = btn_nav + colour + '--active';
         mapColours[colour] = btn_colour_active;
     });
 };
@@ -66,7 +67,7 @@ getBtnColour();
 
 function removeNavClasses() {
     buttons.forEach(btn => {
-        btn.classList.remove(tabby_active);
+        btn.classList.remove(btn_nav_active);
         if (btn.classList.contains(mapColours.green)) btn.classList.remove(mapColours.green);
         if (btn.classList.contains(mapColours.yellow)) btn.classList.remove(mapColours.yellow);
         if (btn.classList.contains(mapColours.blue)) btn.classList.remove(mapColours.blue);
@@ -77,27 +78,27 @@ function removeNavClasses() {
 function clickHandler() {
     const transition_l = 1000;
     removeNavClasses();
-    this.classList.toggle(tabby_active);
-    if (this.classList.contains(tabby + 'green')) {
+    this.classList.toggle(btn_nav_active);
+    if (this.classList.contains(btn_nav + 'green')) {
         this.classList.add(mapColours.green);
         setTimeout(() => {
-            window.open('../../../../app/projects.html', '_self');
+            window.open('/app/projects.html', '_self');
         }, transition_l);
     }
-    if (this.classList.contains(tabby + 'yellow')) {
+    if (this.classList.contains(btn_nav + 'yellow')) {
         this.classList.add(mapColours.yellow);
         setTimeout(() => {
-            window.open('../../../../app/about.html', '_self');
+            window.open('/app/about.html', '_self');
         }, transition_l);
     }
-    if (this.classList.contains(tabby + 'blue')) {
+    if (this.classList.contains(btn_nav + 'blue')) {
         this.classList.add(mapColours.blue);
         window.open('https://github.com/InspectorPocket', '_blank');
         setTimeout(() => {
-            window.open('../../../../app/github.html', '_self');
+            window.open('/app/github.html', '_self');
         }, transition_l);
     }
-    if (this.classList.contains(tabby + 'red')) {
+    if (this.classList.contains(btn_nav + 'red')) {
         this.classList.add(mapColours.red);
         window.open('https://dribbble.com/InspectorPocket', '_blank');
         setTimeout(() => {

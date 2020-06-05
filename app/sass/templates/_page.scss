@@ -1,0 +1,9 @@
+.page {
+    position: relative;
+    &__projects {
+        ::selection { @include selection($green-light, $grey-700); }
+    }
+    &__contact {
+        ::selection { @include selection($yellow-light, $grey-700); }
+    }
+}

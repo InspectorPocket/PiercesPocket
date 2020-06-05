@@ -1,21 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-        <title>Pierce's Pocket</title>
-        <meta name="description" content="Step inside Pierce's Pocket, a place where I showcase the work I have completed, designed or contributed to.">
-        <link rel="shortcut icon" href="/app/img/icons/logo.ico"/>
-        <link rel="stylesheet" type="text/css" media="all" href="/app/styles.css">
-    </head>
-    <body>
-    
-
-
+{% macro active(activePage='home') %}
 <nav id="header" class="header">
-    
+    {# Logo #}
     <a class="logo">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             viewBox="0 0 100 100" class="logo__inner">
@@ -26,12 +11,12 @@
             </g>
         </svg>
     </a>
-    
+    {# Line - Left #}
     <div class="header__line"></div>
-    
+    {# Navbar #}
     <div class="nav">
-        
-        <a class="btn btn__nav btn__nav--green ">
+        {# Projects #}
+        <a class="btn btn__nav btn__nav--green {%if activePage == 'projects' %}btn__nav--active btn__nav--green--active{% endif %}">
             <div class="icon btn__nav__icon">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
                     <title>Projects</title>
@@ -46,8 +31,8 @@
                 </div>
             </div>
         </a>
-        
-        <a class="btn btn__nav btn__nav--yellow ">
+        {# Contact #}
+        <a class="btn btn__nav btn__nav--yellow {%if activePage == 'contact' %}btn__nav--active btn__nav--yellow--active{% endif %}">
             <div class="icon btn__nav__icon">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"viewBox="0 0 24 24" version="1.1">
                     <g id="contact-icon" fill-rule="evenodd">
@@ -66,9 +51,9 @@
             </div>
         </a>
     </div>
-    
+    {# Line - Right #}
     <div class="header__line"></div>
-    
+    {# Social Media Icon #}
    <a class="icon btn__social">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"viewBox="0 0 50 50">
             <title>About</title>
@@ -78,11 +63,4 @@
         </svg>
     </a>
 </nav>
-
-<div class="page__home">
-    <h1 style="color: black; text-align: center;">INDEX</h1>
-</div>
-
-    <script src="/app/js/buttons.js"></script>
-    </body>
-</html>
+{% endmacro %}

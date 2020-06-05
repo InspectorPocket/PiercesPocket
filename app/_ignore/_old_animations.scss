@@ -1,0 +1,112 @@
+// GENERIC ANIMATIONS //
+@include keyframes(fade-in) {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@include keyframes(animate-gradient) {
+    0%, 100% { background-position: 0 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+// SPECIFIC ANIMATIONS //
+// TODO make these better
+@include keyframes(nav_open_anim-1) {
+    0% {
+        transform: translateY(-5px) scaleY(1);
+    }
+    10%, 90% {
+        transform: translateY(0) scaleY(0.2);
+    }
+    100% {
+        transform: rotate(-50deg) scaleY(1);
+    }
+}
+@include keyframes(nav_open_anim-2) {
+    0% {
+        transform: scaleX(1);
+    }
+    10%, 90% {
+        transform: scaleX(1);
+    }
+    100% {
+        transform: scaleX(0);
+    }
+}
+@include keyframes(nav_open_anim-3) {
+    0% {
+        transform: translateY(5px);
+    }
+    10%, 90% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: rotate(50deg);
+    }
+}
+@include keyframes(nav_closed_anim-1) {
+    0% {
+        transform: rotate(-50deg);
+    }
+    10%, 90% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-5px);
+    }
+}
+@include keyframes(nav_closed_anim-2) {
+    0% {
+        transform: scaleX(0);
+    }
+    10%, 90% {
+        transform: scaleX(1);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+@include keyframes(nav_closed_anim-3) {
+    0% {
+        transform: rotate(50deg);
+    }
+    10%, 90% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(5px);
+    }
+}
+
+@include keyframes(projects_intro) {
+    0% {
+        opacity: 0;
+        transform: translateY(180px) translateX(-100vw);
+    }
+    40%, 60% {
+        opacity: 1;
+        transform: translateY(180px) translateX(0);
+        box-shadow: 0 -0 0 0 inset rgba(0,0,0,0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) translateX(0);
+        box-shadow: 0 -16px 32px 0 inset rgba($grey-800, 1);
+    }
+}
+@include keyframes(section) {
+    0%, 60% {
+        opacity: 0;
+        transform: translateY(16px) scaleY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scaleY(1);
+    }
+}
+
+// Generic animation initialise
+.bounce {
+    @include animation(arrow-bounce);
+}
+

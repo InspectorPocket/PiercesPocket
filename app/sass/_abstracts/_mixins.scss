@@ -1,0 +1,253 @@
+// FUNCTIONS
+@function strip-units($value) {
+	@return ($value / ($value * 0 + 1));
+}
+  
+//Set font size as pixels and rems {px}
+@function rem($pxval) {
+	@if not unitless($pxval) {
+		$pxval: strip-units($pxval);
+	}
+	$base: 16;
+	@if not unitless($base) {
+		$base: strip-units($base);
+	}
+	@return ($pxval / $base) * 1rem;
+}
+
+
+// MIXINS
+@mixin font-family($family) {
+	font-family: $family, Arial, Helvetica, sans-serif;
+}
+
+@mixin size($width, $height: $width) {
+	width: $width;
+	height: $height;
+}
+
+@mixin absolute-pos($top, $right: $top, $bot: $right, $left: $bot) {
+	position: absolute;
+	top: $top;
+	right: $right;
+	bottom: $bot;
+	left: $left;
+}
+
+@mixin nav-icon($colour) {
+	background: $colour;
+	@include box-shadow(0 rem(4) rem(8) 0 rgba($colour, .5));
+}
+@mixin nav-icon-l($colour) {
+	background: $colour;
+	@include box-shadow(0 rem(8) rem(16) 0 rgba($colour, .5));
+}
+
+@mixin user-select($colour) {
+	-webkit-touch-callout: $colour;
+    -webkit-user-select: $colour;
+    -khtml-user-select: $colour;
+    -moz-user-select: $colour;
+    -ms-user-select: $colour;
+    user-select: $colour;
+}
+@mixin tap-highlight($transparent) {
+	-webkit-tap-highlight-color: $transparent;
+	-webkit-tap-highlight-color: transparent;
+}
+
+@mixin selection($bg, $colour) {
+	background-color: $bg;
+    color: $colour;
+}
+
+@mixin border-radius($fancy-border) {
+	-moz-border-radius: $fancy-border;
+	-webkit-border-radius: $fancy-border;
+	-o-border-radius: $fancy-border;
+	border-radius: $fancy-border;
+}
+
+@mixin box-sizing($box-size) {
+	-webkit-box-sizing: $box-size;
+	-moz-box-sizing: $box-size;
+	-o-box-sizing: $box-size;
+	box-sizing: $box-size;
+}
+
+@mixin transform($transform) {
+	-webkit-transform: $transform;
+  	-moz-transform: $transform;
+  	-o-transform: $transform;
+  	-ms-transform: $transform;
+  	transform: $transform;
+}
+
+@mixin placeholder($placeholder) {
+	::-webkit-input-placeholder { color:$placeholder; }
+	::-moz-placeholder { color:$placeholder; }
+	::-ms-placeholder { color:$placeholder; }
+	::placeholder { color:$placeholder; }
+}
+
+@mixin blur($blur) {
+	-webkit-filter: blur($blur);
+	filter: blur($blur);
+}
+
+// STYLING
+@mixin border-default($colour) {
+	border: rem(1) solid $colour;
+}
+
+@mixin background-size($size) {
+	background-size: $size;
+	-webkit-background-size: $size;
+	-moz-background-size: $size;
+	-o-background-size: $size;
+}
+
+@mixin background-image($file, $size) {
+	background: url($file) no-repeat center center;
+	@include background-size($size);
+}
+
+@mixin background-opacity($color, $opacity: 0) {
+	background: $color; /* The Fallback */
+	background: rgba($color, $opacity);
+}
+
+// ANIMATION //
+@mixin keyframes($animationName) {
+	@-webkit-keyframes #{$animationName} {
+		@content;
+	}
+	@-moz-keyframes #{$animationName} {
+		@content;
+	}
+	@-o-keyframes #{$animationName} {
+		@content;
+	}
+	@keyframes #{$animationName} {
+		@content;
+	}
+}
+
+@mixin animation($anim) {
+	-moz-animation: $anim;
+  	-webkit-animation: $anim;
+  	-o-animation: $anim;
+ 	animation: $anim;
+}
+
+@mixin vault-animation($name) {
+	// @include animation($name 1.5s ease-in-out 1.5s);
+	@include animation($name 1.5s ease-in-out);
+}
+
+@mixin transition($transition) {
+	-webkit-transition: $transition;
+  	-moz-transition: $transition;
+  	-o-transition: $transition;
+  	transition: $transition;
+}
+
+// BACKGROUND //
+@mixin linear-background($gradient) {
+	background: -webkit-linear-gradient($gradient);
+	background: -moz-linear-gradient($gradient);
+	background: -o-linear-gradient($gradient);
+	background: linear-gradient($gradient);
+}
+
+@mixin background-opacity($color, $opacity) {
+    background: $color; /* The Fallback */
+    background: rgba($color, $opacity);
+}
+
+// SHADOWS //
+@mixin box-shadow($shadow) {
+	-webkit-box-shadow: $shadow;
+	-moz-box-shadow: $shadow;
+	-o-box-shadow: $shadow;
+	box-shadow: $shadow;
+}
+@mixin border-vault($colour) {
+	border: 100px solid $colour;
+}
+@mixin vault-border($width) {
+	@include box-shadow(0 0 0 $width #{$white});
+}
+@mixin vault-shadow($x, $y, $blur) {
+	@include box-shadow($x $y $blur 0 rgba(43,38,38,0.15));
+}
+
+@mixin box-shadows($shadow1, $shadow2) {
+	-webkit-box-shadow: $shadow1, $shadow2;
+	-moz-box-shadow: $shadow1, $shadow2;
+	-o-box-shadow: $shadow1, $shadow2;
+	box-shadow: $shadow1, $shadow2;
+}
+
+// BREAKPOINTS
+@mixin bp-sm {
+	@media (min-width: $bp-sm) {
+	  @content;
+	}
+}
+@mixin bp-md {
+	@media (min-width: $bp-md) {
+	  @content;
+	}
+}
+@mixin bp-lg {
+	@media (min-width: $bp-lg) {
+	  @content;
+	}
+}
+
+
+// MEDIA QUERIES
+
+// Tablet Portrait
+@mixin tablet-portrait {
+	@media (min-width: #{$screen-tablet-portrait}) and (max-width: #{$screen-tablet-landscape - rem(1)}) {
+	  @content;
+	}
+}
+
+// Tablet Landscape and Up
+@mixin tablet-landscape-plus {
+	@media (min-width: #{$screen-tablet-landscape}) {
+	  @content;
+	}
+}
+
+// Tablet Landscape
+@mixin tablet-landscape {
+	@media (min-width: #{$screen-tablet-landscape}) and (max-width: #{$screen-desktop - rem(1)}) {
+	  @content;
+	}
+}
+
+// Desktop
+@mixin desktop {
+	@media (min-width: #{$screen-desktop}) and (max-width: #{$screen-hd - rem(1)}) {
+	  @content;
+	}
+}
+
+// Desktop HD
+@mixin desktop-hd {
+	@media (min-width: #{$screen-hd}) {
+	  @content;
+	}
+}
+
+//High resolution screens
+@mixin high-resolution {
+	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+		@content;
+	}
+}
+

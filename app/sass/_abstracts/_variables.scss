@@ -1,0 +1,60 @@
+// Colours
+$white: #ffffff;
+$grey-100: #FDFFFC;
+$grey-200: #E7E7E8;
+$grey-400: #A2A1A1;
+$grey-600: #3C3D42;
+$grey-700: #2B2626;
+$grey-800: #191919;
+$black: #000000;
+$blue-dark: #2270EB;
+$blue: #73A8FD;
+$blue-light: #BAE2FF;
+$green-dark: #168E4E;
+$green: #6ED29D;
+$green-light: #CAFFE3;
+$red-dark: #9F1425;
+$red: #FF324B;
+$red-light: #FFA6A6;
+$orange-dark: #DB3E14;
+$orange: #FF744F;
+$orange-light: #FFB29D;
+$yellow-dark: #FF9F1C;
+$yellow: #FFBE0B;
+$yellow-light: #FFE7A5;
+$purple-dark: #3A076E;
+$purple: #915EC6;
+$purple-light: #DFC0FF;
+
+$shadow-colour: rgba($grey-700, 0.25);
+
+// Screen Sizes
+$screen-tablet-portrait: 481px !default;
+$screen-tablet-landscape: 768px !default;
+$screen-desktop: 1024px !default;
+$screen-hd: 1920px !default;
+
+$bp-sm: rem(600);
+$bp-md: rem(960);
+$bp-lg: rem(1280);
+
+// Animations
+$transition-default: all 0.2s ease-in-out;
+$anim-delayed: .3s cubic-bezier(.82,-0.01,1,1);
+
+// Shadows
+
+
+// Gradients and other styling
+$transparent: rgba(255,255,255,0);
+$half-translucent: rgba(0,0,0,0.5);
+$gradient: left, rgba(0,0,0,0), rgba(0,0,0,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.3), rgba(0,0,0,0.2), rgba(0,0,0,0.1),  rgba(0,0,0,0);
+
+// Border radius
+$b-radius: rem(16);
+
+// Header references
+$header-h-sm: rem(88);
+$header-h-md: rem(108);
+$header-h-lg: rem(174);
+$header-h-x-lg: rem(220);

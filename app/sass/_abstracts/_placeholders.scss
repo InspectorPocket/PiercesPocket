@@ -1,0 +1,35 @@
+// FLEX //
+%center-items {
+    display: flex;
+    align-items: center; 
+}
+%justify-center {
+    display: flex;
+    justify-content: center; 
+}
+%align-left {
+    display: flex;
+    justify-content: left;
+    align-items: center; 
+}
+%align-center {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+%align-right {
+    display: flex;
+    justify-content: right;
+    align-items: center; 
+}
+%align-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+%flex-row { flex-direction: row; }
+%flex-column { flex-direction: column; }
+
+// Animation
+%anim-long { @include transition(0.4s ease-in-out); }

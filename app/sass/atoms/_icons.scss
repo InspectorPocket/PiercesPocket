@@ -1,0 +1,7 @@
+.icon {
+    @extend %align-center;
+    @include size(rem(40));
+    @extend %anim-long;
+    border-radius: $b-radius;
+    z-index: 2;
+}

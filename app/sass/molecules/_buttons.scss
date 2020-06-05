@@ -1,0 +1,164 @@
+.btn {
+    @extend %center-items;
+    @extend %anim-long;
+    &::before {
+        // content: '';
+        display: block;
+        position: absolute;
+        @include transition($anim-delayed);
+    }
+    &:hover {
+        &::before { @include transition($anim-delayed); }
+    }
+    &__nav {
+        border-radius: $b-radius;
+        height: rem(40);
+        margin: 0 rem(4);
+        &__icon {
+            @include border-default($white);
+        }
+        &:hover > &,
+        &--active > & {
+            &__icon {
+                @include transition(.2s cubic-bezier(.82,-0.01,1,1));
+                @include transform(translateY(- rem(4)));
+            }
+            &__text {
+                & :first-child {
+                    &::before {
+                        @include transition(.3s cubic-bezier(.82,-0.01,1,1));
+                        transform: scaleX(1);
+                    }
+                }
+            }
+        }
+        &:first-of-type { margin-left: rem(8); }
+        &:last-of-type { margin-right: rem(8); }
+
+        &__text {
+            height: 100%;
+            pointer-events: none;
+            ::selection { background-color: none; }
+            &__inner {
+                border-radius: $b-radius;
+                display: none;
+                align-items: center;
+                overflow: hidden;
+                position: relative;
+                z-index: 1;
+                padding-left: rem(40);
+                @extend %anim-long;
+                &::before {
+                    content: '';
+                    @include size(100%);
+                    @include absolute-pos(0);
+                    display: block;
+                    transform-origin: 0% 50%;
+                    @include transform(scaleX(0));
+                    border-radius: $b-radius;
+                    z-index: -1;
+                    @extend %anim-long;
+                }
+                h4 {
+                    padding: 0 rem(16) 0 rem(12);
+                    white-space: nowrap;
+                }
+            }
+        }
+
+        &--green {
+            &:hover > div:first-of-type, &--active > div:first-of-type {
+                @include nav-icon-l($green);
+            }
+        }
+        &--yellow {
+            &:hover > div:first-of-type, &--active > div:first-of-type {
+                @include nav-icon-l($yellow);
+            }
+        }
+        &--blue {
+            &:hover > div:first-of-type, &--active > div:first-of-type {
+                @include nav-icon-l($blue);
+            }
+        }
+        &--red {
+            &:hover > div:first-of-type, &--active > div:first-of-type {
+                @include nav-icon-l($red);
+            }
+        }
+    }
+    &__social {
+        @include size(rem(36));
+        &--active {
+            transform: translateY(-rem(8));
+        }
+    }
+}
+
+
+@include bp-sm {
+    .btn {
+        &__nav {
+            margin: 0 rem(12);
+            &:hover > &, &--active > & {
+                &__icon {
+                    transform: translateY(- rem(8));
+                }
+            }
+            &__icon {
+                position: absolute;
+            }
+            &__text {
+                display: flex;
+                &__inner {
+                    display: flex;
+                }
+            }
+
+            &--green {
+                & > div:first-of-type, & > :first-child::before {
+                    background: $green-light;
+                }
+                & > div:last-of-type > :first-child::before {
+                    background: $green-light;
+                }
+                &:hover > div:first-of-type, &--active > div:first-of-type {
+                    @include nav-icon-l($green);
+                }
+            }
+            &--yellow {
+                & > div:first-of-type, & > :first-child::before {
+                    background: $yellow-light;
+                }
+                & > div:last-of-type > :first-child::before {
+                    background: $yellow-light;
+                }
+                &:hover > div:first-of-type, &--active > div:first-of-type {
+                    @include nav-icon-l($yellow);
+                }
+            }
+            &--blue {
+                & > div:first-of-type, & > :first-child::before {
+                    background: $blue-light;
+                }
+                & > div:last-of-type > :first-child::before {
+                    background: $blue-light;
+                }
+                &:hover > div:first-of-type, &--active > div:first-of-type {
+                    @include nav-icon-l($blue);
+                }
+            }
+            &--red {
+                & > div:first-of-type, & > :first-child::before {
+                    background: $red-light;
+                }
+                & > div:last-of-type > :first-child::before {
+                    background: $red-light;
+                }
+                &:hover > div:first-of-type, &--active > div:first-of-type {
+                    @include nav-icon-l($red);
+                }
+            }
+        }
+    }
+}

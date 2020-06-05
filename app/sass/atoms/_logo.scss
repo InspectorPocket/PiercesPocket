@@ -1,0 +1,32 @@
+// TODO add click animation ==> water droplet ripple?
+
+.logo {
+    & > svg {
+        padding: 0;
+        @include size(rem(36));
+    }
+}
+
+@include bp-sm {
+    .logo {
+        & > svg {
+            @include size(rem(44));
+        }
+    }
+}
+
+@include bp-md {
+    .logo {
+        & > svg {
+            @include size(rem(62));
+        }
+    }
+}
+
+@include bp-lg {
+    .logo {
+        & > svg {
+            @include size(rem(62));
+        }
+    }
+}

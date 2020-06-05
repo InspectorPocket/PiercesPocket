@@ -1,0 +1,19 @@
+{% extends "layouts.njk" %}
+
+{% block content %}
+{% import 'macros/nav-macro.njk' as nav %}
+{{nav.active('projects')}}
+<div class="vault">
+    <div class="vault__inner">
+        <div class="vault__inner__shadow vault__inner__shadow--first"></div>
+        <div class="vault__inner__border"></div>
+        <div class="vault__inner__shadow vault__inner__shadow--last"></div>
+    </div>
+</div>
+<div class="headings__projects">
+    <h1>PROJECTS</h1>
+</div>
+<div class="page page__projects">
+
+</div>
+{% endblock %}
