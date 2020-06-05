@@ -43,8 +43,7 @@ $transition-default: all 0.2s ease-in-out;
 $anim-delayed: .3s cubic-bezier(.82,-0.01,1,1);
 
 // Shadows
-$dark-shadow: 0 16px 32px 0 rgba(0,0,0,0.3);
-$light-shadow: 0 16px 32px 0 rgba(0,0,0, 0.15);
+
 
 // Gradients and other styling
 $transparent: rgba(255,255,255,0);
@@ -56,3 +55,6 @@ $b-radius: rem(16);
 
 // Header references
 $header-h-sm: rem(88);
+$header-h-md: rem(108);
+$header-h-lg: rem(174);
+$header-h-x-lg: rem(220);

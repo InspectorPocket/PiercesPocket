@@ -7,7 +7,7 @@
         flex-direction: column;
         position: fixed;
         @include size(100vw, calc(100vh - #{$header-h-sm * 2}));
-        // margin-top: $header-h-sm;
+        @include vault-animation(vault-open-sm);
         &__border {
             overflow: hidden;
             @include absolute-pos(0, auto, 0, auto);
@@ -21,33 +21,82 @@
         &__shadow {
             display: block;
             position: absolute;
-            @include size(100%, $header-h-sm);
+            left: rem(24);
+            right: rem(24);
             background: $white;
+            @include size(calc(100% - #{rem(48)}), $header-h-sm);
+            opacity: 1;
+            @include vault-animation(fade-out);
             z-index: 4;
-            &--top {
-                @include vault-shadow(rem(20), rem(40));
+            &--first {
+                @include vault-shadow(rem(30), 0, rem(60));
                 bottom: 100%;
             }
-            &--bot {
-                @include vault-shadow(- rem(20), rem(40));
+            &--last {
+                @include vault-shadow(-#{rem(30)}, 0, rem(60));
                 top: 100%;
             }
         }
+    }
+}
 
-        // &::before, &::after {
-        //     content: '';
-        //     display: block;
-        //     position: absolute;
-        //     @include size(100%);
-        //     background: $green;
-        //     // @include box-shadow();
-        //     z-index: 4;
-        // }
-        // &::before {
-        //     bottom: 100%;
-        // }
-        // &::after {
-        //     top: 100%;
-        // }
+@include bp-sm {
+    .vault {
+        &__inner {
+            @include size(100vw, calc(100vh - #{$header-h-md * 2}));
+            @include vault-animation(vault-open-md);
+            &__shadow {
+                left: rem(40);
+                right: rem(40);
+                @include size(calc(100% - #{rem(80)}), $header-h-md);
+                // @include vault-animation(fade-out);
+            }
+        }
+    }
+}
+
+@include bp-md {
+    .vault {
+        align-items: flex-start;
+        &__inner {
+            // flex-direction: row;
+            @include size(calc(100vw - #{rem(224)}), 100vh);
+            @include vault-animation(vault-open-lg);
+            &__border {
+                @include absolute-pos(auto, 0, auto, 0);
+                @include size(100%, 200%);
+                @include transform(translateX(0) scaleY(1));
+            }
+            &__shadow {
+                top: $header-h-lg;
+                bottom: $header-h-lg;
+                @include size($header-h-lg, calc(100% - #{$header-h-lg * 2}));
+                &--first {
+                    @include vault-shadow(rem(30), 0, rem(60));
+                    right: 100%;
+                    left: auto;
+                }
+                &--last {
+                    @include vault-shadow(-#{rem(30)}, 0, rem(60));
+                    left: 100%;
+                    right: auto;
+                }
+            }
+        }
+    }
+}
+
+@include bp-lg {
+    .vault {
+        align-items: flex-start;
+        &__inner {
+            @include size(80vw, 100vh);
+            @include vault-animation(vault-open-x-lg);
+            &__shadow {
+                top: $header-h-x-lg;
+                bottom: $header-h-x-lg;
+                @include size($header-h-x-lg, calc(100% - #{$header-h-x-lg * 2}));
+            }
+        }
     }
 }
