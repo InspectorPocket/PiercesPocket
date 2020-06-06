@@ -8,6 +8,7 @@
         position: fixed;
         @include size(100vw, calc(100vh - #{$header-h-sm * 2}));
         @include vault-animation(vault-open-sm);
+        @include transform(translateZ(0));
         &__border {
             overflow: hidden;
             @include absolute-pos(0, auto, 0, auto);
