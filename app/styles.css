@@ -564,7 +564,12 @@ h4 {
     -moz-animation: vault-open-sm 1.5s ease-in-out;
     -webkit-animation: vault-open-sm 1.5s ease-in-out;
     -o-animation: vault-open-sm 1.5s ease-in-out;
-    animation: vault-open-sm 1.5s ease-in-out; }
+    animation: vault-open-sm 1.5s ease-in-out;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0); }
     .vault__inner__border {
       overflow: hidden;
       position: absolute;
