@@ -2,7 +2,6 @@
     @extend %center-items;
     @extend %anim-long;
     &::before {
-        // content: '';
         display: block;
         position: absolute;
         @include transition($anim-delayed);
@@ -38,7 +37,6 @@
         &__text {
             height: 100%;
             pointer-events: none;
-            ::selection { background-color: none; }
             &__inner {
                 border-radius: $b-radius;
                 display: none;
@@ -61,27 +59,32 @@
                 }
                 h4 {
                     padding: 0 rem(16) 0 rem(12);
+                    font-size: rem(16);
                     white-space: nowrap;
                 }
             }
         }
 
         &--green {
+            ::selection { @include selection($green-light, $grey-700); }
             &:hover > div:first-of-type, &--active > div:first-of-type {
                 @include nav-icon-l($green);
             }
         }
         &--yellow {
+            ::selection { @include selection($yellow-light, $grey-700); }
             &:hover > div:first-of-type, &--active > div:first-of-type {
                 @include nav-icon-l($yellow);
             }
         }
         &--blue {
+            ::selection { @include selection($blue-light, $grey-700); }
             &:hover > div:first-of-type, &--active > div:first-of-type {
                 @include nav-icon-l($blue);
             }
         }
         &--red {
+            ::selection { @include selection($red-light, $grey-700); }
             &:hover > div:first-of-type, &--active > div:first-of-type {
                 @include nav-icon-l($red);
             }

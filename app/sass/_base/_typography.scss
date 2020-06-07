@@ -5,5 +5,96 @@
     src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
 }
 
-// TODO  Make fonts scaleable to display sizes
-// TODO  Set up font % scaling (root font size is 1rem, everything else is % based
+html { font-size: 100%; }
+
+h1, h2, h3, h4, h5, p, ul, li, a {
+    text-decoration: none;
+    list-style: none;
+    color: $grey-700;
+    line-height: 1.5;
+}
+h5, p, a, ul, li {
+    text-transform: none;
+    font-size: rem(16);
+    font-weight: 300;
+}
+h1, h2, h3 { @include transform(translateX(-#{rem(1)})); }
+h1 {
+    font-size: rem(40);
+    font-weight: bold;
+}
+h2 { font-size: rem(32); }
+h3 { font-size: rem(28); }
+h4 { font-size: rem(22); }
+h5 {
+    text-transform: uppercase;
+    letter-spacing: rem(16);
+}
+
+a {
+    cursor: pointer;
+    pointer-events: auto;
+    outline: none;
+    padding-bottom: rem(1);
+    @include user-select(text);
+    @include tap-highlight($transparent);
+    @include linear-background(#{
+        180deg,
+        $blue-light,
+        $blue-light
+    });
+    @include background-pos(0 100%, repeat-x, rem(4) rem(4));
+    @include transition(background-size .2s ease-in-out);
+    &::selection { @include selection($blue-light !important, $grey-700); }
+    &:visited, &:hover, &:active {
+        @include transition(background-size .2s ease-in-out);
+    }
+    &:visited {
+        &::selection { @include selection($purple-light !important, $grey-700); }
+        color: $purple-dark;
+    }
+    &:hover {
+        background-size: rem(5) 42%;
+    }
+}
+
+ul > li, ol > li {
+    @extend %center-items;
+    position: relative;
+    padding-left: rem(34);
+}
+
+ul > li::before {
+    content: '';
+    display: block;
+    @include absolute-pos(auto, auto, auto, rem(14));
+    @extend %dot;
+    @include size(rem(5));
+    @include transform(translateY(rem(1)));
+}
+ol > li > span {
+    @include user-select(none);
+    min-width: 18px;
+    font-weight: 700;
+    @include absolute-pos(auto, auto, auto, 0);
+    text-align: right;
+}
+
+@include bp-md {
+    h1 {
+        font-size: rem(80);
+        @include transform(translateX(-#{rem(4)}));
+    }
+    h2 {
+        font-size: rem(56);
+        @include transform(translateX(-#{rem(3)}));
+    }
+    h3 {
+        font-size: rem(40);
+        @include transform(translateX(-#{rem(2)}));
+    }
+    h4 {
+        font-size: rem(32);
+        @include transform(translateX(-#{rem(1)}));
+    }
+}

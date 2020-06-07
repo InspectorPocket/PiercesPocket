@@ -1,9 +1,18 @@
 {% extends "layouts.njk" %}
 
-{% block content %}
+{% block meta %}
+{% set current_page = "contact" %}
+{# Navbar #}
 {% import 'macros/nav-macro.njk' as nav %}
-{{nav.active('contact')}}
-<div class="page__contact">
-    <h1 style="color: black; text-align: center;">CONTACT</h1>
+{{nav.active(current_page)}}
+{# Heading #}
+{% import 'macros/heading.njk' as heading %}
+{{heading.active(current_page)}}
+
+{# Content #}
+{% import 'macros/page-macro.njk' as page %}
+{{page.active(current_page)}}
+
 </div>
+
 {% endblock %}

@@ -1,0 +1,19 @@
+// POSITIONING & SPACING
+.center-margin { margin: 0 auto; }
+.auto-margin { margin: auto; }
+
+.absolute { position: absolute; }
+.relative { position: relative; }
+
+// DISPLAY
+.hide { display: none !important; }
+.invisible { opacity: 0 !important; }
+.hide-overflow { overflow: hidden; }
+
+// FONT CLASSES
+.uppercase { text-transform: uppercase; }
+.lowercase { text-transform: lowercase; }
+.capitalize { text-transform: capitalize; }
+
+.bold { font-weight: bold; }
+.italic { font-style: italic; }

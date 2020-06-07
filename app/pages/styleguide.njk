@@ -1,0 +1,48 @@
+{% extends "layouts.njk" %}
+
+{% block meta %}
+{% set current_page = "styleguide" %}
+{# Navbar #}
+{% import 'macros/nav-macro.njk' as nav %}
+{{nav.active(current_page)}}
+{# Heading #}
+{% import 'macros/heading.njk' as heading %}
+{{heading.active(current_page)}}
+
+{# Content #}
+{% import 'macros/page-macro.njk' as page %}
+{{page.active(current_page)}}
+
+<div class="padding__24">
+    <h1 class="margin__16--bot">Heading 1</h1>
+    <h2 class="margin__16--bot">Heading 2</h2>
+    <h3 class="margin__16--bot">Heading 3</h3>
+    <h4 class="margin__16--bot">Heading 4</h4>
+    <h5 class="margin__16--bot">Heading 5</h5>
+    <p class="margin__16--bot">Paragraph</p>
+    <ul class="margin__16--bot">
+        <li>Unordered List - Item 1</li>
+        <li>Unordered List - Item 2</li>
+        <li>Unordered List - Item 3</li>
+    </ul>
+    <ol class="margin__16--bot">
+        <li>
+            <span>1</span>
+            Ordered List - Item 1
+        </li>
+        <li>
+            <span>2</span>
+            Ordered List - Item 2
+        </li>
+        <li>
+            <span>10</span>
+            Ordered List - Item 3
+        </li>
+    </ol>
+    <p class="margin__16--bot" >Ello this is a inline link... <a href="#">Inline - link to page</a></p>
+    <a href="contact.html">Not Inline - link to page</a>
+</div>
+
+</div>
+
+{% endblock %}

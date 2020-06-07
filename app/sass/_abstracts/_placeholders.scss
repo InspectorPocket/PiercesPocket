@@ -1,4 +1,10 @@
-// FLEX //
+// STYLES
+%dot {
+    background: $grey-700;
+    @include border-radius(rem(50));
+}
+
+// FLEX
 %center-items {
     display: flex;
     align-items: center; 

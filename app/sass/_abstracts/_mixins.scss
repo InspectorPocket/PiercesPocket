@@ -34,6 +34,7 @@
 	left: $left;
 }
 
+// ICONS
 @mixin nav-icon($colour) {
 	background: $colour;
 	@include box-shadow(0 rem(4) rem(8) 0 rgba($colour, .5));
@@ -43,6 +44,7 @@
 	@include box-shadow(0 rem(8) rem(16) 0 rgba($colour, .5));
 }
 
+// SELECTION
 @mixin user-select($colour) {
 	-webkit-touch-callout: $colour;
     -webkit-user-select: $colour;
@@ -100,21 +102,9 @@
 	border: rem(1) solid $colour;
 }
 
-@mixin background-size($size) {
-	background-size: $size;
-	-webkit-background-size: $size;
-	-moz-background-size: $size;
-	-o-background-size: $size;
-}
-
-@mixin background-image($file, $size) {
-	background: url($file) no-repeat center center;
-	@include background-size($size);
-}
-
-@mixin background-opacity($color, $opacity: 0) {
-	background: $color; /* The Fallback */
-	background: rgba($color, $opacity);
+@mixin colour-opacity($color, $opacity) {
+    color: $color; /* The Fallback */
+    color: rgba($color, $opacity);
 }
 
 // ANIMATION //
@@ -154,15 +144,34 @@
 
 // BACKGROUND //
 @mixin linear-background($gradient) {
-	background: -webkit-linear-gradient($gradient);
-	background: -moz-linear-gradient($gradient);
-	background: -o-linear-gradient($gradient);
-	background: linear-gradient($gradient);
+	background-image: -webkit-linear-gradient($gradient);
+	background-image: -moz-linear-gradient($gradient);
+	background-image: -o-linear-gradient($gradient);
+	background-image: linear-gradient($gradient);
 }
 
 @mixin background-opacity($color, $opacity) {
     background: $color; /* The Fallback */
     background: rgba($color, $opacity);
+}
+
+@mixin background-size($size) {
+	background-size: $size;
+	-webkit-background-size: $size;
+	-moz-background-size: $size;
+	-o-background-size: $size;
+	-ms-background-size: $size;
+}
+
+@mixin background-pos($pos, $repeat, $size) {
+	background-position: $pos;
+    background-repeat: $repeat;
+    background-size: $size;
+}
+
+@mixin background-image($file, $size) {
+	background: url($file) no-repeat center center;
+	@include background-size($size);
 }
 
 // SHADOWS //
@@ -180,6 +189,10 @@
 }
 @mixin vault-shadow($x, $y, $blur) {
 	@include box-shadow($x $y $blur 0 rgba(43,38,38,0.15));
+}
+
+@mixin link-underline($width, $colour) {
+	@include box-shadow(inset 0 $width 0 0 $colour);
 }
 
 @mixin box-shadows($shadow1, $shadow2) {
