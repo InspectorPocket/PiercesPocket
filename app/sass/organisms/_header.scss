@@ -1,22 +1,24 @@
 .header {
     @extend %align-between;
+    @include size(100%, $header-h-sm);
     position: fixed;
-    padding: rem(24);
+    padding: 0 rem(24);
     bottom: 0;
-    min-height: rem(84);
-    max-height: rem(214);
-    @include size(100%, auto);
     z-index: 999;
+    a {
+        background: transparent;
+        @include background-pos(0, no-repeat, 0 0);
+    }
     &__line {
-        background: $grey-700;
+        @extend %dot;
         @include size(rem(4));
-        @include border-radius(rem(50));
     }
 }
 
 @include bp-sm {
     .header {
-        padding: rem(32);
+        height: $header-h-md;
+        padding: 0 rem(32);
         &__line {
             margin: 0 rem(32);
             @include size(100%, rem(2));
@@ -26,7 +28,8 @@
 
 @include bp-md {
     .header {
-        padding: rem(56);
+        height: $header-h-lg;
+        padding: 0 rem(56);
         &__line {
             margin: 0 rem(56);
         }
@@ -35,7 +38,8 @@
 
 @include bp-lg {
     .header {
-        padding: rem(76);
+        height: $header-h-x-lg;
+        padding: 0 rem(76);
         &__line {
             margin: 0 rem(76);
         }

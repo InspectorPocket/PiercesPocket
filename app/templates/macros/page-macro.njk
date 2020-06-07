@@ -1,0 +1,3 @@
+{% macro active(activePage='home') %}
+<div class="page{%if activePage == 'home' %} page__home{% endif %}{%if activePage == 'projects' %} page__projects{% endif %}{%if activePage == 'contact' %} page__contact{% endif %}">
+{% endmacro %}

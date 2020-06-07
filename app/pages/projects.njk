@@ -1,19 +1,28 @@
 {% extends "layouts.njk" %}
 
-{% block content %}
+{% block meta %}
+{% set current_page = "projects" %}
+{# Navbar #}
 {% import 'macros/nav-macro.njk' as nav %}
-{{nav.active('projects')}}
-<div class="vault">
-    <div class="vault__inner">
-        <div class="vault__inner__shadow vault__inner__shadow--first"></div>
-        <div class="vault__inner__border"></div>
-        <div class="vault__inner__shadow vault__inner__shadow--last"></div>
+{{nav.active(current_page)}}
+{# Vault #}
+{% include 'partials/vault.njk' %}
+{# Heading #}
+{% import 'macros/heading.njk' as heading %}
+{{heading.active(current_page)}}
+
+{# Content #}
+{% import 'macros/page-macro.njk' as page %}
+{{page.active(current_page)}}
+
+    {# To populate - cycle through using macros #}
+    <div class="grid">
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
     </div>
-</div>
-<div class="headings__projects">
-    <h1>PROJECTS</h1>
-</div>
-<div class="page page__projects">
 
 </div>
+
 {% endblock %}

@@ -2,6 +2,8 @@
     @extend %align-center;
     @include size(100%);
     position: absolute;
+    pointer-events: none;
+    z-index: 3;
     &__inner {
         @extend %justify-center;
         flex-direction: column;
@@ -30,11 +32,11 @@
             @include vault-animation(fade-out);
             z-index: 4;
             &--first {
-                @include vault-shadow(rem(30), 0, rem(60));
+                @include vault-shadow(0, rem(30), rem(60));
                 bottom: 100%;
             }
             &--last {
-                @include vault-shadow(-#{rem(30)}, 0, rem(60));
+                @include vault-shadow(0, -#{rem(30)}, rem(60));
                 top: 100%;
             }
         }

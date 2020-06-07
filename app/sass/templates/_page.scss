@@ -1,9 +1,33 @@
 .page {
     position: relative;
+    margin: $header-h-sm 0;
+    z-index: 1;
     &__projects {
         ::selection { @include selection($green-light, $grey-700); }
+        ul > li::before { background: $green; }
+        ol > li > span { color: $green; }
     }
     &__contact {
         ::selection { @include selection($yellow-light, $grey-700); }
+        ul > li::before { background: $yellow; }
+        ol > li > span { color: $yellow; }
+    }
+}
+
+@include bp-sm {
+    .page {
+        margin: $header-h-md 0;
+    }
+}
+
+@include bp-md {
+    .page {
+        margin: $header-h-lg 0;
+    }
+}
+
+@include bp-lg {
+    .page {
+        margin: $header-h-x-lg 0;
     }
 }
