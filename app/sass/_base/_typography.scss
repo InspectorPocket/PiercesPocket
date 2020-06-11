@@ -80,6 +80,7 @@ ol > li > span {
     text-align: right;
 }
 
+// TODO add mid way font-size for better sclaing?
 @include bp-md {
     h1 {
         font-size: rem(80);

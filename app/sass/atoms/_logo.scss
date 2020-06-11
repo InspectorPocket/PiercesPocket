@@ -3,6 +3,7 @@
 .logo {
     & > svg {
         padding: 0;
+        fill: $grey-700;
         @include size(rem(36));
     }
 }
