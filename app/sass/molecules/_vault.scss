@@ -3,7 +3,7 @@
     @include size(100%);
     position: absolute;
     pointer-events: none;
-    z-index: 3;
+    z-index: 50;
     &__inner {
         @extend %justify-center;
         flex-direction: column;
@@ -58,11 +58,15 @@
     }
 }
 
+@include phone-landscape {
+    // TODO rotate vault for landscape mobile
+    // media query to detect height?
+}
+
 @include bp-md {
     .vault {
         align-items: flex-start;
         &__inner {
-            // flex-direction: row;
             @include size(calc(100vw - #{rem(224)}), 100vh);
             @include vault-animation(vault-open-lg);
             &__border {

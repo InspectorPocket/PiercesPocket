@@ -1,3 +1,37 @@
-.grid {
-    
-}
+// .grid {
+//     display: grid;
+//     grid-gap: rem(16);
+// }
+
+// .item {
+//     display: grid;
+//     justify-content: center;
+//     align-items: center;
+//     border: 5px solid rgba(0, 0, 0, 0.03);
+//     border-radius: 3px;
+//     background-color: $yellow-light;
+//   }
+
+// .container {
+//     display: grid;
+//     grid-gap: rem(16);
+//     grid-template-areas: 
+//         "left left left left right right right right"
+//         "left left left left right right right right"
+//         "left left left left right right right right"
+//         "left left left left right right right right"
+//     ;
+// }
+
+// .item3 {
+//     grid-column: left-start / left-end;
+// }
+
+// @media (max-width: 700px) {
+//     .container {
+//         grid-template-areas:
+//         "sidebar-1 content content"
+//         "sidebar-1 sidebar-2 sidebar-2"
+//         "footer footer footer";
+//     }
+// }

@@ -1,11 +1,7 @@
 ::selection { @include selection($grey-700, $white); }
 
-*, *::before, *::after {
+html {
     @include box-sizing(border-box);
-    margin: 0;
-    padding: 0;
-    font-family: system-ui;
-    z-index: 1;
 }
 
 html, body {
@@ -13,9 +9,18 @@ html, body {
     text-shadow: rem(1) rem(1) rem(1) rgba(0,0,0,0.004);
     background-color: $white;
     overflow-x: hidden;
+    // overflow-y: hidden;
     color: $grey-700;
     @include size(100%);
     @include transition($transition-default)
+}
+
+*, *::before, *::after {
+    @include box-sizing(inherit);
+    margin: 0;
+    padding: 0;
+    font-family: system-ui;
+    z-index: 1;
 }
 
 *:active, *:focus {

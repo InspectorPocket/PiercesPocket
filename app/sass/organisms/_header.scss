@@ -4,7 +4,7 @@
     position: fixed;
     padding: 0 rem(24);
     bottom: 0;
-    z-index: 999;
+    z-index: 100;
     a {
         background: transparent;
         @include background-pos(0, no-repeat, 0 0);
