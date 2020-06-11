@@ -1,17 +1,17 @@
 @include keyframes(vault-open-sm) {
     to {
-        @include size(100vw, calc(100vh - #{$header-h-sm * 2}));
+        @include size(100vw, calc(100% - #{$header-h-sm * 2}));
     }
     from {
-        @include size(100vw, calc(10vh - #{$header-h-sm * 2}));
+        @include size(100vw, calc(10% - #{$header-h-sm * 2}));
     }
 }
 @include keyframes(vault-open-md) {
     to {
-        @include size(100vw, calc(100vh - #{$header-h-md * 2}));
+        @include size(100vw, calc(100% - #{$header-h-md * 2}));
     }
     from {
-        @include size(100vw, calc(10vh - #{$header-h-md * 2}));
+        @include size(100vw, calc(10% - #{$header-h-md * 2}));
     }
 }
 @include keyframes(vault-open-lg) {

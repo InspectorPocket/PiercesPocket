@@ -68,66 +68,66 @@ svg, .icon, .vault, .heading, .heading__projects > h1 {
 @-webkit-keyframes vault-open-sm {
   to {
     width: 100vw;
-    height: calc(100vh - 11rem); }
+    height: calc(100% - 11rem); }
   from {
     width: 100vw;
-    height: calc(10vh - 11rem); } }
+    height: calc(10% - 11rem); } }
 
 @-moz-keyframes vault-open-sm {
   to {
     width: 100vw;
-    height: calc(100vh - 11rem); }
+    height: calc(100% - 11rem); }
   from {
     width: 100vw;
-    height: calc(10vh - 11rem); } }
+    height: calc(10% - 11rem); } }
 
 @-o-keyframes vault-open-sm {
   to {
     width: 100vw;
-    height: calc(100vh - 11rem); }
+    height: calc(100% - 11rem); }
   from {
     width: 100vw;
-    height: calc(10vh - 11rem); } }
+    height: calc(10% - 11rem); } }
 
 @keyframes vault-open-sm {
   to {
     width: 100vw;
-    height: calc(100vh - 11rem); }
+    height: calc(100% - 11rem); }
   from {
     width: 100vw;
-    height: calc(10vh - 11rem); } }
+    height: calc(10% - 11rem); } }
 
 @-webkit-keyframes vault-open-md {
   to {
     width: 100vw;
-    height: calc(100vh - 13.5rem); }
+    height: calc(100% - 13.5rem); }
   from {
     width: 100vw;
-    height: calc(10vh - 13.5rem); } }
+    height: calc(10% - 13.5rem); } }
 
 @-moz-keyframes vault-open-md {
   to {
     width: 100vw;
-    height: calc(100vh - 13.5rem); }
+    height: calc(100% - 13.5rem); }
   from {
     width: 100vw;
-    height: calc(10vh - 13.5rem); } }
+    height: calc(10% - 13.5rem); } }
 
 @-o-keyframes vault-open-md {
   to {
     width: 100vw;
-    height: calc(100vh - 13.5rem); }
+    height: calc(100% - 13.5rem); }
   from {
     width: 100vw;
-    height: calc(10vh - 13.5rem); } }
+    height: calc(10% - 13.5rem); } }
 
 @keyframes vault-open-md {
   to {
     width: 100vw;
-    height: calc(100vh - 13.5rem); }
+    height: calc(100% - 13.5rem); }
   from {
     width: 100vw;
-    height: calc(10vh - 13.5rem); } }
+    height: calc(10% - 13.5rem); } }
 
 @-webkit-keyframes vault-open-lg {
   to {
@@ -1345,7 +1345,7 @@ ol > li > span {
     flex-direction: column;
     position: fixed;
     width: 100vw;
-    height: calc(100vh - 11rem);
+    height: calc(100% - 11rem);
     -moz-animation: vault-open-sm 1.5s ease-in-out;
     -webkit-animation: vault-open-sm 1.5s ease-in-out;
     -o-animation: vault-open-sm 1.5s ease-in-out;
