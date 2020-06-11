@@ -8,7 +8,7 @@
         @extend %justify-center;
         flex-direction: column;
         position: fixed;
-        @include size(100vw, calc(100vh - #{$header-h-sm * 2}));
+        @include size(100vw, calc(100% - #{$header-h-sm * 2}));
         @include vault-animation(vault-open-sm);
         @include transform(translateZ(0));
         &__border {
