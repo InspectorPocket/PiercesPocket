@@ -1,3 +1,8 @@
+%highlight-remove {
+    @include user-select(text);
+    @include tap-highlight($transparent);
+}
+
 // STYLES
 %dot {
     background: $grey-700;
@@ -26,6 +31,11 @@
 %align-between {
     justify-content: space-between;
     align-items: center; 
+}
+
+%pos-wrap {
+    @include absolute-pos(0);
+    margin: auto;
 }
 
 %flex-row { flex-direction: row; }
