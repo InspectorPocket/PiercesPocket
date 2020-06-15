@@ -25,6 +25,14 @@
 	width: $width;
 	height: $height;
 }
+@mixin min-size($width, $height: $width) {
+	min-width: $width;
+	min-height: $height;
+}
+@mixin max-size($width, $height: $width) {
+	max-width: $width;
+	max-height: $height;
+}
 
 @mixin absolute-pos($top, $right: $top, $bot: $right, $left: $bot) {
 	position: absolute;
@@ -203,35 +211,50 @@
 }
 
 // BREAKPOINTS
+@mixin bp-x-sm {
+	@media (min-width: rem(480)) {
+	  @content;
+	}
+}
 @mixin bp-sm {
-	@media (min-width: $bp-sm) {
+	@media (min-width: rem(600)) {
 	  @content;
 	}
 }
 @mixin bp-md {
-	@media (min-width: $bp-md) {
+	@media (min-width: rem(960)) {
 	  @content;
 	}
 }
 @mixin bp-lg {
-	@media (min-width: $bp-lg) {
+	@media (min-width: rem(1280)) {
+	  @content;
+	}
+}
+@mixin desktop-hd {
+	@media (min-width: rem(1920)) {
+	  @content;
+	}
+}
+@mixin ultra-wide {
+	@media (min-width: rem(2560)) {
 	  @content;
 	}
 }
 
 
-// MEDIA QUERIES
+// SPECIFIC BREAKPOINTS
 
-//Phone Landscape
+// Phone Landscape
 @mixin phone-landscape {
-	@media (min-width: 481px) and (max-width: 767px) and (orientation: landscape) {
+	@media (min-width: #{$screen-tablet-portrait}) and (max-width: #{$screen-tablet-landscape - 1px}) and (orientation: landscape) {
 		@content;
 	}
 }
 
 // Tablet Portrait
 @mixin tablet-portrait {
-	@media (min-width: #{$screen-tablet-portrait}) and (max-width: #{$screen-tablet-landscape - rem(1)}) {
+	@media (min-width: #{$screen-tablet-portrait}) and (max-width: #{$screen-tablet-landscape - 1px}) {
 	  @content;
 	}
 }
@@ -245,21 +268,14 @@
 
 // Tablet Landscape
 @mixin tablet-landscape {
-	@media (min-width: #{$screen-tablet-landscape}) and (max-width: #{$screen-desktop - rem(1)}) {
+	@media (min-width: #{$screen-tablet-landscape}) and (max-width: #{$screen-desktop - 1px}) {
 	  @content;
 	}
 }
 
 // Desktop
 @mixin desktop {
-	@media (min-width: #{$screen-desktop}) and (max-width: #{$screen-hd - rem(1)}) {
-	  @content;
-	}
-}
-
-// Desktop HD
-@mixin desktop-hd {
-	@media (min-width: #{$screen-hd}) {
+	@media (min-width: #{$screen-desktop}) and (max-width: #{$screen-hd - 1px}) {
 	  @content;
 	}
 }

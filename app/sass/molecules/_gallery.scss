@@ -1,0 +1,90 @@
+.gallery {
+    display: grid;
+    grid-gap: rem(16);
+    grid-template-columns: repeat(2, minmax(rem(120), 1fr));
+    grid-auto-rows: calc(50vw - #{rem(32)});
+    padding: $gallery-pad-sm;
+    justify-items: center;
+    align-items: center;
+    &__project {
+        display: flex; // Fallback
+        display: grid;
+        @extend %align-center;
+        border-radius: $b-radius;
+        background: $green-light;
+        @include size(100%);
+        &--hidden{
+            opacity: 0;
+            display: none;
+        }
+    }   
+}
+
+@include bp-x-sm {
+    .gallery {
+        padding: #{$header-h-sm / 2} rem(32);
+    }
+}
+
+@include bp-sm {
+    .gallery {
+        grid-template-columns: repeat(3, minmax(rem(120), 1fr));
+        grid-auto-rows: calc(33.333vw - #{rem(40)});
+        padding: #{$header-h-md / 2} rem(24);
+    }
+}
+
+@include bp-md {
+    .gallery {
+        grid-template-columns: 
+            $gallery-pad-lg + rem(24)
+            repeat($project-number, calc(#{$project-size-lg}))
+            $gallery-pad-lg + rem(24)
+        ;
+        grid-template-rows: repeat(2, 1fr);
+        grid-auto-flow: column;
+        grid-auto-rows: auto;
+        // grid-template-columns: repeat(auto-fill, calc(50vh - #{($header-h-lg) - rem(64)}));
+        grid-auto-columns: calc(#{$project-size-lg});
+        // padding: 0 $gallery-pad-lg;
+        padding: 0;
+        height: 100%;
+        &__project {
+            &--hidden{
+                display: flex; // Fallback
+                display: grid;
+            }
+        }
+    }
+}
+
+@include bp-lg {
+    .gallery {
+        grid-template-columns: 
+            $gallery-pad-lg + rem(40)
+            repeat($project-number, calc(#{$project-size-x-lg}))
+            $gallery-pad-lg + rem(40)
+        ;
+        grid-auto-columns: calc(#{$project-size-x-lg});
+    }
+}
+
+@include desktop-hd {
+    .gallery {
+        grid-template-columns: 
+            $gallery-pad-x-lg + rem(40)
+            repeat($project-number, calc(#{$project-size-x-lg}))
+            $gallery-pad-x-lg + rem(40)
+        ;
+    }
+}
+
+@include ultra-wide {
+    .gallery {
+        grid-template-columns: 
+            $gallery-pad-x-lg + rem(64)
+            repeat($project-number, calc(#{$project-size-x-lg}))
+            $gallery-pad-x-lg + rem(64)
+        ;
+    }
+}

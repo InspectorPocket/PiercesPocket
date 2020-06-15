@@ -1,14 +1,17 @@
 .vault {
+    display: flex;
     @extend %align-center;
     @include size(100%);
-    position: absolute;
+    position: fixed;
     pointer-events: none;
     z-index: 50;
     &__inner {
+        display: flex;
         @extend %justify-center;
         flex-direction: column;
-        position: fixed;
-        @include size(100vw, calc(100% - #{$header-h-sm * 2}));
+        position: absolute;
+        width: 150%;
+        height: calc(100% - #{$header-h-sm * 2});
         @include vault-animation(vault-open-sm);
         @include transform(translateZ(0));
         &__border {
@@ -46,7 +49,8 @@
 @include bp-sm {
     .vault {
         &__inner {
-            @include size(100vw, calc(100vh - #{$header-h-md * 2}));
+            width: 125%;
+            height: calc(100% - #{$header-h-md * 2});
             @include vault-animation(vault-open-md);
             &__shadow {
                 left: rem(40);
@@ -65,9 +69,9 @@
 
 @include bp-md {
     .vault {
-        align-items: flex-start;
         &__inner {
-            @include size(calc(100vw - #{rem(224)}), 100vh);
+            height: 100vh;
+            width: calc(100vw - #{$gallery-pad-lg * 2});
             @include vault-animation(vault-open-lg);
             &__border {
                 @include absolute-pos(auto, 0, auto, 0);
@@ -95,14 +99,28 @@
 
 @include bp-lg {
     .vault {
-        align-items: flex-start;
         &__inner {
-            @include size(80vw, 100vh);
-            @include vault-animation(vault-open-x-lg);
+            // width: calc(100vw - #{$gallery-pad-lg * 2});
+            // @include vault-animation(vault-open-lg);
             &__shadow {
                 top: $header-h-x-lg;
                 bottom: $header-h-x-lg;
                 @include size($header-h-x-lg, calc(100% - #{$header-h-x-lg * 2}));
+            }
+        }
+    }
+}
+
+@include desktop-hd {
+    .vault {
+        &__inner {
+            height: 125vh;
+            width: calc(100vw - #{$gallery-pad-x-lg * 2});
+            @include vault-animation(vault-open-x-lg);
+            &__shadow {
+                top: $header-h-x-lg * 1.5;
+                bottom: $header-h-x-lg * 1.5;
+                height: calc(100% - #{$header-h-x-lg * 2} * 1.5);
             }
         }
     }

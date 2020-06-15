@@ -4,30 +4,18 @@
     & > svg {
         padding: 0;
         fill: $grey-700;
-        @include size(rem(36));
+        @include size($logo-size-sm);
     }
 }
 
 @include bp-sm {
     .logo {
-        & > svg {
-            @include size(rem(44));
-        }
+        & > svg { @include size($logo-size-md); }
     }
 }
 
 @include bp-md {
     .logo {
-        & > svg {
-            @include size(rem(62));
-        }
-    }
-}
-
-@include bp-lg {
-    .logo {
-        & > svg {
-            @include size(rem(62));
-        }
+        & > svg { @include size($logo-size-lg); }
     }
 }

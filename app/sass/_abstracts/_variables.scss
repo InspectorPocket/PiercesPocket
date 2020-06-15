@@ -34,10 +34,6 @@ $screen-tablet-landscape: 768px !default;
 $screen-desktop: 1024px !default;
 $screen-hd: 1920px !default;
 
-$bp-sm: rem(600);
-$bp-md: rem(960);
-$bp-lg: rem(1280);
-
 // Animations
 $transition-default: all 0.2s ease-in-out;
 $anim-delayed: .3s cubic-bezier(.82,-0.01,1,1);
@@ -53,8 +49,30 @@ $gradient: left, rgba(0,0,0,0), rgba(0,0,0,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.3
 // Border radius
 $b-radius: rem(16);
 
+// Logo
+$logo-size-sm: rem(36);
+$logo-size-md: rem(44);
+$logo-size-lg: rem(62);
+
 // Header references
 $header-h-sm: rem(88);
 $header-h-md: rem(108);
 $header-h-lg: rem(174);
-$header-h-x-lg: rem(220);
+$header-h-x-lg: rem(224);
+
+$header-pad-sm: rem(24);
+$header-pad-md: rem(32);
+$header-pad-lg: rem(56);
+$header-pad-x-lg: rem(76);
+
+// GALLERY
+$project-number: 16 / 2; // Divide by 2 for 2 rows
+
+// Gallery paddings
+$gallery-pad-sm: #{$header-h-sm / 2} rem(16);
+$gallery-pad-lg: $header-pad-lg + $logo-size-lg + rem(24);
+$gallery-pad-x-lg: $header-pad-x-lg + $header-pad-x-lg + $logo-size-lg;
+
+// Gallery Project sizes
+$project-size-lg: 50vh - #{($header-h-lg) + rem(24)};
+$project-size-x-lg: 50vh - #{($header-h-x-lg) + rem(24)};

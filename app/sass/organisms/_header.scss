@@ -1,8 +1,9 @@
 .header {
+    display: flex;
     @extend %align-between;
     @include size(100%, $header-h-sm);
     position: fixed;
-    padding: 0 rem(24);
+    padding: 0 $header-pad-sm;
     bottom: 0;
     z-index: 100;
     a {
@@ -18,9 +19,9 @@
 @include bp-sm {
     .header {
         height: $header-h-md;
-        padding: 0 rem(32);
+        padding: 0 $header-pad-md;
         &__line {
-            margin: 0 rem(32);
+            margin: 0 $header-pad-md;
             @include size(100%, rem(2));
         }
     }
@@ -29,19 +30,15 @@
 @include bp-md {
     .header {
         height: $header-h-lg;
-        padding: 0 rem(56);
-        &__line {
-            margin: 0 rem(56);
-        }
+        padding: 0 $header-pad-lg;
+        &__line { margin: 0 $header-pad-lg; }
     }
 }
 
 @include bp-lg {
     .header {
         height: $header-h-x-lg;
-        padding: 0 rem(76);
-        &__line {
-            margin: 0 rem(76);
-        }
+        padding: 0 $header-pad-x-lg;
+        &__line { margin: 0 $header-pad-x-lg; }
     }
 }

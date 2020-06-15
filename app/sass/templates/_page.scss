@@ -1,7 +1,8 @@
 .page {
-    position: relative;
+    position: absolute;
     margin: $header-h-sm 0;
     z-index: 40;
+    width: 100vw;
     &__projects {
         ::selection { @include selection($green-light, $grey-700); }
         ul > li::before { background: $green; }
@@ -22,16 +23,15 @@
 
 @include bp-md {
     .page {
+        position: relative;
         margin: $header-h-lg 0;
+        height: calc(100vh - #{$header-h-lg * 2});
     }
 }
 
 @include bp-lg {
     .page {
         margin: $header-h-x-lg 0;
-        &__projects {
-            @include size(100%);
-            padding: 0 15%;
-        }
+        height: calc(100vh - #{$header-h-x-lg * 2});
     }
 }

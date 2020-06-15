@@ -1,6 +1,7 @@
 .heading {
+    display: flex;
     @extend %align-center;
-    position: absolute;
+    position: fixed;
     @include size(100%, $header-h-sm);
     z-index: 60;
     & > span {
@@ -11,6 +12,7 @@
     &__projects {
         ::selection { @include selection($green-light, $grey-700); }
         & > h1 {
+            display: flex;
             @extend %align-center;
             @include size(100%);
             &::before {
@@ -32,6 +34,7 @@
         }
         & > span {
             @include colour-opacity($green, .5);
+            text-align: center;
         }
     }
 }
