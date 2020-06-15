@@ -16,26 +16,36 @@
 {{page.active(current_page)}}
 
     {# To populate - cycle through using macros #}
-    <div class="container">
+    
+    <section class="gallery">
 
-        <!-- <div class="item item1">
-            <p>SIDEBAR</p>
-        </div>
+        {# Spacer columns for large displays #}
+        <div class="gallery__project gallery__project--hidden"></div>
+        <div class="gallery__project gallery__project--hidden"></div>
 
-        <div class="item item2">
-            <p>PURE CONTENT HERE INIT</p>
-        </div>
+        {# Dynamically add projects here #}
+        <div class="gallery__project">1</div>
+        <div class="gallery__project">2</div>
+        <div class="gallery__project">3</div>
+        <div class="gallery__project">4</div>
+        <div class="gallery__project">5</div>
+        <div class="gallery__project">6</div>
+        <div class="gallery__project">7</div>
+        <div class="gallery__project">8</div>
+        <div class="gallery__project">9</div>
+        <div class="gallery__project">10</div>
+        <div class="gallery__project">11</div>
+        <div class="gallery__project">12</div>
+        <div class="gallery__project">13</div>
+        <div class="gallery__project">14</div>
+        <div class="gallery__project">15</div>
+        <div class="gallery__project">16</div>
+        
+        {# Spacer columns for large displays #}
+        <div class="gallery__project gallery__project--hidden"></div>
+        <div class="gallery__project gallery__project--hidden"></div>
 
-        <div class="item item3">
-            <p>SIDEBAR</p>
-        </div>
+    </section>
 
-        <div class="item footer">
-            <p>FOOTER</p>
-        </div> -->
-
-    </div>
-
-</div>
-
+</div> {# Ends page macro #}
 {% endblock %}

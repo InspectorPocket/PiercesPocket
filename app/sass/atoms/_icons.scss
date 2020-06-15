@@ -1,4 +1,5 @@
 .icon {
+    display: flex;
     @extend %align-center;
     @include size(rem(40));
     @extend %anim-long;

@@ -9,10 +9,10 @@ html, body {
     text-shadow: rem(1) rem(1) rem(1) rgba(0,0,0,0.004);
     background-color: $white;
     overflow-x: hidden;
-    // overflow-y: hidden;
     color: $grey-700;
     @include size(100%);
-    @include transition($transition-default)
+    @include transition($transition-default);
+    overscroll-behavior: none;
 }
 
 *, *::before, *::after {
@@ -36,6 +36,7 @@ svg {
     padding: rem(2);
     fill: $grey-700;
     margin: auto;
+    display: flex;
     @extend %align-center;
 }
 
@@ -53,7 +54,7 @@ img { max-width: 100%; }
   }
   
   *::-webkit-scrollbar-thumb {
-    background-color: $grey-700;
+    background-color: $white;
     border-radius: rem(50);
     outline: rem(1) solid $grey-700;
   }
@@ -70,4 +71,11 @@ img { max-width: 100%; }
 // TODO
 @media screen and (max-device-width: 480px){
     body{ -webkit-text-size-adjust: 100%; }
+}
+
+@include bp-md {
+    html, body {
+        overflow-x: visible;
+        overflow-y: hidden;
+    }
 }

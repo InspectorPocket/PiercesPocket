@@ -59,6 +59,7 @@ a {
 }
 
 ul > li, ol > li {
+    display: flex;
     @extend %center-items;
     position: relative;
     padding-left: rem(34);

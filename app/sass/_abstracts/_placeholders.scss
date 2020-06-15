@@ -4,32 +4,26 @@
     @include border-radius(rem(50));
 }
 
-// FLEX
+// ALIGNMENT
 %center-items {
-    display: flex;
     align-items: center; 
 }
 %justify-center {
-    display: flex;
     justify-content: center; 
 }
 %align-left {
-    display: flex;
     justify-content: left;
     align-items: center; 
 }
 %align-center {
-    display: flex;
     justify-content: center;
     align-items: center; 
 }
 %align-right {
-    display: flex;
     justify-content: right;
     align-items: center; 
 }
 %align-between {
-    display: flex;
     justify-content: space-between;
     align-items: center; 
 }

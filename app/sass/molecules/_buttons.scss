@@ -1,4 +1,5 @@
 .btn {
+    display: flex;
     @extend %center-items;
     @extend %anim-long;
     &::before {
@@ -91,7 +92,7 @@
         }
     }
     &__social {
-        @include size(rem(36));
+        @include min-size($logo-size-sm);
         &--active {
             transform: translateY(-rem(8));
         }
@@ -162,6 +163,17 @@
                     @include nav-icon-l($red);
                 }
             }
+        }
+        &__social {
+            @include min-size($logo-size-md);
+        }
+    }
+}
+
+@include bp-md {
+    .btn {
+        &__social {
+            @include min-size($logo-size-lg);
         }
     }
 }
