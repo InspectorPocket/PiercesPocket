@@ -8,13 +8,49 @@
     align-items: center;
     &__project {
         display: flex; // Fallback
-        display: grid;
         @extend %align-center;
-        border-radius: $b-radius;
-        background: $green-light;
         @include size(100%);
+        position: relative;
+        @extend %anim-long;
+        border-radius: $b-radius;
+        &:hover > & {
+            &__image {
+                @include transform(translateY(-#{rem(16)}));
+                &--blur {
+                    width: 80%;
+                    @include transition($transition-default);
+                    @include transform(translateY(rem(0)));
+                    @include blur(rem(16));
+                    opacity: .5;
+                }
+            }
+        }
+        & > a { @extend %pos-wrap; }
+        &__image {
+            @extend %pos-wrap;
+            @extend %anim-long;
+            border-radius: $b-radius;
+            pointer-events: none;
+            @include box-border(rem(1));
+            overflow: hidden;
+            & > img {
+                @extend %pos-wrap;
+                @include size(100%);
+            }
+            &--blur {
+                @include size(100%, 88%);
+                @include transform(translateY(0));
+                @include blur(0);
+                top: auto;
+                opacity: .2;
+            }
+        }
+        &__overlay {
+
+        }
         &--hidden{
             opacity: 0;
+            background: none;;
             display: none;
         }
     }   
@@ -50,6 +86,7 @@
         padding: 0;
         height: 100%;
         &__project {
+            &__image { @include box-border(rem(2)); }
             &--hidden{
                 display: flex; // Fallback
                 display: grid;

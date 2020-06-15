@@ -109,6 +109,9 @@
 @mixin border-default($colour) {
 	border: rem(1) solid $colour;
 }
+@mixin border-2($colour) {
+	border: rem(2) solid $colour;
+}
 
 @mixin colour-opacity($color, $opacity) {
     color: $color; /* The Fallback */
@@ -192,7 +195,7 @@
 @mixin border-vault($colour) {
 	border: 100px solid $colour;
 }
-@mixin vault-border($width) {
+@mixin box-border($width) {
 	@include box-shadow(0 0 0 $width #{$white});
 }
 @mixin vault-shadow($x, $y, $blur) {

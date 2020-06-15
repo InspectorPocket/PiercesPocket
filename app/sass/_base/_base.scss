@@ -9,10 +9,10 @@ html, body {
     text-shadow: rem(1) rem(1) rem(1) rgba(0,0,0,0.004);
     background-color: $white;
     overflow-x: hidden;
+    overscroll-behavior: none;
     color: $grey-700;
     @include size(100%);
     @include transition($transition-default);
-    overscroll-behavior: none;
 }
 
 *, *::before, *::after {
@@ -30,17 +30,30 @@ html, body {
     -moz-outline-style: none;
 }
 
-svg {
-    pointer-events: none;
-    @include size(rem(24));
-    padding: rem(2);
-    fill: $grey-700;
-    margin: auto;
-    display: flex;
-    @extend %align-center;
+a {
+    cursor: pointer;
+    pointer-events: auto;
+    outline: none;
+    @include user-select(text);
+    @include tap-highlight($transparent);
 }
 
-img { max-width: 100%; }
+svg {
+    display: flex;
+    @extend %align-center;
+    @include size(rem(24));
+    margin: auto;
+    padding: rem(2);
+    fill: $grey-700;
+    pointer-events: none;
+}
+
+img {
+    max-width: 100%;
+    pointer-events: none;
+    @include user-select(none);
+    @include tap-highlight($transparent);
+}
 
 *::-webkit-scrollbar {
     height: rem(8);

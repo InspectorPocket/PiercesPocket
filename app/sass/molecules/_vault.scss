@@ -20,20 +20,20 @@
             position: relative;
             border-radius: 50%;
             @include size(200%, 100%);
-            @include vault-border(rem(2000));
+            @include box-border(rem(2000));
             @include transform(translateX(-25%) scaleY(1));
             z-index: 5;
         }
         &__shadow {
+            z-index: 4;
+            opacity: 1;
             display: block;
             position: absolute;
-            left: rem(24);
-            right: rem(24);
             background: $white;
-            @include size(calc(100% - #{rem(48)}), $header-h-sm);
-            opacity: 1;
+            left: calc(25vw + #{rem(32)});
+            right: calc(25vw + #{rem(32)});
+            @include size(calc(100vw - #{rem(64)}), $header-h-sm);
             @include vault-animation(fade-out);
-            z-index: 4;
             &--first {
                 @include vault-shadow(0, rem(30), rem(60));
                 bottom: 100%;
@@ -53,9 +53,9 @@
             height: calc(100% - #{$header-h-md * 2});
             @include vault-animation(vault-open-md);
             &__shadow {
-                left: rem(40);
-                right: rem(40);
-                @include size(calc(100% - #{rem(80)}), $header-h-md);
+                left: calc(12.5vw + #{rem(40)});
+                right: calc(12.5vw + #{rem(40)});
+                @include size(calc(100vw - #{rem(80)}), $header-h-md);
                 // @include vault-animation(fade-out);
             }
         }
