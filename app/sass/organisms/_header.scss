@@ -1,6 +1,6 @@
 .header {
     display: flex;
-    @extend %align-between;
+    @extend %justify-between;
     @include size(100%, $header-h-sm);
     position: fixed;
     padding: 0 $header-pad-sm;

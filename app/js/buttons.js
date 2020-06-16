@@ -13,7 +13,7 @@ function getBtnColour() {
     buttons.forEach(btn => {
         let btn_class_arr = Array.from(btn.classList);
         let colour = btn_class_arr.join('-').split("-").join('_').split('_').filter(e => e !== 'btn').filter(e => e !== 'nav').filter(e => e !== 'active').filter(item => item).pop();
-        let btn_colour_active = btn_nav + colour + '--active';
+        let btn_colour_active = btn_nav + colour + active;
         mapColours[colour] = btn_colour_active;
     });
 };
