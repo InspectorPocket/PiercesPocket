@@ -56,21 +56,24 @@ img {
 }
 
 *::-webkit-scrollbar {
-    height: rem(8);
-    margin: 2%;
-    width: rem(8);
+    @include size(0);
+    display: none;
+    // @include size(rem(8));
+    // margin: 2%;
 }
 
+/*
 *::-webkit-scrollbar-track {
     -webkit-box-shadow: none;
     box-shadow: none;
   }
   
-  *::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
     background-color: $white;
     border-radius: rem(50);
     outline: rem(1) solid $grey-700;
-  }
+}
+*/
 
 
 .fill {

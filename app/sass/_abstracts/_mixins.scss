@@ -53,13 +53,13 @@
 }
 
 // SELECTION
-@mixin user-select($colour) {
-	-webkit-touch-callout: $colour;
-    -webkit-user-select: $colour;
-    -khtml-user-select: $colour;
-    -moz-user-select: $colour;
-    -ms-user-select: $colour;
-    user-select: $colour;
+@mixin user-select($type) {
+	-webkit-touch-callout: $type;
+    -webkit-user-select: $type;
+    -khtml-user-select: $type;
+    -moz-user-select: $type;
+    -ms-user-select: $type;
+    user-select: $type;
 }
 @mixin tap-highlight($transparent) {
 	-webkit-tap-highlight-color: $transparent;

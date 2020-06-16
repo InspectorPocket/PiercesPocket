@@ -19,7 +19,7 @@
                 content:"";
                 display: block;
                 z-index: -1;
-                @include absolute-pos(0);
+                @extend %pos-wrap;
                 @include background-opacity($white, .8);
                 @include linear-background(#{
                     90deg, 
@@ -33,7 +33,8 @@
             }
         }
         & > span {
-            @include colour-opacity($green, .5);
+            // @include colour-opacity($green, .5);
+            color: $green;
             text-align: center;
         }
     }

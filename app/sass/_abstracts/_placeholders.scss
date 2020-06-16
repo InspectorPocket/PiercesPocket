@@ -16,19 +16,23 @@
 %justify-center {
     justify-content: center; 
 }
-%align-left {
-    justify-content: left;
+%align-start {
+    justify-content: flex-start;
     align-items: center; 
 }
 %align-center {
     justify-content: center;
     align-items: center; 
 }
-%align-right {
-    justify-content: right;
+%align-end {
+    justify-content: center;
+    align-items: flex-end; 
+}
+%justify-end {
+    justify-content: flex-end;
     align-items: center; 
 }
-%align-between {
+%justify-between {
     justify-content: space-between;
     align-items: center; 
 }
