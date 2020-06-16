@@ -6,34 +6,21 @@ $(function() {
       //    e.preventDefault();
     });
 
-   //  Mobile hover = click
-    $('.gallery__project').bind('touchstart mouseenter', '.link', function (e) {
-         $(this).addClass('gallery__project--hover');
-         if (e.type == 'click') {
-            e.preventDefault();
-            // e.preventDefault ? e.preventDefault() : e.returnValue = false;
-         }
-      });
-
-   $('.gallery__project').bind('mouseleave touchmove click', '.link', function (e) {
-      $(this).removeClass('gallery__project--hover');
-      // e.preventDefault();
-
-      if (e.type == 'click') {
-         // e.preventDefault ? e.preventDefault() : e.returnValue = false;
-      }
-   });
-
-   //  $('.gallery__project').bind('touchstart mouseenter', '.link', function (e) {
-   //       $(this).addClass('gallery__project--hover');
-   //    });
+    // Not needed, but left commented just in case
+   // //  Mobile hover = click
+   // $('.gallery__project').bind('touchstart mouseenter', '.link', function (e) {
+   //    $(this).addClass('gallery__project--hover');
+   //    if (e.type == 'click') {
+   //       e.preventDefault();
+   //    }
+   // });
 
    // $('.gallery__project').bind('mouseleave touchmove click', '.link', function (e) {
    //    $(this).removeClass('gallery__project--hover');
-
-   //    if (e.type == 'click') {
-   //       e.preventDefault ? e.preventDefault() : e.returnValue = false;
-   //    }
    // });
+
+   // if (e.type == 'click') {
+   //    // e.preventDefault ? e.preventDefault() : e.returnValue = false;
+   // }
 
  });

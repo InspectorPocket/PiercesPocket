@@ -7,17 +7,12 @@
     justify-items: center;
     align-items: center;
     &__project {
-        // Project Variables
-        $overlay-colour: $white;
-        $overlay-spacing: rem(0);
-
         display: flex; // Fallback
         @extend %align-center;
         @include size(100%);
         position: relative;
         @extend %anim-long;
         border-radius: $b-radius;
-        & > a { @extend %pos-wrap; }
         &__image {
             pointer-events: none;
             overflow: hidden;
@@ -41,14 +36,17 @@
             }
         }
         &__overlay {
+            // Overlay Variables
+            $overlay-colour: $white;
+            $overlay-spacing: rem(6);
+            
             display: flex;
             flex-direction: column;
-            @extend %align-center;
+            @extend %justify-between;
             text-align: center;
             
-            @include absolute-pos(auto, 0);
-            @include size(calc(100% - #{$overlay-spacing * 2}));
-            margin: $overlay-spacing;
+            @include size(100%);
+            padding: $overlay-spacing;
             
             @extend %anim-long;
             @include transition(all .5s ease-in);
@@ -57,18 +55,39 @@
             overflow: hidden;
             
             @include background-opacity($white, .7);
-            border-radius: $b-radius - $overlay-spacing;
+            border-radius: $b-radius;
             opacity: 0;
-            & > h4 {
-                font-size: rem(16);
-                padding: rem(8) 0;
-                font-weight: bold;
-                text-shadow: 0 rem(1) 0 $white;
+            & > span {
+                display: flex;
+                @extend %align-center;
+                text-align: center;
+                width: 100%;
+                &:first-child {
+                    height: 75%;
+                }
+                &:last-child {
+                    height: 25%;
+                }
+                & > h4 {
+                    font-size: rem(18);
+                    font-weight: bold;
+                    text-shadow: 0 rem(1) 0 $white;
+                    text-align: center;
+                }
+                & > a {
+                    @include animation(none);
+
+                    display: flex;
+                    @extend %align-center;
+                    @include size(100%);
+    
+                    border-radius: $b-radius - $overlay-spacing;
+                    background: $grey-700;
+                    color: $white;
+                }
             }
         }
-        &--hover & {
-            @include user-select(none);
-            -webkit-touch-callout: none;
+        &:hover &, &--hover & {
             &__image {
                 @include transform(translateY(-#{rem(24)}));
                 @include transition(all .3s ease-in-out);
@@ -84,6 +103,7 @@
                 @include transform(translateY(-#{rem(24)}));
                 @include transition(all .3s ease-in-out);
                 opacity: 1;
+                & > span > a { @include animation(gallery-button .3s ease-in-out); }
             }
         }
         &--hidden{
