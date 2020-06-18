@@ -36,25 +36,25 @@
             }
         }
         &__overlay {
-            // Overlay Variables
-            $overlay-colour: $white;
-            $overlay-spacing: rem(6);
+            // Overlay Spacing Variable
+            $overlay-spacing-sm: rem(6);
             
             display: flex;
             flex-direction: column;
             @extend %justify-between;
             text-align: center;
             
+
             @include size(100%);
-            padding: $overlay-spacing;
-            
+            padding: $overlay-spacing-sm;
+
             @extend %anim-long;
-            @include transition(all .5s ease-in);
-            
+            @include transition(all .4s ease-out);
+
             pointer-events: none;
             overflow: hidden;
-            
-            @include background-opacity($white, .7);
+
+            @include background-opacity($white, .65);
             border-radius: $b-radius;
             opacity: 0;
             & > span {
@@ -81,9 +81,12 @@
                     @extend %align-center;
                     @include size(100%);
     
-                    border-radius: $b-radius - $overlay-spacing;
+                    border-radius: $b-radius - $overlay-spacing-sm;
                     background: $grey-700;
                     color: $white;
+                    &:hover {
+
+                    }
                 }
             }
         }
@@ -94,7 +97,7 @@
                 &--blur {
                     width: 80%;
                     @include transition($transition-default);
-                    @include transform(translateY(0));
+                    @include transform(translateY(0) !important);
                     @include blur(rem(24));
                     opacity: .5;
                 }
@@ -137,20 +140,24 @@
     .gallery {
         grid-template-columns: 
             $gallery-pad-lg + rem(24)
-            repeat($project-number, calc(#{$project-size-lg}))
+            repeat($project-number, calc(#{$project-size-desktop}))
             $gallery-pad-lg + rem(24)
         ;
         grid-template-rows: repeat(2, 1fr);
         grid-auto-flow: column;
         grid-auto-rows: auto;
         // grid-template-columns: repeat(auto-fill, calc(50vh - #{($header-h-lg) - rem(64)}));
-        grid-auto-columns: calc(#{$project-size-lg});
+        grid-auto-columns: calc(#{$project-size-desktop});
         // padding: 0 $gallery-pad-lg;
         padding: 0;
         height: 100%;
         &__project {
             &__image { @include box-border(rem(2)); }
             &__overlay {
+                // Overlay Spacing Variable
+                $overlay-spacing-md: rem(8);
+            
+                padding: $overlay-spacing-md;
                 & > h4 { font-size: rem(22) !important; }
             }
             &--hidden{
@@ -165,10 +172,10 @@
     .gallery {
         grid-template-columns: 
             $gallery-pad-lg + rem(40)
-            repeat($project-number, calc(#{$project-size-x-lg}))
+            repeat($project-number, calc(#{$project-size-desktop}))
             $gallery-pad-lg + rem(40)
         ;
-        grid-auto-columns: calc(#{$project-size-x-lg});
+        grid-auto-columns: calc(#{$project-size-desktop});
         &__project {
             &__overlay {
                 & > h4 { font-size: rem(28) !important; }
@@ -181,11 +188,20 @@
     .gallery {
         grid-template-columns: 
             $gallery-pad-x-lg + rem(40)
-            repeat($project-number, calc(#{$project-size-x-lg}))
+            repeat($project-number, calc(#{$project-size-desktop}))
             $gallery-pad-x-lg + rem(40)
         ;
+        grid-gap: rem(24);
         &__project {
+            &:hover &, &--hover & {
+                &__image { @include transform(translateY(-#{rem(40)})); }
+                &__overlay { @include transform(translateY(-#{rem(40)})); }
+            }
             &__overlay {
+                // Overlay Spacing Variable
+                $overlay-spacing-lg: rem(12);
+
+                padding: $overlay-spacing-lg;
                 & > h4 { font-size: rem(32) !important; }
             }
         }
@@ -196,7 +212,7 @@
     .gallery {
         grid-template-columns: 
             $gallery-pad-x-lg + rem(64)
-            repeat($project-number, calc(#{$project-size-x-lg}))
+            repeat($project-number, calc(#{$project-size-desktop}))
             $gallery-pad-x-lg + rem(64)
         ;
     }

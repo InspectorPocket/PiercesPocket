@@ -74,5 +74,5 @@ $gallery-pad-lg: $header-pad-lg + $logo-size-lg + rem(24);
 $gallery-pad-x-lg: $header-pad-x-lg + $header-pad-x-lg + $logo-size-lg;
 
 // Gallery Project sizes
-$project-size-lg: 50vh - #{($header-h-lg) + rem(24)};
-$project-size-x-lg: 50vh - #{($header-h-x-lg) + rem(24)};
+$project-size-desktop: 50vh - #{($header-h-x-lg) + rem(16)};
+$project-size-hd: 50vh - #{($header-h-x-lg) + rem(24)};
