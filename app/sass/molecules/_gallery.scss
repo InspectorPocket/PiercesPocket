@@ -3,23 +3,29 @@
     grid-gap: rem(16);
     grid-template-columns: repeat(2, minmax(rem(120), 1fr));
     grid-auto-rows: calc(50vw - #{rem(32)});
-    padding: $gallery-pad-sm;
+    grid-auto-flow: dense;
     justify-items: center;
     align-items: center;
+    padding: $gallery-pad-sm;
     &__project {
-        display: flex; // Fallback
+        display: flex;
         @extend %align-center;
         @include size(100%);
         position: relative;
         @extend %anim-long;
         border-radius: $b-radius;
+
+        // Transitions
+        $transition-project-default: all .4s ease-out;
+        $transition-project-hover: all .3s ease-in-out;
+        
         &__image {
             pointer-events: none;
             overflow: hidden;
             @extend %pos-wrap;
             
             @extend %anim-long;
-            @include transition(all .5s ease-in);
+            @include transition($transition-project-default);
             
             border-radius: $b-radius;
             @include box-border(rem(1));
@@ -35,25 +41,27 @@
                 opacity: 0;
             }
         }
+        // TODO make the clickable area the overlay area and apply the display animation to the overlay, rather than the button.
+        // Can remove button this way
         &__overlay {
-            // Overlay Variables
-            $overlay-colour: $white;
-            $overlay-spacing: rem(6);
+            // Overlay Spacing Variable
+            $overlay-spacing-sm: rem(6);
             
             display: flex;
             flex-direction: column;
             @extend %justify-between;
             text-align: center;
             
+
             @include size(100%);
-            padding: $overlay-spacing;
-            
+            padding: $overlay-spacing-sm;
+
             @extend %anim-long;
-            @include transition(all .5s ease-in);
-            
+            @include transition($transition-project-default);
+
             pointer-events: none;
             overflow: hidden;
-            
+
             @include background-opacity($white, .7);
             border-radius: $b-radius;
             opacity: 0;
@@ -81,27 +89,33 @@
                     @extend %align-center;
                     @include size(100%);
     
-                    border-radius: $b-radius - $overlay-spacing;
+                    border-radius: $b-radius - $overlay-spacing-sm;
                     background: $grey-700;
                     color: $white;
+                    @include transition($transition-default);
+                    &:hover {
+                        background: $green;
+                        color: $grey-700;
+                        @include transition($transition-default);
+                    }
                 }
             }
         }
         &:hover &, &--hover & {
             &__image {
                 @include transform(translateY(-#{rem(24)}));
-                @include transition(all .3s ease-in-out);
+                @include transition($transition-project-hover);
                 &--blur {
                     width: 80%;
                     @include transition($transition-default);
-                    @include transform(translateY(0));
+                    @include transform(translateY(0) !important);
                     @include blur(rem(24));
                     opacity: .5;
                 }
             }
             &__overlay {
                 @include transform(translateY(-#{rem(24)}));
-                @include transition(all .3s ease-in-out);
+                @include transition($transition-project-hover);
                 opacity: 1;
                 & > span > a { @include animation(gallery-button .3s ease-in-out); }
             }
@@ -111,7 +125,10 @@
             background: none;;
             display: none;
         }
-    }   
+        &:nth-child(3n) {
+            // grid-column: span 2;
+        }
+    }
 }
 
 @include bp-x-sm {
@@ -137,20 +154,24 @@
     .gallery {
         grid-template-columns: 
             $gallery-pad-lg + rem(24)
-            repeat($project-number, calc(#{$project-size-lg}))
+            repeat($project-number, calc(#{$project-size-desktop}))
             $gallery-pad-lg + rem(24)
         ;
         grid-template-rows: repeat(2, 1fr);
         grid-auto-flow: column;
         grid-auto-rows: auto;
         // grid-template-columns: repeat(auto-fill, calc(50vh - #{($header-h-lg) - rem(64)}));
-        grid-auto-columns: calc(#{$project-size-lg});
+        grid-auto-columns: calc(#{$project-size-desktop});
         // padding: 0 $gallery-pad-lg;
         padding: 0;
         height: 100%;
         &__project {
             &__image { @include box-border(rem(2)); }
             &__overlay {
+                // Overlay Spacing Variable
+                $overlay-spacing-md: rem(8);
+            
+                padding: $overlay-spacing-md;
                 & > h4 { font-size: rem(22) !important; }
             }
             &--hidden{
@@ -165,10 +186,10 @@
     .gallery {
         grid-template-columns: 
             $gallery-pad-lg + rem(40)
-            repeat($project-number, calc(#{$project-size-x-lg}))
+            repeat($project-number, calc(#{$project-size-desktop}))
             $gallery-pad-lg + rem(40)
         ;
-        grid-auto-columns: calc(#{$project-size-x-lg});
+        grid-auto-columns: calc(#{$project-size-desktop});
         &__project {
             &__overlay {
                 & > h4 { font-size: rem(28) !important; }
@@ -181,11 +202,20 @@
     .gallery {
         grid-template-columns: 
             $gallery-pad-x-lg + rem(40)
-            repeat($project-number, calc(#{$project-size-x-lg}))
+            repeat($project-number, calc(#{$project-size-desktop}))
             $gallery-pad-x-lg + rem(40)
         ;
+        grid-gap: rem(24);
         &__project {
+            &:hover &, &--hover & {
+                &__image { @include transform(translateY(-#{rem(40)})); }
+                &__overlay { @include transform(translateY(-#{rem(40)})); }
+            }
             &__overlay {
+                // Overlay Spacing Variable
+                $overlay-spacing-lg: rem(12);
+
+                padding: $overlay-spacing-lg;
                 & > h4 { font-size: rem(32) !important; }
             }
         }
@@ -196,7 +226,7 @@
     .gallery {
         grid-template-columns: 
             $gallery-pad-x-lg + rem(64)
-            repeat($project-number, calc(#{$project-size-x-lg}))
+            repeat($project-number, calc(#{$project-size-desktop}))
             $gallery-pad-x-lg + rem(64)
         ;
     }
