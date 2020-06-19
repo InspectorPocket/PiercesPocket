@@ -30,7 +30,7 @@ function insertProjects() {
         gallery.innerHTML += gallerySpacer + gallerySpacer;
         outputNames.forEach(project => {
             gallery.innerHTML += `
-                <article class="gallery__project js-test">
+                <article class="gallery__project">
                     <div class="gallery__project__image gallery__project__image--blur">
                         <img src="/app/img/projects/_thumbnails/t-${outputNames[project_index][1]}.png">
                     </div>
