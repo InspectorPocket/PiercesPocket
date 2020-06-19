@@ -27,20 +27,32 @@ gulp.task('pack-js', function () {
 
 // Nunjucks Task
 gulp.task('nunjucks', function() {
-    // Gets .html and .nunjucks files in pages
-    return gulp.src('app/pages/**/*.+(html|njk)', '!app/pages/index.njk')
+    // Gets .html and .nunjucks files in njk
+    return gulp.src('app/njk/**/*.+(html|njk)', '!app/njk/index.njk')
     // Renders template with nunjucks
     .pipe(nunjucksRender({
         path: ['app/templates']
       }))
     // output files in app folder
-    .pipe(gulp.dest('app'))
+    .pipe(gulp.dest('app/pages'))
 });
-  
+
+// Nunjucks Projects
+gulp.task('njk-projects', function() {
+  // Gets .html and .nunjucks files in njk
+  return gulp.src('app/njk/projects/**/*.+(html|njk)', '!app/njk/index.njk')
+  // Renders template with nunjucks
+  .pipe(nunjucksRender({
+      path: ['app/templates']
+    }))
+  // output files in app folder
+  .pipe(gulp.dest('app/pages/projects'))
+});
+
 // Nunjucks Index
 gulp.task('njk-index', function() {
   // Gets index.njk
-  return gulp.src('app/pages/index.+(html|njk)')
+  return gulp.src('app/njk/index.+(html|njk)')
   // Renders template with nunjucks
   .pipe(nunjucksRender({
     path: ['app/templates']

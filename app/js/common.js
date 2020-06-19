@@ -2,7 +2,8 @@ $(function() {
 
    // Horizontal scroll
    $("body").mousewheel(function(e, delta) {
-      this.scrollLeft -= (delta * 5);
+      this.scrollLeft -= (delta / 1.5);
+      // this.scrollLeft -= (delta * 5);
       //    e.preventDefault();
     });
 

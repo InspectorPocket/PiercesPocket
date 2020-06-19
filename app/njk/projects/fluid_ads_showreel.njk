@@ -1,0 +1,20 @@
+{% extends "layouts.njk" %}
+
+{% block meta %}
+{% set current_project = "fa_showreel" %}
+
+{# Navbar #}
+{% import 'macros/nav-macro.njk' as nav %}
+{{nav.active(projects)}}
+{# Heading #}
+{% import 'macros/heading.njk' as heading %}
+{{heading.active(current_project)}}
+
+{# Content #}
+{% import 'macros/page-macro.njk' as page %}
+{{page.active(current_project)}}
+
+    
+
+</div> {# Ends page macro #}
+{% endblock %}

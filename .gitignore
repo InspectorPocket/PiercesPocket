@@ -6,5 +6,5 @@ node_modules
 # templates
 # pages
 
-app/index.html
+app/pages/index.html
 app/_ignore/_toStudy.scss
