@@ -32,17 +32,17 @@ function insertProjects() {
             gallery.innerHTML += `
                 <article class="gallery__project">
                     <div class="gallery__project__image gallery__project__image--blur">
-                        <img src="/app/img/projects/_thumbnails/t-${outputNames[project_index][1]}.png">
+                        <img src="/img/projects/_thumbnails/t-${outputNames[project_index][1]}.png">
                     </div>
                     <div class="gallery__project__image">
-                        <img src="/app/img/projects/_thumbnails/t-${outputNames[project_index][1]}.png" alt="${outputNames[project_index][0]}">
+                        <img src="/img/projects/_thumbnails/t-${outputNames[project_index][1]}.png" alt="${outputNames[project_index][0]}">
                     </div>
                     <div class="gallery__project__overlay">
                         <span>
                             <h4>${outputNames[project_index][0]}</h4>
                         </span>
                         <span>
-                            <a href="/app/pages/projects/${outputNames[0][1]}.html">View Project</a>
+                            <a href="/pages/projects/${outputNames[0][1]}.html">View Project</a>
                         </span>
                     </div>
                 </article>

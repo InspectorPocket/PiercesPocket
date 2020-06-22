@@ -34,7 +34,7 @@ gulp.task('nunjucks', function() {
         path: ['app/templates']
       }))
     // output files in app folder
-    .pipe(gulp.dest('app/pages'))
+    .pipe(gulp.dest('public/pages'))
 });
 
 // Nunjucks Projects
@@ -46,7 +46,7 @@ gulp.task('njk-projects', function() {
       path: ['app/templates']
     }))
   // output files in app folder
-  .pipe(gulp.dest('app/pages/projects'))
+  .pipe(gulp.dest('public/pages/projects'))
 });
 
 // Nunjucks Index
@@ -58,7 +58,7 @@ gulp.task('njk-index', function() {
     path: ['app/templates']
   }))
   // output files in app folder
-  .pipe(gulp.dest('./'))
+  .pipe(gulp.dest('public'))
 });
 
 // Watch Task
