@@ -39,20 +39,20 @@ function navHandler() {
     if (this.classList.contains(btn_nav + 'green')) {
         this.classList.add(mapColours.green);
         setTimeout(() => {
-            window.open('/app/pages/projects.html', '_self');
+            window.open('/pages/projects.html', '_self');
         }, transition_default);
     }
     if (this.classList.contains(btn_nav + 'yellow')) {
         this.classList.add(mapColours.yellow);
         setTimeout(() => {
-            window.open('/app/pages/contact.html', '_self');
+            window.open('/pages/contact.html', '_self');
         }, transition_default);
     }
     if (this.classList.contains(btn_nav + 'blue')) {
         this.classList.add(mapColours.blue);
         window.open('https://github.com/InspectorPocket', '_blank');
         setTimeout(() => {
-            window.open('/app/pages/github.html', '_self');
+            window.open('/pages/github.html', '_self');
         }, transition_default);
     }
     if (this.classList.contains(btn_nav + 'red')) {
@@ -78,7 +78,7 @@ function headerHandler() {
     if (this.classList.contains(btn_contact)) {
         this.classList.add(btn_contact + active);
         setTimeout(() => {
-            window.open('/app/pages/contact.html', '_self');
+            window.open('/pages/contact.html', '_self');
         }, transition_default);
     }
 }

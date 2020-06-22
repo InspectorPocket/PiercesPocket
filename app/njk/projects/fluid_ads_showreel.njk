@@ -6,15 +6,14 @@
 {# Navbar #}
 {% import 'macros/nav-macro.njk' as nav %}
 {{nav.active(projects)}}
-{# Heading #}
-{% import 'macros/heading.njk' as heading %}
-{{heading.active(current_project)}}
+{# Header #}
+{% import 'macros/project-header.njk' as heading %}
+
 
 {# Content #}
 {% import 'macros/page-macro.njk' as page %}
 {{page.active(current_project)}}
 
-    
 
 </div> {# Ends page macro #}
 {% endblock %}
