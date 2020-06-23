@@ -41,7 +41,7 @@
     to { opacity: 1; }
 }
 
-@include keyframes(gallery-button) {
+@include keyframes(gallery-link) {
     0%, 30% { pointer-events: none; }
     100% { pointer-events: auto; }
 }

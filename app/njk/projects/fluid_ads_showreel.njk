@@ -1,18 +1,17 @@
 {% extends "layouts.njk" %}
 
 {% block meta %}
-{% set current_project = "fa_showreel" %}
+{% set current_page = "projects" %}
+{% set current_project = "fluid_ads_showreel" %}
 
 {# Navbar #}
 {% import 'macros/nav-macro.njk' as nav %}
-{{nav.active(projects)}}
+{{nav.active(current_page)}}
 {# Header #}
-{% import 'macros/project-header.njk' as heading %}
-
-
+{% include 'partials/project-header.njk' %}
 {# Content #}
 {% import 'macros/page-macro.njk' as page %}
-{{page.active(current_project)}}
+{{page.active(current_page)}}
 
 
 </div> {# Ends page macro #}

@@ -11,7 +11,7 @@ gulp.task('styles', function(done) {
     return gulp.src('app/sass/**/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(cleanCSS({compatibility: 'ie8'}))
-        .pipe(gulp.dest('public/build'))
+        .pipe(gulp.dest('./'))
 });
 
 // JS Bundle
@@ -22,7 +22,7 @@ gulp.task('pack-js', function () {
         ext:{ min:'.js' },
         noSource: true
       }))
-      .pipe(gulp.dest('public/build'))
+      .pipe(gulp.dest('./'))
 });
 
 // Nunjucks Task
@@ -34,7 +34,7 @@ gulp.task('nunjucks', function() {
         path: ['app/templates']
       }))
     // output files in app folder
-    .pipe(gulp.dest('public/pages'))
+    .pipe(gulp.dest('pages'))
 });
 
 // Nunjucks Projects
@@ -46,19 +46,16 @@ gulp.task('njk-projects', function() {
       path: ['app/templates']
     }))
   // output files in app folder
-  .pipe(gulp.dest('public/pages/projects'))
+  .pipe(gulp.dest('pages/projects'))
 });
 
 // Nunjucks Index
 gulp.task('njk-index', function() {
-  // Gets index.njk
   return gulp.src('app/njk/index.+(html|njk)')
-  // Renders template with nunjucks
   .pipe(nunjucksRender({
     path: ['app/templates']
   }))
-  // output files in app folder
-  .pipe(gulp.dest('public'))
+  .pipe(gulp.dest('./'))
 });
 
 // Watch Task

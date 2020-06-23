@@ -12,7 +12,7 @@
     }
     &__line {
         @extend %dot;
-        @include size(rem(4));
+        @include size(rem(3));
     }
     &--project {
         bottom: auto;

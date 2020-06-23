@@ -6,3 +6,28 @@
     border-radius: $b-radius;
     z-index: 2;
 }
+
+.kebab {
+    flex-direction: column;
+    & > span {
+        background: $grey-700;
+        border-radius: $b-radius;
+        @include size(rem(6));
+        position: absolute;
+        &:nth-child(1) {
+            @include transform(translateY(-#{rem(6)}))
+        }
+        &:nth-child(2) {
+            @include transform(translateY(rem(6)))
+        }
+    }
+    &--active {
+
+    }
+}
+
+@include bp-md {
+    .kebab {
+        // display: none;
+    }
+}

@@ -1,0 +1,25 @@
+// TODO add social dropdown with github and dribbble
+// Will show both icons and !kebab when on larger displays
+.social {
+    position: relative;
+    margin: 0;
+    @include border-default($white);
+    &__dropdown {
+        border-radius: $b-radius;
+        position: absolute;
+        bottom: 0;
+        padding-bottom: rem(40);
+        display: flex;
+        background: $purple-light;
+        @include size(100%, auto);
+        @extend %anim-delayed;
+        z-index: -1;
+        @include border-default($white);
+    }
+    &:hover & {
+        &__dropdown {
+            @extend %anim-delayed;
+            @include border-default($grey-700);
+        }
+    }
+}

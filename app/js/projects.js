@@ -30,22 +30,19 @@ function insertProjects() {
         gallery.innerHTML += gallerySpacer + gallerySpacer;
         outputNames.forEach(project => {
             gallery.innerHTML += `
-                <article class="gallery__project">
-                    <div class="gallery__project__image gallery__project__image--blur">
-                        <img src="/img/projects/_thumbnails/t-${outputNames[project_index][1]}.png">
-                    </div>
-                    <div class="gallery__project__image">
-                        <img src="/img/projects/_thumbnails/t-${outputNames[project_index][1]}.png" alt="${outputNames[project_index][0]}">
-                    </div>
-                    <div class="gallery__project__overlay">
-                        <span>
-                            <h4>${outputNames[project_index][0]}</h4>
-                        </span>
-                        <span>
-                            <a href="/pages/projects/${outputNames[0][1]}.html">View Project</a>
-                        </span>
-                    </div>
-                </article>
+            <article class="gallery__project">
+                <div class="gallery__project__image gallery__project__image--blur">
+                    <img src="/img/projects/_thumbnails/t-${outputNames[project_index][1]}.png">
+                </div>
+                <div class="gallery__project__image">
+                    <img src="/img/projects/_thumbnails/t-${outputNames[project_index][1]}.png" alt="${outputNames[project_index][0]}">
+                </div>
+                <div class="gallery__project__overlay">
+                    <a href="/pages/projects/${outputNames[0][1]}.html">
+                        <p>${outputNames[project_index][0]}</p>
+                    </a>
+                </div>
+            </article>
             `;
             project_index++;
             // console.log('Project: ' + project_index);

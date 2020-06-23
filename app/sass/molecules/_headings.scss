@@ -4,33 +4,33 @@
     position: fixed;
     @include size(100%, $header-h-sm);
     z-index: 60;
-    & > span {
-        position: absolute;
-        font-weight: bold;
-        font-size: rem(72);
-    }
+    // & > span {
+    //     position: absolute;
+    //     font-weight: bold;
+    //     display: none;
+    // }
     &__projects {
         ::selection { @include selection($green-light, $grey-700); }
         & > h1 {
             display: flex;
             @extend %align-center;
             @include size(100%);
-            &::before {
-                content:"";
-                display: block;
-                z-index: -1;
-                @extend %pos-wrap;
-                @include background-opacity($white, .8);
-                @include linear-background(#{
-                    90deg, 
-                    rgba($white,0) 0%, 
-                    rgba($white,0) 10%, 
-                    rgba($white,.6) 45%, 
-                    rgba($white,.6) 55%, 
-                    rgba($white,0) 90%,
-                    rgba($white,0) 100%
-                });
-            }
+            // &::before {
+            //     content:"";
+            //     display: none;
+            //     z-index: -1;
+            //     @extend %pos-wrap;
+            //     @include background-opacity($white, .8);
+            //     @include linear-background(#{
+            //         90deg, 
+            //         rgba($white,0) 0%, 
+            //         rgba($white,0) 10%, 
+            //         rgba($white,.6) 45%, 
+            //         rgba($white,.6) 55%, 
+            //         rgba($white,0) 90%,
+            //         rgba($white,0) 100%
+            //     });
+            // }
         }
         & > span {
             // @include colour-opacity($green, .5);
@@ -50,14 +50,18 @@
     .heading {
         z-index: 30;
         height: $header-h-lg;
-        & > span {
-            font-size: rem(160);
-        }
-        &__projects {
-            & > h1 {
-                height: 120%;
-            }
-        }
+        // & > span {
+        //     display: block;
+        //     font-size: rem(160);
+        // }
+        // &__projects {
+        //     & > h1 {
+        //         height: 120%;
+        //         &::before {
+        //             display: block;
+        //         }
+        //     }
+        // }
     }
 }
 
