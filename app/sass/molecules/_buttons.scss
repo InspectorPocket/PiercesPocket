@@ -5,10 +5,10 @@
     &::before {
         display: block;
         position: absolute;
-        @include transition($anim-delayed);
+        @extend %anim-delayed;
     }
     &:hover {
-        &::before { @include transition($anim-delayed); }
+        &::before { @extend %anim-delayed; }
     }
     &__nav {
         border-radius: $b-radius;
@@ -20,13 +20,13 @@
         &:hover > &,
         &--active > & {
             &__icon {
-                @include transition(.2s cubic-bezier(.82,-0.01,1,1));
+                @extend %anim-nav-btn;
                 @include transform(translateY(- rem(4)));
             }
             &__text {
                 & :first-child {
                     &::before {
-                        @include transition(.3s cubic-bezier(.82,-0.01,1,1));
+                        @extend %anim-nav-text;
                         transform: scaleX(1);
                     }
                 }
@@ -90,11 +90,11 @@
                 @include nav-icon-l($red);
             }
         }
-    }
-    &__social {
-        @include min-size($logo-size-sm);
-        &--active {
-            transform: translateY(-rem(8));
+        &--purple {
+            ::selection { @include selection($purple-light, $grey-700); }
+            &:hover > div:first-of-type, &--active > div:first-of-type {
+                @include nav-icon-l($purple);
+            }
         }
     }
 }
@@ -163,17 +163,6 @@
                     @include nav-icon-l($red);
                 }
             }
-        }
-        &__social {
-            @include min-size($logo-size-md);
-        }
-    }
-}
-
-@include bp-md {
-    .btn {
-        &__social {
-            @include min-size($logo-size-lg);
         }
     }
 }

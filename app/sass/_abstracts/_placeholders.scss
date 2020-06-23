@@ -47,3 +47,7 @@
 
 // Animation
 %anim-long { @include transition(0.4s ease-in-out); }
+%anim-delayed { @include transition($anim-delayed); }
+
+%anim-nav-btn { @include transition(.2s cubic-bezier(.82,-0.01,1,1)); }
+%anim-nav-text { @include transition(.3s cubic-bezier(.82,-0.01,1,1)); }
